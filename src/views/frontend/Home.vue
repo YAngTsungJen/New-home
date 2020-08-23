@@ -25,30 +25,21 @@
         </div>
       </div>
     </div>
-    <Swiper />
-    <div class="bg-light py-7">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-4 text-center">
-            <h3>Lorem ipsum</h3>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.</p>
-            <button class="btn btn-dark mt-4 rounded-0">Lorem ipsum</button>
-          </div>
-        </div>
-      </div>
+    <div>
+      <SwiperModal />
     </div>
   </div>
 </template>
 
 <script>
-import Swiper from '../../components/frontend/Swiper'
+import SwiperModal from '../../components/frontend/SwiperModal'
 export default {
   data () {
     return {
     }
   },
   components: {
-    Swiper
+    SwiperModal
   }
 }
 </script>

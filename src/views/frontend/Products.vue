@@ -1,4 +1,3 @@
-import router from '../router';
 <template>
   <div>
     <div class="container mt-md-5 mt-3 mb-7">
