@@ -2,20 +2,20 @@
   <div>
     <div class="bg-dark py-2 fixed-bottom">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-between text-white mb-md-7 mb-4">
+        <div class="d-flex align-items-center justify-content-between text-gray mb-md-7 mb-4">
           <div>
-            <router-link to="/" class="text-white h4">好有錢房屋</router-link>
+            <router-link to="/" class="text-gray h4">好有錢房屋</router-link>
           </div>
           <ul class="d-flex list-unstyled mb-0 h4">
-            <router-link to="/about" class="nav-link text-white mr-2">
+            <router-link to="/about" class="nav-link text-gray mr-2">
               關於我們
             </router-link>
-            <li><a href="#" class="text-white mx-3"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#" class="text-white mx-3"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#" class="text-white ml-3"><i class="fab fa-line"></i></a></li>
+            <li><a href="#" class="text-gray mx-3"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" class="text-gray mx-3"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" class="text-gray ml-3"><i class="fab fa-line"></i></a></li>
           </ul>
         </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end align-items-start text-white">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end align-items-start text-gray">
           <div class="mb-md-0 mb-1">
             <p class="mb-0">02-3456-7890</p>
             <p class="mb-0">service@mail.com</p>
