@@ -28,8 +28,8 @@
         <div class="col-12 col-lg-10 mt-3 mb-3 d-flex flex-wrap">
           <div class="col-12 col-md-6 col-lg-4 mb-2  " v-for="item in products" :key="item.id">
             <div class="col-sm-6">
-              <div class="card Regular shadow" style="width: 18rem;">
-                <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid " style="height:200px;" alt="">
+              <div class="card Regular shadow fadder" style="width: 18rem;">
+                <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid" style="height:200px;" alt="">
                 <div class="card-body">
                   <p class="card-text ">{{item.title}}</p>
                 </div>
@@ -68,3 +68,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+/* .fadder:hover{
+  background-color: rgba(145,200,0,1);
+  z-index: 100;
+  opacity: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+} */
+</style>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 // bootstrap檔案
+import 'bootstrap'
 import './assets/scss/main.scss'
 // axios
 import axios from 'axios'
