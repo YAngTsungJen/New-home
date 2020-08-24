@@ -1,8 +1,10 @@
 <template>
   <div>
     <Swiper :options="swiperOption">
-      <Swiper-slide class="swiper-slide" v-for="(item,index) in slide" :key="index">
-        slide {{ item }}
+      <Swiper-slide class="swiper-slide" v-for="(item,index) in imgs" :key="index">
+        <div class="img-fluid ">
+          <img :src="item.img[0]" width="1400" height="650" alt="">
+        </div>
       </Swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
@@ -13,7 +15,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import 'swiper/swiper-bundle.css'
+import 'swiper/css/swiper.css'
 export default {
   components: {
     Swiper,
@@ -21,7 +23,19 @@ export default {
   },
   data () {
     return {
-      slide: [1, 2, 3, 4, 5, 6],
+      imgs: [{
+        img: ['https://images.unsplash.com/photo-1585154153069-d71926cf8fba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80']
+      }, {
+        img: ['https://images.unsplash.com/photo-1558016886-68507e3f3d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1069&q=80']
+      }, {
+        img: ['https://images.unsplash.com/photo-1580202313707-46a966af5c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+      }, {
+        img: ['https://images.unsplash.com/photo-1529034550849-aca4e412cdd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+      }, {
+        img: ['https://images.unsplash.com/photo-1510420845-c54dae3fe226?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+      }, {
+        img: ['https://images.unsplash.com/photo-1479968071622-d0a39f8551be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+      }],
       swiperOption: {
         direction: 'horizontal',
         loop: true,
@@ -47,9 +61,6 @@ export default {
 
 <style scoped>
 .swiper-slide{
-  height: 4rem;
-  padding: 7rem;
-  border-bottom: 1px solid red;
-  background: green;
+  height: 650px;
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class="bg-dark py-5">
+    <div class="bg-dark py-2 fixed-bottom">
       <div class="container">
         <div class="d-flex align-items-center justify-content-between text-white mb-md-7 mb-4">
-          <a class="text-white h4" href="./index.html">LOGO</a>
+          <div>
+            <router-link to="/" class="text-white h4">好有錢房屋</router-link>
+          </div>
           <ul class="d-flex list-unstyled mb-0 h4">
             <router-link to="/about" class="nav-link text-white mr-2">
               關於我們

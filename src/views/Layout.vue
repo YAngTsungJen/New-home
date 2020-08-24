@@ -2,21 +2,21 @@
     <div>
         <Navbar />
         <router-view></router-view>
-        <!-- <Footer /> -->
+        <Footer />
     </div>
 </template>
 
 <script>
 import Navbar from '../components/frontend/Navbar'
-// import Footer from '../components/frontend/Footer'
+import Footer from '../components/frontend/Footer'
 export default {
   data () {
     return {
     }
   },
   components: {
-    Navbar
-    // Footer
+    Navbar,
+    Footer
   }
 }
 </script>
