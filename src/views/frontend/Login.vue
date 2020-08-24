@@ -94,13 +94,11 @@ export default {
 </script>
 
 <style>
-body {
+/* body {
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
   height: 100vh;
   width: 100vh;
-}
+} */
 .btn {
   width: 50%;
 }

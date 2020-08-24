@@ -12,7 +12,6 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 import './bus'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import style
-// import 'swiper/swiper-bundle.css'
 import 'swiper/css/swiper.css'
 Vue.component('loading', Loading)
 Vue.use(VueAxios, axios)

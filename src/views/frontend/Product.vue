@@ -1,9 +1,14 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <h2>單一房間頁面</h2>
-    <h3>{{product.title}}</h3>
-    <h3>{{product.description}}</h3>
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <h3>{{product.title}}</h3>
+        <h3>{{product.description}}</h3>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -18,7 +18,7 @@
                 <div class="nav-link">|</div>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/about">關於我們</router-link>
+                <router-link class="nav-link" to="/about">關於好有錢</router-link>
               </li>
               <li class="nav-item active">
                 <div class="nav-link">|</div>
