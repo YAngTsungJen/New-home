@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-dark py-2 fixed-bottom">
+    <div class="bg-dark py-2 fixed-bottom mt-4">
       <div class="container">
         <div class="d-flex align-items-center justify-content-between text-gray mb-md-7 mb-4">
           <div>
@@ -8,7 +8,7 @@
           </div>
           <ul class="d-flex list-unstyled mb-0 h4">
             <router-link to="/about" class="nav-link text-gray mr-2">
-              關於我們
+              關於好有錢
             </router-link>
             <li><a href="#" class="text-gray mx-3"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#" class="text-gray mx-3"><i class="fab fa-instagram"></i></a></li>

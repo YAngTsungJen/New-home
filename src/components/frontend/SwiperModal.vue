@@ -61,6 +61,6 @@ export default {
 
 <style scoped>
 .swiper-slide{
-  height: 650px;
+  height: 480px;
 }
 </style>
