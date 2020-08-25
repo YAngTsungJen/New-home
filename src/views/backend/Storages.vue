@@ -10,7 +10,9 @@
             </thead>
             <tbody>
               <tr v-for="item in storages" :key="item.id" >
-                <th scope="row">1</th>
+                <th scope="row">
+                    {{item}}
+                </th>
                 <td>
                     <div style="
                       height: 100px;
@@ -42,6 +44,7 @@ import Delfilemodal from '../../components/backend/Delfilemodal'
 export default {
   data () {
     return {
+      categories: ['烏日區', '大里區', '彰化區'],
       storages: [],
       tempStorage: {},
       pagination: {}

@@ -38,7 +38,7 @@
               </div>
               <div class="col-sm-8">
                 <div class="form-group">
-                  <label for="title">標題</label>
+                  <label for="title">建案名稱</label>
                   <input
                     id="tempProduct.title"
                     v-model="tempProduct.title"
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="category">分類</label>
+                    <label for="category">建案位址</label>
                     <input
                       id="tempProduct.category"
                       v-model="tempProduct.category"
@@ -71,7 +71,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="origin_price">原價</label>
+                    <label for="origin_price">坪數</label>
                     <input
                       id="tempProduct.origin_price"
                       v-model="tempProduct.origin_price"
@@ -81,7 +81,7 @@
                     />
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="price">售價</label>
+                    <label for="price">價格</label>
                     <input
                       id="tempProduct.price"
                       v-model="tempProduct.price"

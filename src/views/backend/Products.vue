@@ -10,11 +10,11 @@
           <table class="table table-striped table-dark">
             <thead>
               <tr>
-                <th width="140">分類</th>
-                <th width="250">產品名稱</th>
+                <th width="140">建案位址</th>
+                <th width="250">建案名稱</th>
                 <th width="250">額外服務</th>
-                <th width="140">原價</th>
-                <th width="140">售價</th>
+                <th width="140">坪數</th>
+                <th width="140">價格</th>
                 <th width="250">設施服務</th>
                 <th width="140">編輯</th>
               </tr>
@@ -101,7 +101,7 @@ export default {
     openmodal (type, item) {
       if (type === 'new') {
         this.$refs.productModal.tempProduct = {
-          imgUrl: []
+          imageUrl: []
         }
         $('#productModal').modal('show')
         this.isNew = true

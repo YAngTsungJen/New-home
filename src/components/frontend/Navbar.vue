@@ -30,13 +30,12 @@
                 <div class="nav-link">|</div>
               </li>
               <li class="nav-item">
+                <router-link class="nav-link" to="/cart">預約看房</router-link>
+              </li>
+              <li class="nav-item">
                 <router-link class="nav-link" to="/login">登入</router-link>
               </li>
             </ul>
-          </div>
-          <div class="d-flex">
-            <a href="#"><i class="fas fa-heart mr-5"></i></a>
-            <router-link to="/cart"><i class="fas fa-shopping-cart"></i></router-link>
           </div>
         </nav>
       </div>
