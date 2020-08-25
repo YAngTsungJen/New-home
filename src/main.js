@@ -14,10 +14,13 @@ import './bus'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import style
 import 'swiper/css/swiper.css'
+// import lightbox
+import Lightbox from 'vue-easy-lightbox'
 Vue.component('loading', Loading)
 Vue.use(VueAxios, axios)
 // Vue.use(Loading) // Use default options
 Vue.use(VueAwesomeSwiper)
+Vue.use(Lightbox)
 Vue.config.productionTip = false
 
 new Vue({

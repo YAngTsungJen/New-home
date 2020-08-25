@@ -22,28 +22,26 @@
       <div class="col-12">
         <h2 class="text-center">建築過程</h2>
       </div>
-        <div class="col-3">
-          <div class="col-12 col-lg-10 mt-3 mb-3 d-flex flex-wrap">
-            <div class="col-12 col-md-6 col-lg-4 mb-2 " >
-              <div class="col-sm-6">
+        <div class="d-flex flex-wrap" v-for="item in product.imageUrl" :key="item.id">
+              <div class="col-sm-3 mb-3">
                 <div class="card Regular shadow fadder" style="width: 18rem;">
-                  <img :src="product.imageUrl[1]" class=" img-fluid" style="height:200px;" alt="">
+                  <img :src="item" class=" img-fluid" style="height:200px;" alt="">
                 </div>
               </div>
-            </div>
-          </div>
         </div>
-        <div class="col-3">2</div>
-        <div class="col-3">3</div>
-        <div class="col-3">4</div>
       <div>
     </div>
-
+    <!-- <vue-easy-lightbox
+      :visible="visible"
+      :imgs="imgs"
+      @hide="handleHide"
+    ></vue-easy-lightbox> -->
     </div>
   </div>
 </template>
 
 <script>
+// import VueEasyLightbox from 'vue-easy-lightbox'
 import L from 'leaflet'
 console.log(L)
 export default {
@@ -52,8 +50,14 @@ export default {
       product: {
         imageUrl: []
       }
+      // mgs: '', // Img Url , string or Array
+      // visible: false,
+      // index: 0 // default
     }
   },
+  // components: {
+  //   VueEasyLightbox
+  // },
   created () {
     console.log(this.$route.params.id)
     const id = this.$route.params.id
@@ -65,7 +69,8 @@ export default {
       .then((response) => {
         console.log(response)
         this.product = response.data.data
-        console.log(this.product)
+        // this.imgs = response.data.data
+        // console.log(this.imgs.imageUrl)
         this.isLoading = false
       }).catch((error) => {
         console.log(error)
@@ -84,6 +89,23 @@ export default {
       .bindPopup('<h3>捷登房屋</h3><p><br>台中市南屯區五權西路二段748號</p>')
       .openPopup()
   }
+  // methods: {
+  //   showSingle () {
+  //     this.imgs = 'http://via.placeholder.com/350x150'
+  //     this.show()
+  //   },
+  //   showMultiple () {
+  //     this.imgs = ['http://via.placeholder.com/350x150', 'http://via.placeholder.com/350x150']
+  //     this.index = 1 // index of imgList
+  //     this.show()
+  //   },
+  //   show () {
+  //     this.visible = true
+  //   },
+  //   handleHide () {
+  //     this.visible = false
+  //   }
+  // }
 }
 </script>
 
