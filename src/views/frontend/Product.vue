@@ -1,6 +1,5 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"></loading>
     <div class="row map">
       <div class="col-sm-5 mr-auto">
         <div id="mapid" ref="mapElement"></div>

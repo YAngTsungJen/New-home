@@ -36,7 +36,9 @@
               <div class="card Regular shadow fadder" style="width: 18rem;">
                 <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid" style="height:200px;" alt="">
                 <div class="card-body">
-                  <p class="card-text ">{{item.title}}</p>
+                  <h5 class="card-title">{{ item.title }}
+                    <span class="badge badge-pill badge-success float-right ">{{item.category}}</span>
+                  </h5>
                 </div>
               </div>
             </div>
