@@ -1,8 +1,23 @@
 <template>
   <div class="about">
+    <div class="d-flex flex-column flex-md-row justify-content-beteewn align-items-md-center align-items-start  text-dark bg-info">
+      <div class="mb-md-0 mb-1 ml-auto">
+        <h2 class="mb-0 " style="font-family: 'Russo One', sans-serif;"> 關於我們 </h2>
+      </div>
+      <div class="img-fluid mb-0 pt-2 pb-2">
+          <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="15%" height="15%" alt="">
+      </div>
+    </div>
     <div class="row map">
-      <div class="col-sm-9">
+      <div class="col-sm-7">
         <div id="mapid" ref="mapElement"></div>
+      </div>
+      <div class="col-sm-5">
+        <ul class="text-left">
+          <li class="text-outside">
+            <h2 class="text-success">捷登房屋</h2>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -39,5 +54,10 @@ export default {
 .map {
   padding: 3rem;
   margin-bottom: 200px;
+}
+.text-outside{
+  list-style-type: none;
+  border-bottom: 1px dashed rgba(0,0,0,.2);
+  padding: 6px 0 6px 23px;
 }
 </style>

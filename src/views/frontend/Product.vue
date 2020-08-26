@@ -22,20 +22,21 @@
       <div class="col-12">
         <h2 class="text-center">建築過程</h2>
       </div>
-        <div class="d-flex flex-wrap" v-for="item in product.imageUrl" :key="item.id">
+        <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
               <div class="col-sm-3 mb-3">
                 <div class="card Regular shadow fadder" style="width: 18rem;">
-                  <img :src="item" class=" img-fluid" style="height:200px;" alt="">
+                  <img :src="item" class=" img-fluid" style="height:200px;" alt="" @click="show(index)">
                 </div>
               </div>
         </div>
       <div>
     </div>
-    <!-- <vue-easy-lightbox
+    <vue-easy-lightbox
       :visible="visible"
       :imgs="imgs"
+      :index="index"
       @hide="handleHide"
-    ></vue-easy-lightbox> -->
+    ></vue-easy-lightbox>
     </div>
   </div>
 </template>
@@ -49,15 +50,12 @@ export default {
     return {
       product: {
         imageUrl: []
-      }
-      // mgs: '', // Img Url , string or Array
-      // visible: false,
-      // index: 0 // default
+      },
+      imgs: [], // Img Url , string or Array
+      visible: false,
+      index: null
     }
   },
-  // components: {
-  //   VueEasyLightbox
-  // },
   created () {
     console.log(this.$route.params.id)
     const id = this.$route.params.id
@@ -69,8 +67,7 @@ export default {
       .then((response) => {
         console.log(response)
         this.product = response.data.data
-        // this.imgs = response.data.data
-        // console.log(this.imgs.imageUrl)
+        this.imgs = response.data.data.imageUrl
         this.isLoading = false
       }).catch((error) => {
         console.log(error)
@@ -88,24 +85,16 @@ export default {
     L.marker([24.143175, 120.636880]).addTo(mymap)
       .bindPopup('<h3>捷登房屋</h3><p><br>台中市南屯區五權西路二段748號</p>')
       .openPopup()
+  },
+  methods: {
+    show (index) {
+      this.index = index
+      this.visible = true
+    },
+    handleHide () {
+      this.visible = false
+    }
   }
-  // methods: {
-  //   showSingle () {
-  //     this.imgs = 'http://via.placeholder.com/350x150'
-  //     this.show()
-  //   },
-  //   showMultiple () {
-  //     this.imgs = ['http://via.placeholder.com/350x150', 'http://via.placeholder.com/350x150']
-  //     this.index = 1 // index of imgList
-  //     this.show()
-  //   },
-  //   show () {
-  //     this.visible = true
-  //   },
-  //   handleHide () {
-  //     this.visible = false
-  //   }
-  // }
 }
 </script>
 
@@ -123,8 +112,6 @@ export default {
   padding: 6px 0 6px 23px;
 }
 .process{
-  /* background: blue; */
-  /* height: 300px; */
   margin-bottom: 200px;
   padding: 3rem 3rem;
 }
