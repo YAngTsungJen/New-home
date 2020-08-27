@@ -4,16 +4,18 @@
           <table class="table table-striped mt-4">
             <thead>
               <tr>
+                <th scope="col">編號
+                </th>
                 <th scope="col">圖片</th>
                 <th scope="col">刪除</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="item in storages" :key="item.id" >
-                <th scope="row">
-                    {{item}}
+                <th>
+                  0
                 </th>
-                <td>
+                <td >
                     <div style="
                       height: 100px;
                       width: 100px;

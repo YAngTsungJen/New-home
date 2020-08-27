@@ -2,7 +2,9 @@
   <div>
     <div class="row map">
       <div class="col-sm-5 mr-auto">
-        <div id="mapid" ref="mapElement"></div>
+        <!-- <div id="mapid" ref="mapElement"></div> -->
+        <iframe v-if="product.id === 'VjkcwT0NNt7FbyY6mbOWvGvrRG3BdwUXDQxkmqbPaWTzH41amTD7VklHgeIhp4Qw'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3493196019563!2d120.69987131498561!3d24.089208081665554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb73414071f%3A0x3ebaf9372a193a70!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3MjLlvIQyMeiZnw!5e0!3m2!1szh-TW!2stw!4v1598456264351!5m2!1szh-TW!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <iframe v-if="product.id === '3tq9h2QtuU8dWiDbMMvHcLBjFKVDGeGOejz90jKUgtOPG8YehiMRc8A57Df9PlOA'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.769873736545!2d120.63261801498753!3d24.07440718443064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA0JzI3LjkiTiAxMjDCsDM4JzA1LjMiRQ!5e0!3m2!1szh-TW!2stw!4v1598458341439!5m2!1szh-TW!2stw" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
       <div class="col-sm-5">
         <ul class="text-left">
@@ -42,9 +44,7 @@
 </template>
 
 <script>
-// import VueEasyLightbox from 'vue-easy-lightbox'
-import L from 'leaflet'
-console.log(L)
+// import L from 'leaflet'
 export default {
   data () {
     return {
@@ -74,18 +74,18 @@ export default {
         this.isLoading = false
       })
   },
-  mounted () {
-    var mymap = L.map('mapid', {
-      center: [24.143175, 120.636880],
-      zoom: 16
-    })
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap)
-    L.marker([24.143175, 120.636880]).addTo(mymap)
-      .bindPopup('<h3>捷登房屋</h3><p><br>台中市南屯區五權西路二段748號</p>')
-      .openPopup()
-  },
+  // mounted () {
+  //   var mymap = L.map('mapid', {
+  //     center: [24.143175, 120.636880],
+  //     zoom: 16
+  //   })
+  //   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  //   }).addTo(mymap)
+  //   L.marker([24.143175, 120.636880]).addTo(mymap)
+  //     .bindPopup('<h3>捷登房屋</h3><p><br>台中市南屯區五權西路二段748號</p>')
+  //     .openPopup()
+  // },
   methods: {
     show (index) {
       this.index = index
