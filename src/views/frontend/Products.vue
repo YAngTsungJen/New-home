@@ -41,7 +41,7 @@
           <div class="col-12 col-md-6 col-lg-4 mb-2 " v-for="item in filterCategories" :key="item.id">
             <!-- v-for="item in products" :key="item.id" -->
             <div class="col-sm-6">
-              <div class="card Regular shadow " style="width: 18rem;">
+              <div class="card Regular shadow work-item" style="width: 18rem;">
                 <div>
                   <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid fadder" alt="">
                   <span class="search"><i class="fas fa-search-plus"></i></span>
@@ -110,6 +110,7 @@ export default {
 .fadder{
   height:200px;
   overflow: hidden;
+  width: 100%;
 }
 .search{
   font-size: 80px;
@@ -117,7 +118,10 @@ export default {
   top: 30%;
   left: 40%;
   color: white;
-  /* opacity: 0; */
-  z-index: 10;
+  opacity: 0;
+}
+.work-item:hover.search{
+  opacity: 1;
+  transition-duration: 0.2s;
 }
 </style>
