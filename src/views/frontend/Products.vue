@@ -42,7 +42,7 @@
             <!-- v-for="item in products" :key="item.id" -->
             <div class="col-sm-6">
               <div class="card Regular shadow work-item" style="width: 18rem;">
-                <div>
+                <div class="work-item">
                   <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid fadder" alt="">
                   <span class="search"><i class="fas fa-search-plus"></i></span>
                 </div>
@@ -107,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+.work-item{
+  height: 300px;
+}
 .fadder{
   height:200px;
   overflow: hidden;
