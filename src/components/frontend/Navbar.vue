@@ -5,7 +5,7 @@
           <router-link class="navbar-brand position-absolute" to="/"
             style="left: 50%; transform: translate(-50%, -50%); top: 40%; font-family: 'Anton', sans-serif;
 font-family: 'Russo One', sans-serif;">
-            好有錢房屋
+            捷登房屋
             <i class="fas fa-home"></i>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@ font-family: 'Russo One', sans-serif;">
                 <router-link class="nav-link text-success " to="/">首頁<span class="sr-only">(current)</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link text-success" to="/about">關於好有錢</router-link>
+                <router-link class="nav-link text-success" to="/about">關於我們</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link text-success" to="/products">最新建案</router-link>

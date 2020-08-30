@@ -20,6 +20,9 @@ import Lightbox from 'vue-easy-lightbox'
 import { ValidationObserver, ValidationProvider, extend, localize, configure } from 'vee-validate'
 import * as rules from 'vee-validate/dist/rules'
 import TW from 'vee-validate/dist/locale/zh_TW.json'
+import AOS from 'aos'
+import 'aos/dist/aos.css' // You can also use <link> for styles
+// ..
 Vue.config.productionTip = false
 
 Vue.component('loading', Loading)
@@ -42,6 +45,9 @@ configure({
   }
 })
 new Vue({
+  created () {
+    AOS.init()
+  },
   router,
   render: h => h(App)
 }).$mount('#app')

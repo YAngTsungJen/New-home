@@ -12,7 +12,7 @@
       <div>
         <h2>留言版</h2>
       </div>
-      <div class="my-5 row justify-content-center ">
+      <!-- <div class="my-5 row justify-content-center ">
         <validation-observer v-slot="{ invalid }" class="col-md-6 text-left">
           <form @submit.prevent="createOrder">
             <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3"
@@ -39,7 +39,7 @@
                     v-model="form.address">
                 <span class="invalid-feedback"> {{errors[0]}} </span>
             </validation-provider>
-            <!-- <validation-provider  v-slot="{ errors, classes }" class="form-group mt-3"
+            <validation-provider  v-slot="{ errors, classes }" class="form-group mt-3"
                 tag="div">
                 <label for="payment">付款方式</label>
                 <select type="select" name="付款方式" id="payment" class="form-control" :class="classes" v-model="form.payment">
@@ -53,7 +53,7 @@
                     <option value="CVS">CVS</option>
                 </select>
                 <span class="invalid-feedback"> {{errors[0]}} </span>
-            </validation-provider> -->
+            </validation-provider>
             <validation-provider v-slot="{ errors, classes }" class="form-group" tag="div">
                 <label for="message">留言</label>
                 <textarea type="text" name="留言" id="message" class="form-control" :class="classes"
@@ -65,7 +65,7 @@
                   </div>
               </form>
           </validation-observer>
-      </div>
+      </div> -->
       <div class="row my-5">
         <div class="col"><h4>詢問欄</h4>
         <ul>
