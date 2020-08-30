@@ -74,16 +74,16 @@ export default {
           this.$router.push('admin/products')
           //  window.location = 'learn.html';
           //  不能移到 post 外面，因為非同步的觀念，會變成先轉址，在執行post
-          // this.$bus.$emit('message:push',
-          //   '登入成功',
-          //   'success')
+          this.$bus.$emit('message:push',
+            '登入成功',
+            'success')
         })
         .catch((error) => {
           console.log(error)
-          // this.$bus.$emit('message:push',
-          // `登入失敗惹，好糗Σ( ° △ °|||)︴
-          //   ${error}`,
-          // 'danger')
+          this.$bus.$emit('message:push',
+          `登入失敗惹，好糗Σ( ° △ °|||)︴
+            ${error}`,
+          'danger')
         })
     },
     signout () {

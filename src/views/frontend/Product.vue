@@ -8,8 +8,14 @@
       </div>
       <div class="col-sm-5">
         <ul class="text-left">
-          <li class="text-outside">
-            <h2 class="text-success">{{product.title}}</h2>
+          <li class="text-outside row">
+            <div class="col mr-auto">
+              <h2 class="text-success">{{product.title}}</h2>
+            </div>
+            <div class="col btn-group">
+              <button type="button" class="btn btn-primary" @click.prevent="addCart(product)">預約看屋</button>
+              <button type="button" class="btn btn-success" @click.prevent="back()">返回</button>
+            </div>
           </li>
           <li class="text-outside"><span class="text-success">地址：</span>{{product.category}} </li>
           <li class="text-outside"><span class="text-success">生活機能：</span>{{product.content}}</li>
@@ -44,6 +50,7 @@
 </template>
 
 <script>
+import Toast from '../../Toast'
 // import L from 'leaflet'
 export default {
   data () {
@@ -53,7 +60,8 @@ export default {
       },
       imgs: [], // Img Url , string or Array
       visible: false,
-      index: null
+      index: null,
+      cart: {}
     }
   },
   created () {
@@ -61,9 +69,7 @@ export default {
     const id = this.$route.params.id
     this.isLoading = true
     this.$http
-      .get(
-        `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/product/${id}`
-      )
+      .get(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/product/${id}`)
       .then((response) => {
         console.log(response)
         this.product = response.data.data
@@ -93,6 +99,34 @@ export default {
     },
     handleHide () {
       this.visible = false
+    },
+    addCart (item, quantity = 1) {
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
+      const cart = {
+        product: item.id,
+        quantity
+      }
+      this.$http.post(url, cart).then(res => {
+        this.$bus.$emit('update')
+        Toast.fire({
+          title: '已幫您加入預約列表，請前往前言版',
+          icon: 'success'
+        })
+        console.log(res)
+      }).catch(error => {
+        const errorData = error.response.data.errors
+        if (errorData) {
+          console.log(errorData)
+          Toast.fire({
+            title: '已經預約此間了',
+            icon: 'warning'
+          })
+          this.$router.push('/cart')
+        }
+      })
+    },
+    back () {
+      this.$router.push('/products')
     }
   }
 }

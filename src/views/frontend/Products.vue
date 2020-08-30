@@ -41,8 +41,11 @@
           <div class="col-12 col-md-6 col-lg-4 mb-2 " v-for="item in filterCategories" :key="item.id">
             <!-- v-for="item in products" :key="item.id" -->
             <div class="col-sm-6">
-              <div class="card Regular shadow fadder" style="width: 18rem;">
-                <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid" style="height:200px;" alt="">
+              <div class="card Regular shadow " style="width: 18rem;">
+                <div>
+                  <img @click="goPage(item)" :src="item.imageUrl[0]" class=" img-fluid fadder" alt="">
+                  <span class="search"><i class="fas fa-search-plus"></i></span>
+                </div>
                 <div class="card-body">
                   <h5 class="card-title">{{ item.title }}
                     <span class="badge badge-pill badge-success float-right ">{{item.category}}</span>
@@ -104,14 +107,17 @@ export default {
 </script>
 
 <style scoped>
-/* .fadder:hover{
-  background-color: rgba(145,200,0,1);
-  z-index: 100;
-  opacity: 0;
+.fadder{
+  height:200px;
+  overflow: hidden;
+}
+.search{
+  font-size: 80px;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-} */
+  top: 30%;
+  left: 40%;
+  color: white;
+  /* opacity: 0; */
+  z-index: 10;
+}
 </style>
