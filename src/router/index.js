@@ -38,6 +38,11 @@ const routes = [
         path: '/cart',
         name: 'Cart',
         component: () => import('../views/frontend/Cart.vue')
+      },
+      {
+        path: '/reservation',
+        name: 'Reservation',
+        component: () => import('../views/frontend/Reservation.vue')
       }
     ]
   },

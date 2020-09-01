@@ -12,7 +12,7 @@
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="my-5 row justify-content-center ">
-                  <validation-observer v-slot="{ invalid }" class="col-md-6 text-left">
+                  <!-- <validation-observer v-slot="{ invalid }" class="col-md-6 text-left">
                     <form @submit.prevent="createOrder">
                       <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3"
                         tag="div">
@@ -48,7 +48,7 @@
                                 <button type="submit" class="btn btn-primary mt-3" :disabled="invalid">確認送出</button>
                             </div>
                         </form>
-                    </validation-observer>
+                    </validation-observer> -->
                 </div>
               </div>
             </div>

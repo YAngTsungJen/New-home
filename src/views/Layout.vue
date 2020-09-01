@@ -3,12 +3,14 @@
         <Navbar />
         <router-view></router-view>
         <Footer />
+        <Top/>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/frontend/Navbar'
 import Footer from '../components/frontend/Footer'
+import Top from '../components/frontend/Top'
 export default {
   data () {
     return {
@@ -16,7 +18,8 @@ export default {
   },
   components: {
     Navbar,
-    Footer
+    Footer,
+    Top
   }
 }
 </script>

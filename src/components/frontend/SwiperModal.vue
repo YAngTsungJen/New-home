@@ -3,7 +3,7 @@
     <Swiper :options="swiperOption">
       <Swiper-slide class="swiper-slide" v-for="(item,index) in imgs" :key="index">
         <div class="img-fluid ">
-          <img :src="item.img[0]" width="1419" height="480" alt="">
+          <img :src="item.img[0]" width="1419" height="800" alt="">
         </div>
       </Swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -24,17 +24,17 @@ export default {
   data () {
     return {
       imgs: [{
-        img: ['https://images.unsplash.com/photo-1585154153069-d71926cf8fba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80']
+        img: ['https://cdn.stocksnap.io/img-thumbs/960w/modern-interior_KWRZNZ6DC6.jpg']
       }, {
-        img: ['https://upload.cc/i1/2020/08/24/DXdysS.png']
+        img: ['https://cdn.stocksnap.io/img-thumbs/960w/home-office_YODJNTOBN9.jpg']
       }, {
-        img: ['https://images.unsplash.com/photo-1580202313707-46a966af5c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+        img: ['https://cdn.stocksnap.io/img-thumbs/960w/city-buildings_WZXIAIPAT9.jpg']
       }, {
-        img: ['https://images.unsplash.com/photo-1529034550849-aca4e412cdd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+        img: ['https://cdn.stocksnap.io/img-thumbs/280h/architecture-building_0GZ83DHBCE.jpg']
       }, {
-        img: ['https://upload.cc/i1/2020/08/24/ZvonWq.png']
+        img: ['https://cdn.stocksnap.io/img-thumbs/280h/architecture-building_D5YP66NZNI.jpg']
       }, {
-        img: ['https://images.unsplash.com/photo-1479968071622-d0a39f8551be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60']
+        img: ['https://cdn.stocksnap.io/img-thumbs/280h/city-stairs_XPJ9JQHLN5.jpg']
       }],
       swiperOption: {
         direction: 'horizontal',
@@ -61,6 +61,6 @@ export default {
 
 <style scoped>
 .swiper-slide{
-  height: 480px;
+  height: 700px;
 }
 </style>

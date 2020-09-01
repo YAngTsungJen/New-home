@@ -3,15 +3,69 @@
     <div class="container mb-3">
       <div class="d-flex flex-column flex-md-row justify-content-beteewn align-items-md-center align-items-start  text-dark bg-info">
         <div class="mb-md-0 mb-1 ml-auto">
-          <h2 class="mb-0 " style="font-family: 'Russo One', sans-serif;"> 預約專區 </h2>
+          <h2 class="mb-0 " style="font-family: 'Russo One', sans-serif;"> 留言 </h2>
         </div>
         <div class="img-fluid mb-0 pt-2 pb-2">
           <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="15%" height="15%" alt="">
         </div>
       </div>
-      <div class="mt-3">
+      <div>
         <h2>留言版</h2>
       </div>
+      <!-- <div class="my-5 row justify-content-center ">
+        <validation-observer v-slot="{ invalid }" class="col-md-6 text-left">
+          <form @submit.prevent="createOrder">
+            <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3"
+              tag="div">
+                <label for="name">姓名</label>
+                <input type="text" name="姓名" id="name" class="form-control" :class="classes" v-model="form.name">
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+            <validation-provider rules="required|email" v-slot="{ errors, classes }" class="form-group mt-3"
+            tag="div">
+                <label for="email">信箱</label>
+                <input type="email" name="信箱" id="email" class="form-control" :class="classes" v-model="form.email">
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+            <validation-provider rules="required|min:8" v-slot="{ errors, classes }" class="form-group mt-3"
+              tag="div">
+                <label for="tel">電話</label>
+                <input type=" tel" name="電話" id="tel" class="form-control" :class="classes" v-model="form.tel">
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+            <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
+                <label for="address">地址</label>
+                <input type="text" name="地址" id="address" class="form-control" :class="classes"
+                    v-model="form.address">
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+            <validation-provider  v-slot="{ errors, classes }" class="form-group mt-3"
+                tag="div">
+                <label for="payment">付款方式</label>
+                <select type="select" name="付款方式" id="payment" class="form-control" :class="classes" v-model="form.payment">
+                    <option value="" disabled selected>請選擇</option>
+                    <option value="WebATM">Web ATM</option>
+                    <option value="ATM">ATM</option>
+                    <option value="Barcode">Barcode</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Applepay">Apple pay</option>
+                    <option value="GooglePay">Google Pay</option>
+                    <option value="CVS">CVS</option>
+                </select>
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+            <validation-provider v-slot="{ errors, classes }" class="form-group" tag="div">
+                <label for="message">留言</label>
+                <textarea type="text" name="留言" id="message" class="form-control" :class="classes"
+                    v-model="form.message"></textarea>
+                <span class="invalid-feedback"> {{errors[0]}} </span>
+            </validation-provider>
+                  <div class="text-right">
+                      <button type="submit" class="btn btn-primary mt-3" :disabled="invalid">確認送出</button>
+                  </div>
+              </form>
+          </validation-observer>
+      </div> -->
       <div class="row my-5">
         <div class="col"><h4>詢問欄</h4>
         <ul>

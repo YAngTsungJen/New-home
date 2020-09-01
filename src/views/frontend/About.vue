@@ -17,6 +17,9 @@
           <li class="text-outside">
             <h2 class="text-success">捷登房屋</h2>
           </li>
+          <li class="text-outside mt-3">
+            <p>地址：<span>台中市南屯區五權西路二段748號</span></p>
+          </li>
         </ul>
       </div>
     </div>
@@ -58,6 +61,6 @@ export default {
 .text-outside{
   list-style-type: none;
   border-bottom: 1px dashed rgba(0,0,0,.2);
-  padding: 6px 0 6px 23px;
+  padding: 6px 6px;
 }
 </style>

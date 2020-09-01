@@ -1,9 +1,9 @@
 <template>
-    <div class="bg-white sticky-top">
+    <div class="bg-white">
       <div class="container">
-        <nav class="navbar px-0 navbar-expand-lg navbar-light bg-white" style="height:20vh;">
+        <nav class="navbar px-0 navbar-expand-lg navbar-light bg-white mb-3" style="height:20vh;">
           <router-link class="navbar-brand position-absolute" to="/"
-            style="left: 50%; transform: translate(-50%, -50%); top: 40%; font-family: 'Anton', sans-serif;
+            style="left: 50%; transform: translate(-50%, -50%); top: 40%; font-family: 'Anton', sans-serif;font-size:40px;
 font-family: 'Russo One', sans-serif;">
             捷登房屋
             <i class="fas fa-home"></i>
@@ -12,7 +12,7 @@ font-family: 'Russo One', sans-serif;">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse bg-white custom-header-md-open justify-content-lg-center mt-5" id="navbarNav">
-            <ul class="navbar-nav mt-5" >
+            <ul class="navbar-nav mt-5 topic" >
               <li class="nav-item active ">
                 <router-link class="nav-link text-success " to="/">首頁<span class="sr-only">(current)</span></router-link>
               </li>
@@ -23,10 +23,10 @@ font-family: 'Russo One', sans-serif;">
                 <router-link class="nav-link text-success" to="/products">最新建案</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link text-success" to="/cart">預約看房</router-link>
+                <router-link class="nav-link text-success" to="/cart">留言板</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link text-success" to="/login">登入</router-link>
+                <router-link class="nav-link text-success" to="/reservation">預約專區</router-link>
               </li>
             </ul>
           </div>
@@ -34,3 +34,13 @@ font-family: 'Russo One', sans-serif;">
       </div>
     </div>
 </template>
+
+<style scoped>
+.topic{
+  font-size:20px;
+  color:palegreen;
+}
+.topic>li:hover{
+  color: blue;
+}
+</style>
