@@ -1,5 +1,12 @@
 <template>
   <div>
+    <loading :active.sync="isLoading">
+      <template slot="default">
+        <div class="loadingio-spinner-spin-b44lsmwv628"><div class="ldio-am4phneojyb">
+        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+        </div></div>
+      </template>
+    </loading>
     <div class="row map">
       <div class="col-sm-7 mr-auto">
         <img :src="product.imageUrl[0]" class=" img-fluid" style="height:500px; width:800px;" alt="">
@@ -11,7 +18,7 @@
               <h2 class="text-success">{{product.title}}</h2>
             </div>
             <div class="col btn-group">
-              <button type="button" class="btn btn-success" @click.prevent="addCart">預約看屋</button>
+              <button type="button" class="btn btn-success" @click.prevent="addCart(product,product.num)">預約看屋</button>
               <button type="button" class="btn btn-light" @click.prevent="back()">返回</button>
             </div>
           </li>
@@ -52,6 +59,7 @@
     ></vue-easy-lightbox>
     <div class="confirm" @click.prevent="addTocart">
       <i class="fas fa-house-user"></i>
+      <span class="badage badage-pill badge-danger" v-if="cart.length" style="transform:translateX(-9px) translateY(4px);">{{ cart.length }}</span>
     </div>
     </div>
   </div>
@@ -65,12 +73,14 @@ export default {
   data () {
     return {
       product: {
+        num: 1,
         imageUrl: []
       },
       imgs: [], // Img Url , string or Array
       visible: false,
       index: null,
-      cart: []
+      cart: [],
+      isLoading: false
     }
   },
   components: {
@@ -78,6 +88,7 @@ export default {
   },
   created () {
     this.getProduct()
+    this.addTocart()
   },
   methods: {
     show (index) {
@@ -96,6 +107,7 @@ export default {
           console.log(response)
           this.product = response.data.data
           this.imgs = response.data.data.imageUrl
+          this.cart = response.data.data
           this.isLoading = false
         }).catch((error) => {
           console.log(error)
@@ -103,39 +115,39 @@ export default {
         })
     },
     getCart () {
-      this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
       this.$http.get(url).then(res => {
         this.cart = res.data.data
         console.log(this.cart)
-        this.isLoading = false
       }).catch(error => {
         console.log(error)
         Toast.fire({
           title: '無法取得資料，稍後再試',
           icon: 'error'
         })
-        this.isLoading = false
       })
     },
     addTocart () {
       $('#reserveModal').modal('show')
-      this.$bus.$emit('update')
     },
     addCart (item, quantity = 1) {
+      this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
       const cart = {
         product: item.id,
         quantity
       }
       this.$http.post(url, cart).then(res => {
+        this.isLoading = false
+        this.$bus.$emit('get-cart')
         this.getCart()
         Toast.fire({
-          title: '已幫您加入預約列表，請前往前言版',
+          title: '已幫您加入預約列表，請前往預約專區',
           icon: 'success'
         })
         console.log(res)
       }).catch(error => {
+        this.isLoading = false
         const errorData = error.response.data.errors
         if (errorData) {
           console.log(errorData)
@@ -218,4 +230,104 @@ export default {
   border-radius: 50% 50%;
   cursor: pointer;
 }
+@keyframes ldio-am4phneojyb {
+  0% {
+    opacity: 1;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.5,1.5);
+  } 100% {
+    opacity: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1,1);
+  }
+}
+.ldio-am4phneojyb div > div {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ff727d;
+  animation: ldio-am4phneojyb 1s linear infinite;
+}.ldio-am4phneojyb div:nth-child(1) > div {
+  left: 148px;
+  top: 88px;
+  animation-delay: -0.875s;
+}
+.ldio-am4phneojyb > div:nth-child(1) {
+  transform: rotate(0deg);
+  transform-origin: 160px 100px;
+}.ldio-am4phneojyb div:nth-child(2) > div {
+  left: 130px;
+  top: 130px;
+  animation-delay: -0.75s;
+}
+.ldio-am4phneojyb > div:nth-child(2) {
+  transform: rotate(45deg);
+  transform-origin: 142px 142px;
+}.ldio-am4phneojyb div:nth-child(3) > div {
+  left: 88px;
+  top: 148px;
+  animation-delay: -0.625s;
+}
+.ldio-am4phneojyb > div:nth-child(3) {
+  transform: rotate(90deg);
+  transform-origin: 100px 160px;
+}.ldio-am4phneojyb div:nth-child(4) > div {
+  left: 46px;
+  top: 130px;
+  animation-delay: -0.5s;
+}
+.ldio-am4phneojyb > div:nth-child(4) {
+  transform: rotate(135deg);
+  transform-origin: 58px 142px;
+}.ldio-am4phneojyb div:nth-child(5) > div {
+  left: 28px;
+  top: 88px;
+  animation-delay: -0.375s;
+}
+.ldio-am4phneojyb > div:nth-child(5) {
+  transform: rotate(180deg);
+  transform-origin: 40px 100px;
+}.ldio-am4phneojyb div:nth-child(6) > div {
+  left: 46px;
+  top: 46px;
+  animation-delay: -0.25s;
+}
+.ldio-am4phneojyb > div:nth-child(6) {
+  transform: rotate(225deg);
+  transform-origin: 58px 58px;
+}.ldio-am4phneojyb div:nth-child(7) > div {
+  left: 88px;
+  top: 28px;
+  animation-delay: -0.125s;
+}
+.ldio-am4phneojyb > div:nth-child(7) {
+  transform: rotate(270deg);
+  transform-origin: 100px 40px;
+}.ldio-am4phneojyb div:nth-child(8) > div {
+  left: 130px;
+  top: 46px;
+  animation-delay: 0s;
+}
+.ldio-am4phneojyb > div:nth-child(8) {
+  transform: rotate(315deg);
+  transform-origin: 142px 58px;
+}
+.loadingio-spinner-spin-b44lsmwv628 {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+.ldio-am4phneojyb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-am4phneojyb div { box-sizing: content-box; }
+/* generated by https://loading.io/ */
 </style>

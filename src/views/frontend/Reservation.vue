@@ -32,7 +32,7 @@
                   <th scope="col-2"></th>
                   <th scope="col-2">案名</th>
                   <th scope="col-2">售價</th>
-                  <th scope="col-2">取消</th>
+                  <th scope="col-2"></th>
                 </tr>
               </thead>
               <tbody v-for="item in cart" :key="item.id">
@@ -46,16 +46,15 @@
                   <td> {{item.product.price}} 萬 </td>
                   <td>
                     <button type="button" class="btn btn-outline-danger btn-sm"
-                        @click="removeCart(item.product.id)">
-                        <i class="fas fa-trash-alt"></i>
+                    @click="removeCart(item.product.id)">
+                      <i class="fas fa-trash-alt"></i>
                     </button>
                   </td>
                 </tr>
               </tbody>
             </table>
-            <div class="row d-flex justify-content-center no-gutters">
-              <button type="button" class="btn btn-cyan mr-auto">返回購物區</button>
-              <button type="button" class="btn btn-success" @click="page = 2">前往結帳</button>
+            <div class="row d-flex justify-content-end no-gutters">
+              <button type="button" class="btn btn-success" @click="page = 2">下一步</button>
             </div>
           </div>
           <div class="col-9 step-2" :class="{ 'show': page === 2 }">
@@ -99,63 +98,66 @@
                             <span class="invalid-feedback"> {{errors[0]}} </span>
                         </validation-provider>
                         <div class="text-right">
-                          <button type="submit" @click="page = 3" class="btn btn-success" :disabled="invalid">提交訂單</button>
+                          <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 上一步</button>
+                          <button type="submit" @click="page = 3" class="btn btn-success" :disabled="invalid">下一步</button>
                         </div>
                       </div>
                     </div>
                   </form>
                 </validation-observer>
               </span>
-              <div class="text-left">
-                <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 返回購物車</button>
-              </div>
             </div>
           </div>
           <div class="col-9 step-3" :class="{ 'show': page === 3 }">
-            <table class="table tablebg" style="background:#fff;">
-              <thead>
-                <tr>
-                  <th scope="col-2"></th>
-                  <th scope="col-2">案名</th>
-                  <th scope="col-2">售價</th>
-                  <th scope="col-2">取消</th>
-                </tr>
-              </thead>
-              <tbody v-for="item in order.products" :key="item.id">
-                <tr>
-                  <th scope="row" style="
-                    width: 200px;
-                    height:120px;
-                    background-size: cover;
-                    background-position: center;" class="rounded-0" :style="{ backgroundImage: `url()` }"></th>
-                  <td>  </td>
-                  <td>  萬 </td>
-                </tr>
-              </tbody>
-            </table>
-            <div>123</div>
-            <div class="row d-flex justify-content-center">
-              <div class="col-6">
-                <table class="table table-borderless  ">
-                    <tr class="border border-secondary">
-                      <th scope="col">姓名</th>
-                      <td> {{form.name}} </td>
-                    </tr>
-                    <tr class="border border-secondary">
-                      <th scope="col">信箱</th>
-                      <td> {{form.email}} </td>
-                    </tr>
-                    <tr class="border border-secondary">
-                      <th scope="col">電話</th>
-                      <td> {{form.tel}} </td>
-                    </tr>
-                    <tr class="border border-secondary">
-                      <th scope="col">地址</th>
-                      <td> {{form.address}} </td>
-                    </tr>
-                </table>
+            <form @submit.prevent="payOrder()">
+              <table class="table tablebg" style="background:#fff;">
+                <thead>
+                  <tr>
+                    <th scope="col-2"></th>
+                    <th scope="col-2">案名</th>
+                    <th scope="col-2">售價</th>
+                  </tr>
+                </thead>
+                <tbody v-for="item in order.products" :key="item.id">
+                  <tr>
+                    <th scope="row" style="
+                      width: 200px;
+                      height:120px;
+                      background-size: cover;
+                      background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></th>
+                    <td> {{item.product.title}} </td>
+                    <td>  {{item.product.price}} 萬 </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                  <table class="table table-borderless  ">
+                      <tr class="border border-secondary">
+                        <th scope="col">姓名</th>
+                        <td> {{form.name}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
+                        <th scope="col">信箱</th>
+                        <td> {{form.email}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
+                        <th scope="col">電話</th>
+                        <td> {{form.tel}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
+                        <th scope="col">地址</th>
+                        <td> {{form.address}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
+                        <th scope="col">留言</th>
+                        <td> {{form.message}} </td>
+                      </tr>
+                  </table>
+                  <button type="submit" class="btn btn-success">確認預約</button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -215,8 +217,10 @@ export default {
       const vm = this
       const order = { ...vm.form }
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders`
-      this.$http.post(url, order).then(res => {
+      vm.$http.post(url, order).then(res => {
         vm.getCart()
+        vm.orderId = res.data.data.id
+        vm.getsingleOrder()
       })
     },
     getsingleOrder () {
@@ -233,6 +237,10 @@ export default {
         .then(res => {
           this.getsingleOrder()
           console.log(res)
+          Toast.fire({
+            title: '預約成功',
+            icon: 'success'
+          })
         })
     }
   },

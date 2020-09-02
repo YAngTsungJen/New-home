@@ -23,7 +23,7 @@ font-family: 'Russo One', sans-serif;">
                 <router-link class="nav-link text-success" to="/products">最新建案</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link text-success" to="/cart">留言板</router-link>
+                <router-link class="nav-link text-success" to="/feedback">留言板</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link text-success" to="/reservation">預約專區</router-link>
