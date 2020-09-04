@@ -22,11 +22,10 @@
               <button type="button" class="btn btn-light" @click.prevent="back()">返回</button>
             </div>
           </li>
-          <li class="text-outside"><span class="text-success">地址：</span>{{product.category}} </li>
-          <li class="text-outside"><span class="text-success">生活機能：</span>{{product.content}}</li>
+          <li class="text-outside"><span class="text-success">現況：</span>{{product.description}}</li>
           <li class="text-outside"><span class="text-success">坪數：</span>{{product.origin_price}}坪</li>
           <li class="text-outside"><span class="text-success">售價：</span>{{product.price}}萬元</li>
-          <li class="text-outside"><span class="text-success">附近交通：</span>{{product.description}}</li>
+          <li class="text-outside"><span class="text-success">機能描述：</span>{{product.content}}</li>
           <li class="text-outside mt-3 text-center">
             <iframe v-if="product.id === 'VjkcwT0NNt7FbyY6mbOWvGvrRG3BdwUXDQxkmqbPaWTzH41amTD7VklHgeIhp4Qw'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3493196019563!2d120.69987131498561!3d24.089208081665554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb73414071f%3A0x3ebaf9372a193a70!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3MjLlvIQyMeiZnw!5e0!3m2!1szh-TW!2stw!4v1598456264351!5m2!1szh-TW!2stw" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             <iframe v-if="product.id === '3tq9h2QtuU8dWiDbMMvHcLBjFKVDGeGOejz90jKUgtOPG8YehiMRc8A57Df9PlOA'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.769873736545!2d120.63261801498753!3d24.07440718443064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA0JzI3LjkiTiAxMjDCsDM4JzA1LjMiRQ!5e0!3m2!1szh-TW!2stw!4v1598458341439!5m2!1szh-TW!2stw" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

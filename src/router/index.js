@@ -38,11 +38,6 @@ const routes = [
         path: '/reservation',
         name: 'Reservation',
         component: () => import('../views/frontend/Reservation.vue')
-      },
-      {
-        path: '/feedback',
-        name: 'Feedback',
-        component: () => import('../views/frontend/Feedback.vue')
       }
     ]
   },

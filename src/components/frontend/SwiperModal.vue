@@ -3,7 +3,7 @@
     <Swiper :options="swiperOption">
       <Swiper-slide class="swiper-slide" v-for="(item,index) in imgs" :key="index">
         <div class="img-fluid ">
-          <img :src="item.img[0]" width="1419" height="800" alt="Responsive image">
+          <img :src="item.img[0]" class="pic" alt="Responsive image">
         </div>
       </Swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -24,13 +24,7 @@ export default {
   data () {
     return {
       imgs: [{
-        img: ['https://cdn.stocksnap.io/img-thumbs/960w/modern-interior_KWRZNZ6DC6.jpg']
-      }, {
-        img: ['https://cdn.stocksnap.io/img-thumbs/960w/home-office_YODJNTOBN9.jpg']
-      }, {
         img: ['https://cdn.stocksnap.io/img-thumbs/960w/city-buildings_WZXIAIPAT9.jpg']
-      }, {
-        img: ['https://cdn.stocksnap.io/img-thumbs/280h/architecture-building_0GZ83DHBCE.jpg']
       }, {
         img: ['https://cdn.stocksnap.io/img-thumbs/280h/architecture-building_D5YP66NZNI.jpg']
       }, {
@@ -61,6 +55,11 @@ export default {
 
 <style scoped>
 .swiper-slide{
-  height: 700px;
+  height: 500px;
+}
+.pic{
+  background-size: cover;
+  width: 100%;
+  height: 600px;
 }
 </style>

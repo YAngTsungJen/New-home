@@ -7,12 +7,12 @@
         </div></div>
       </template>
     </loading>
-    <div class="d-flex flex-column flex-md-row justify-content-beteewn align-items-md-center align-items-start  text-dark bg-info">
-      <div class="mb-md-0 mb-1 ml-auto">
-        <h2 class="mb-0 " style="font-family: 'Russo One', sans-serif;" > 最新建案 </h2>
+    <div class="row d-flex justify-content-between bg-info pt-4 pb-4 mb-3">
+      <div class="col mt-5">
+        <h2 style="font-family: 'Russo One', sans-serif;">最新建案 </h2>
       </div>
-      <div class="img-fluid mb-0 pt-2 pb-2">
-          <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="15%" height="15%" alt="">
+      <div class="col img-fluid">
+          <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="150px" height="150px" alt="">
       </div>
     </div>
     <div class="container mt-md-5 mt-3 mb-7">
@@ -63,41 +63,55 @@
           </div>
         </div>
       </div>
+      <div class="row">
+          <div class="col">
+            <Pagination :pages="pagination" @update="getProducts" />
+          </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Pagination from '../../components/Pagination'
 export default {
   data () {
     return {
       products: [],
       filterCategory: '',
       categories: ['烏日區', '大里區', '彰化區'],
-      isLoading: false
+      isLoading: false,
+      pagination: {}
     }
+  },
+  components: {
+    Pagination
   },
   methods: {
     goPage (item) {
       this.$router.push(`/product/${item.id}`)
+    },
+    getProducts () {
+      this.isLoading = true
+      this.$http
+        .get(
+          `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
+        )
+        .then((response) => {
+          console.log(response)
+          this.products = response.data.data
+          this.pagination = response.data.meta.pagination
+          this.isLoading = false
+          const { categoryName } = this.$route.params
+          if (categoryName) {
+            this.filterCategory = categoryName
+          }
+          console.log(this.products)
+        })
     }
   },
   created () {
-    this.isLoading = true
-    this.$http
-      .get(
-        `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
-      )
-      .then((response) => {
-        console.log(response)
-        this.products = response.data.data
-        this.isLoading = false
-        const { categoryName } = this.$route.params
-        if (categoryName) {
-          this.filterCategory = categoryName
-        }
-        console.log(this.products)
-      })
+    this.getProducts()
   },
   computed: {
     filterCategories () {

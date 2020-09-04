@@ -1,26 +1,33 @@
 <template>
-  <div class="about">
-    <div class="d-flex flex-column flex-md-row justify-content-beteewn align-items-md-center align-items-start  text-dark bg-info">
-      <div class="mb-md-0 mb-1 ml-auto">
-        <h2 class="mb-0 " style="font-family: 'Russo One', sans-serif;"> 關於我們 </h2>
+  <div>
+    <div >
+      <div class="row d-flex justify-content-between bg-info pt-4 pb-4 mb-3">
+        <div class="col mt-5">
+          <h2 style="font-family: 'Russo One', sans-serif;"> 關於我們 </h2>
+        </div>
+        <div class="col img-fluid">
+            <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="150px" height="150px" alt="">
+        </div>
       </div>
-      <div class="img-fluid mb-0 pt-2 pb-2">
-          <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="15%" height="15%" alt="">
-      </div>
-    </div>
-    <div class="row map">
-      <div class="col-sm-7">
-        <div id="mapid" ref="mapElement"></div>
-      </div>
-      <div class="col-sm-5">
-        <ul class="text-left">
-          <li class="text-outside">
-            <h2 class="text-success">捷登房屋</h2>
-          </li>
-          <li class="text-outside mt-3">
-            <p>地址：<span>台中市南屯區五權西路二段748號</span></p>
-          </li>
-        </ul>
+      <div class="container">
+        <div class=" row d-flex justify-content-center">
+            <div class="col">
+              <div id="mapid" ref="mapElement"></div>
+            </div>
+            <div class="col">
+              <ul class="text-left mt-4">
+                <li class="text-outside">
+                  <h2 class="text-success">捷登房屋</h2>
+                </li>
+                <li class="text-outside mt-3">
+                  <p>地址：<span>台中市南屯區五權西路二段748號</span></p>
+                </li>
+                <li class="text-outside mt-3">
+                  <p>宗旨：<span>真實，用心，經營每一個客戶</span></p>
+                </li>
+              </ul>
+            </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,8 +58,8 @@ export default {
 
 <style scoped>
 #mapid {
-  height: 500px;
-  width: 800px;
+  height: 300px;
+  width: 500px;
 }
 .map {
   padding: 3rem;
