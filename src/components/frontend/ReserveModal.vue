@@ -83,9 +83,7 @@ export default {
         this.$bus.$on('get-cart', () => {
           this.getCart()
         })
-        console.log(this.cart)
-      }).catch(error => {
-        console.log(error)
+      }).catch(() => {
         Toast.fire({
           title: '無法取得資料，稍後再試',
           icon: 'error'
@@ -99,9 +97,8 @@ export default {
       this.$http.delete(url).then(res => {
         this.isLoading = false
         this.getCart()
-      }).catch(error => {
+      }).catch(() => {
         this.isLoading = false
-        console.log(error)
       })
     },
     removeAllCart () {
@@ -110,9 +107,8 @@ export default {
       this.$http.delete(url).then(() => {
         this.isLoading = false
         this.getCart()
-      }).catch(error => {
+      }).catch(() => {
         this.isLoading = false
-        console.log(error)
       })
     },
     goReservation () {

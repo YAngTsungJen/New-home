@@ -33,11 +33,11 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body py-0">
                   <ul class="list-unstyled" >
-                    <li><a href="#" class="py-2 d-block text-muted"
+                    <li><button class="py-2 px-3 mb-2 d-block text-muted btn btn-whitegreen"
                     @click.prevent="filterCategory = item"
                     :class="{ active: item === filterCategory }"
                     v-for="item in categories"
-                    :key="item"> {{item}} </a></li>
+                    :key="item"> {{item}} </button></li>
                   </ul>
                 </div>
               </div>
@@ -98,7 +98,6 @@ export default {
           `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
         )
         .then((response) => {
-          console.log(response)
           this.products = response.data.data
           this.pagination = response.data.meta.pagination
           this.isLoading = false
@@ -106,7 +105,6 @@ export default {
           if (categoryName) {
             this.filterCategory = categoryName
           }
-          console.log(this.products)
         })
     }
   },

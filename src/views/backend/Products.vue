@@ -89,13 +89,9 @@ export default {
       this.isLoading = true
       this.$http
         .get(url).then((res) => {
-          console.log(res)
           this.isLoading = false
           this.products = res.data.data
           this.pagination = res.data.meta.pagination
-        })
-        .catch((error) => {
-          console.log(error)
         })
     },
     openmodal (type, item) {

@@ -64,7 +64,6 @@ export default {
         .post(api, this.user)
         .then((res) => {
           //  抓 api撈email和 password
-          console.log(res)
           const token = res.data.token //  定義 token
           const expired = res.data.expired //  定義 到期日
           //  token 存取cookie
@@ -79,7 +78,6 @@ export default {
             'success')
         })
         .catch((error) => {
-          console.log(error)
           this.$bus.$emit('message:push',
           `登入失敗惹，好糗Σ( ° △ °|||)︴
             ${error}`,

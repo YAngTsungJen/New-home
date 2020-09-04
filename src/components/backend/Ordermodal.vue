@@ -59,9 +59,6 @@ export default {
         this.order = res.data.data
         $('#orderModal').modal('show')
       })
-        .catch((error) => {
-          console.log(error)
-        })
     }
   }
 }

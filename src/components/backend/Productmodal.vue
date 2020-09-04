@@ -155,9 +155,6 @@ export default {
           $('#productModal').modal('show')
           this.tempProduct = res.data.data
         })
-        .catch((error) => {
-          console.log(error)
-        })
     },
     updateProduct () {
       let http = 'post'
@@ -169,9 +166,6 @@ export default {
       this.$http[http](url, this.tempProduct)
         .then((res) => {
           this.$emit('update')
-        })
-        .catch((error) => {
-          console.log(error)
         })
       $('#productModal').modal('hide')
     },

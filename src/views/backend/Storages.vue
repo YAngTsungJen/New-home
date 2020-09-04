@@ -63,13 +63,9 @@ export default {
     getFiles (page = 1) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage?page=${page}`
       this.$http.get(url).then((res) => {
-        console.log(res)
         this.storages = res.data.data
         this.pagination = res.data.meta.pagination
       })
-        .catch((error) => {
-          console.log(error)
-        })
     },
     openModal (item) {
       $('#delFileModal').modal('show')

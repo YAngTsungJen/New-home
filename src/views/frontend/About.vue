@@ -35,7 +35,6 @@
 
 <script>
 import L from 'leaflet'
-console.log(L)
 export default {
   data () {
     return {

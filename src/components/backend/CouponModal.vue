@@ -86,15 +86,11 @@ export default {
     getCoupon (id) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${id}`
       this.$http.get(url).then((res) => {
-        console.log(res)
         this.tempCoupon = res.data.data
         $('#couponModal').modal('show')
         const dedlineAt = this.tempCoupon.deadline.datetime.split(' ');
         [this.due_date, this.due_time] = dedlineAt
       })
-        .catch((error) => {
-          console.log(error)
-        })
     },
     updateCoupon () {
       let url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon`
@@ -104,7 +100,6 @@ export default {
         http = 'patch'
       }
       this.tempCoupon.deadline_at = `${this.due_date} ${this.due_time}`
-      console.log(this.tempCoupon.deadline_at)
       this.$http[http](url, this.tempCoupon).then((res) => {
         $('#couponModal').modal('hide')
         this.$emit('update')

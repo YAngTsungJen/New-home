@@ -193,10 +193,8 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
       this.$http.get(url).then(res => {
         this.cart = res.data.data
-        console.log(this.cart)
         this.isLoading = false
-      }).catch(error => {
-        console.log(error)
+      }).catch(() => {
         Toast.fire({
           title: '無法取得資料，稍後再試',
           icon: 'error'
@@ -208,12 +206,9 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`
       this.$http.delete(url).then(res => {
         this.getCart()
-      }).catch(error => {
-        console.log(error)
       })
     },
     createOrder () {
-      console.log('送出表單')
       const vm = this
       const order = { ...vm.form }
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders`
@@ -228,15 +223,13 @@ export default {
       this.$http.get(url)
         .then((response) => {
           this.order = response.data.data
-          console.log(this.order)
         })
     },
     payOrder () {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders/${this.orderId}/paying`
       this.$http.post(url)
-        .then(res => {
+        .then(() => {
           this.getsingleOrder()
-          console.log(res)
           Toast.fire({
             title: '預約成功',
             icon: 'success'

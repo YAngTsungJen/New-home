@@ -67,7 +67,6 @@ export default {
       this.$http.get(url).then(res => {
         this.coupons = res.data.data
         this.pagination = res.data.meta.pagination
-        console.log(res)
       })
     },
     openModal (type, item) {

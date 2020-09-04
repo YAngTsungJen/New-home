@@ -59,9 +59,8 @@ export default {
         $('#delFileModal').modal('hide')
         this.$emit('update')
       })
-        .catch(error => {
+        .catch(() => {
           $('#delFileModal').modal('hide')
-          console.log(error)
         })
     }
   }
