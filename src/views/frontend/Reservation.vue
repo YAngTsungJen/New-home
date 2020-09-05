@@ -4,7 +4,7 @@
         <template slot="default">
         </template>
       </loading>
-      <div class="container" v-if="cart.length">
+      <div class="container">
         <div class="row p-2">
           <div class="col mt-3 mb-3">
             <h3>預約專區</h3>
@@ -24,6 +24,14 @@
             <p class="bar" :class="{ 'focus': page === 3 }">確認訂單</p>
           </div>
         </div>
+        <!-- <div class="h-100" v-if="!cart[0]">
+          <div class="row p-5">
+            <div class="col-md-8 mx-auto text-center py-4">
+              <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
+              <router-link to="/products">新案專區</router-link>
+            </div>
+          </div>
+        </div> -->
         <div class="row  d-flex justify-content-center p-2 no-gutters">
           <div class="col-9 step-1" :class="{ 'show': page === 1 }">
             <table class="table tablebg" style="background:#fff;">
@@ -35,7 +43,7 @@
                   <th scope="col-2"></th>
                 </tr>
               </thead>
-              <tbody v-if="cart.length">
+              <tbody>
                 <tr v-for="item in cart" :key="item.id">
                   <th scope="row" style="
                     width: 200px;
@@ -155,17 +163,10 @@
                       </tr>
                   </table>
                   <button type="submit" class="btn btn-success">確認預約</button>
+                  <button type="button" class="btn btn-cyan" @click="backtohome">返回首頁</button>
                 </div>
               </div>
             </form>
-          </div>
-        </div>
-      </div>
-      <div class="container h-100" v-else>
-        <div class="row p-5">
-          <div class="col-md-8 mx-auto text-center py-4">
-            <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
-            <router-link to="/products">新案專區</router-link>
           </div>
         </div>
       </div>
@@ -243,6 +244,9 @@ export default {
             icon: 'success'
           })
         })
+    },
+    backtohome () {
+      this.$router.push('/')
     }
   },
   created () {

@@ -14,16 +14,22 @@
             <div class="col">
               <div id="mapid" ref="mapElement"></div>
             </div>
-            <div class="col">
+            <div class="col-lg col-md-8">
               <ul class="text-left mt-4">
                 <li class="text-outside">
-                  <h2 class="text-success">捷登房屋</h2>
+                  <h2 class="text-success">捷登開發有限公司</h2>
                 </li>
                 <li class="text-outside mt-3">
                   <p>地址：<span>台中市南屯區五權西路二段748號</span></p>
                 </li>
                 <li class="text-outside mt-3">
-                  <p>宗旨：<span>真實，用心，經營每一個客戶</span></p>
+                  <p>規劃理念：<span>人性規劃，藝術建築，以滿足現在人需求，建材加入藝術袁術、創新思維，採用新建材，新工法。</span></p>
+                </li>
+                <li class="text-outside mt-3">
+                  <p>綠化建築：<span>外觀以植哉做綠化環境</span></p>
+                </li>
+                <li class="text-outside mt-3">
+                  <p class="text-danger">理念：<span>真實，用心，經營每一個客戶，捷登開花，無限可能</span></p>
                 </li>
               </ul>
             </div>
@@ -49,7 +55,7 @@ export default {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap)
     L.marker([24.143175, 120.636880]).addTo(mymap)
-      .bindPopup('<h3>捷登房屋</h3><p><br>台中市南屯區五權西路二段748號</p>')
+      .bindPopup('<h3>捷登開發</h3><p><br>台中市南屯區五權西路二段748號</p>')
       .openPopup()
   }
 }

@@ -5,7 +5,7 @@
           <router-link class="navbar-brand position-absolute" to="/"
             style="left: 50%; transform: translate(-50%, -50%); top: 40%; font-family: 'Anton', sans-serif;font-size:40px;
             font-family: 'Russo One', sans-serif;">
-            捷登房屋
+            捷登開發
             <i class="fas fa-home"></i>
           </router-link>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
