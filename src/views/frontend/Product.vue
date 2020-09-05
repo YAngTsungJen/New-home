@@ -49,7 +49,6 @@
       <div>
     </div>
     <ReserveModal />
-    <!-- @update = "addCart(product)" -->
     <vue-easy-lightbox
       :visible="visible"
       :imgs="imgs"

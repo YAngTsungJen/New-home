@@ -4,7 +4,7 @@
         <template slot="default">
         </template>
       </loading>
-      <div class="container">
+      <div class="container" v-if="cart.length">
         <div class="row p-2">
           <div class="col mt-3 mb-3">
             <h3>預約專區</h3>
@@ -35,8 +35,8 @@
                   <th scope="col-2"></th>
                 </tr>
               </thead>
-              <tbody v-for="item in cart" :key="item.id">
-                <tr>
+              <tbody v-if="cart.length">
+                <tr v-for="item in cart" :key="item.id">
                   <th scope="row" style="
                     width: 200px;
                     height:120px;
@@ -158,6 +158,14 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+      <div class="container h-100" v-else>
+        <div class="row p-5">
+          <div class="col-md-8 mx-auto text-center py-4">
+            <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
+            <router-link to="/products">新案專區</router-link>
           </div>
         </div>
       </div>
