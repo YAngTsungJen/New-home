@@ -1,20 +1,26 @@
 <template>
   <div>
-    <div>
+    <Banner/>
+    <Info/>
+    <!-- <div>
       <SwiperModal data-aos="zoom-in" data-aos-duration="1000" />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import SwiperModal from '../../components/frontend/SwiperModal'
+// import SwiperModal from '../../components/frontend/SwiperModal'
+import Banner from '../../components/frontend/Banner'
+import Info from '../../components/frontend/Info'
 export default {
   data () {
     return {
     }
   },
   components: {
-    SwiperModal
+    Banner,
+    Info
+    // SwiperModal
   }
 }
 </script>

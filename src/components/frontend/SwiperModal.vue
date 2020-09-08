@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Swiper :options="swiperOption">
       <Swiper-slide class="swiper-slide" v-for="(item,index) in imgs" :key="index">
         <div class="img-fluid ">
