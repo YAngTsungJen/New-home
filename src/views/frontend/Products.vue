@@ -1,74 +1,58 @@
 <template>
-  <div>
+  <div class="mt-5">
     <loading :active.sync="isLoading">
-      <template slot="default">
-        <div class="loadingio-spinner-spin-b44lsmwv628"><div class="ldio-am4phneojyb">
-        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
-        </div></div>
-      </template>
     </loading>
-    <div class="row d-flex justify-content-between bg-info pt-4 pb-4 mb-3">
-      <div class="col mt-5">
-        <h2 style="font-family: 'Russo One', sans-serif;">最新建案 </h2>
-      </div>
-      <div class="col img-fluid">
-          <img src="https://images.unsplash.com/photo-1509952762474-040a7a370e17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80" width="150px" height="150px" alt="">
-      </div>
-    </div>
-    <div class="container mt-md-5 mt-3 mb-7">
-      <div class="row mb-6" >
-        <div class="col-12 col-lg-2">
-          <div class="accordion border border-bottom border-top-0 border-left-0 border-right-0 mb-3" id="accordionExample">
-            <div class="card border-0">
-              <div class="card-header px-0 py-4 bg-white border border-bottom-0 border-top border-left-0 border-right-0" id="headingOne" data-toggle="collapse" data-target="#collapseOne">
-                <div class="d-flex justify-content-between align-items-center pr-1"
-                @click.prevent="filterCategory = ''"
-                :class="{ active: filterCategory === '' }">
-                  <h4 class="mb-0">
-                    最新建案
-                  </h4>
-                  <i class="fas fa-chevron-down"></i>
-                </div>
-              </div>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body py-0">
-                  <ul class="list-unstyled" >
-                    <li><button class="py-2 px-3 mb-2 d-block text-muted btn btn-whitegreen"
-                    @click.prevent="filterCategory = item"
-                    :class="{ active: item === filterCategory }"
-                    v-for="item in categories"
-                    :key="item"> {{item}} </button></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+    <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
+      <div class="row">
+        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+        </div>
+      <div class="container">
+        <div class="row justify-md-center align-items-center">
+          <div class="col" style="margin-top:10%">
+            <h2>最新建案</h2>
           </div>
         </div>
-        <div class="col-12 col-lg-10 mt-3 mb-3 d-flex flex-wrap">
-          <div class="col-12 col-md-6 col-lg-4 mb-2 " v-for="item in filterCategories" :key="item.id">
-            <div class="col-sm-6">
-              <div class="card Regular shadow work-item" style="width: 18rem;">
-                <div @click="goPage(item)">
-                  <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="">
-                  <span class="ink"></span>
-                  <span class="search"><i class="fas fa-search-plus"></i></span>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">{{ item.title }}
-                    <span class="badge badge-pill badge-success float-right ">{{item.category}}</span>
-                  </h5>
-                </div>
-              </div>
+      </div>
+      </div>
+    </section>
+    <section class="container mt-5 py-5">
+          <ul class="list-group list-group-horizontal justify-content-md-center">
+            <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
+              <h4>
+                全部建案
+              </h4>
+            </li>
+            <li class="list-group-item" @click.prevent="filterCategory = item"
+                :class="{ active: item === filterCategory }"
+                v-for="item in categories" :key="item"> {{item}}
+            </li>
+          </ul>
+    </section>
+    <section class="container mt-5 py-5">
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col-4 mb-4" v-for="item in filterCategories" :key="item.id">
+          <div class="card h-100 Regular shadow work-item">
+            <div @click="goPage(item)">
+              <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="">
+              <span class="ink"></span>
+              <span class="search"><i class="fas fa-search-plus"></i></span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}
+                <span class="badge badge-pill badge-success float-right ">{{item.category}}</span>
+              </h5>
             </div>
           </div>
         </div>
       </div>
-      <div class="row mt-2">
-          <div class="col">
-            <Pagination :pages="pagination" @update="getProducts" />
-          </div>
+    </section>
+    <section class="container mt-5 py-5">
+      <div class="row">
+        <div class="col">
+          <Pagination :pages="pagination" @update="getProducts" />
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -99,6 +83,7 @@ export default {
         )
         .then((response) => {
           this.products = response.data.data
+          console.log(this.products)
           this.pagination = response.data.meta.pagination
           this.isLoading = false
           const { categoryName } = this.$route.params
@@ -129,10 +114,11 @@ export default {
 
 <style scoped>
 .work-item{
-  height: 300px;
+  height: 430px;
+  /* width: 400px; */
 }
 .fadder{
-  height:200px;
+  height:300px;
   overflow: hidden;
   width: 100%;
 }
@@ -145,9 +131,9 @@ export default {
   opacity: 0;
 }
 .ink{
-  height: 300px;
-  width: 286px;
-  background: rgb(145, 200, 0, 1);
+  height: 100%;
+  width: 100%;
+  background: #e7a247;
   position: absolute;
   left: 0;
   opacity: 0;
@@ -164,104 +150,7 @@ export default {
   transition-duration: 0.2s;
   transition: all .8s
 }
-@keyframes ldio-am4phneojyb {
-  0% {
-    opacity: 1;
-    backface-visibility: hidden;
-    transform: translateZ(0) scale(1.5,1.5);
-  } 100% {
-    opacity: 0;
-    backface-visibility: hidden;
-    transform: translateZ(0) scale(1,1);
-  }
+.changecolor{
+background-color: #B67965;
 }
-.ldio-am4phneojyb div > div {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #ff727d;
-  animation: ldio-am4phneojyb 1s linear infinite;
-}.ldio-am4phneojyb div:nth-child(1) > div {
-  left: 148px;
-  top: 88px;
-  animation-delay: -0.875s;
-}
-.ldio-am4phneojyb > div:nth-child(1) {
-  transform: rotate(0deg);
-  transform-origin: 160px 100px;
-}.ldio-am4phneojyb div:nth-child(2) > div {
-  left: 130px;
-  top: 130px;
-  animation-delay: -0.75s;
-}
-.ldio-am4phneojyb > div:nth-child(2) {
-  transform: rotate(45deg);
-  transform-origin: 142px 142px;
-}.ldio-am4phneojyb div:nth-child(3) > div {
-  left: 88px;
-  top: 148px;
-  animation-delay: -0.625s;
-}
-.ldio-am4phneojyb > div:nth-child(3) {
-  transform: rotate(90deg);
-  transform-origin: 100px 160px;
-}.ldio-am4phneojyb div:nth-child(4) > div {
-  left: 46px;
-  top: 130px;
-  animation-delay: -0.5s;
-}
-.ldio-am4phneojyb > div:nth-child(4) {
-  transform: rotate(135deg);
-  transform-origin: 58px 142px;
-}.ldio-am4phneojyb div:nth-child(5) > div {
-  left: 28px;
-  top: 88px;
-  animation-delay: -0.375s;
-}
-.ldio-am4phneojyb > div:nth-child(5) {
-  transform: rotate(180deg);
-  transform-origin: 40px 100px;
-}.ldio-am4phneojyb div:nth-child(6) > div {
-  left: 46px;
-  top: 46px;
-  animation-delay: -0.25s;
-}
-.ldio-am4phneojyb > div:nth-child(6) {
-  transform: rotate(225deg);
-  transform-origin: 58px 58px;
-}.ldio-am4phneojyb div:nth-child(7) > div {
-  left: 88px;
-  top: 28px;
-  animation-delay: -0.125s;
-}
-.ldio-am4phneojyb > div:nth-child(7) {
-  transform: rotate(270deg);
-  transform-origin: 100px 40px;
-}.ldio-am4phneojyb div:nth-child(8) > div {
-  left: 130px;
-  top: 46px;
-  animation-delay: 0s;
-}
-.ldio-am4phneojyb > div:nth-child(8) {
-  transform: rotate(315deg);
-  transform-origin: 142px 58px;
-}
-.loadingio-spinner-spin-b44lsmwv628 {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
-  background: #ffffff;
-}
-.ldio-am4phneojyb {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0; /* see note above */
-}
-.ldio-am4phneojyb div { box-sizing: content-box; }
-/* generated by https://loading.io/ */
 </style>

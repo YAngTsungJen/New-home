@@ -1,15 +1,21 @@
 <template>
     <div>
       <loading :active.sync="isLoading">
-        <template slot="default">
-        </template>
       </loading>
-      <div class="container">
-        <div class="row p-2">
-          <div class="col mt-3 mb-3">
-            <h3>預約專區</h3>
+      <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
+        <div class="row">
+          <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+          </div>
+        <div class="container">
+          <div class="row justify-md-center align-items-center">
+            <div class="col" style="margin-top:10%">
+              <h2>預約專區</h2>
+            </div>
           </div>
         </div>
+        </div>
+      </section>
+      <div class="container mt-5 ">
         <div class="row d-flex justify-content-center p-2 no-gutters ">
           <div class="col-3">
             <span>1</span>
@@ -97,6 +103,16 @@
                                 v-model="form.address">
                             <span class="invalid-feedback"> {{errors[0]}} </span>
                         </validation-provider>
+                        <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
+                            <label for="reservation_date" class="col-form-label col-form-label-sm">預約日期</label>
+                            <input type="date" name="預約日期" id="reservation_date" class="form-control form-control-sm" :class="classes" v-model="form.reservation_date">
+                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                        </validation-provider>
+                        <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
+                            <label for="reservation_time" class="col-form-label col-form-label-sm">預約時間</label>
+                            <input type="time" name="預約時間" id="reservation_time" class="form-control form-control-sm" :class="classes" v-model="form.reservation_time">
+                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                        </validation-provider>
                       </div>
                       <div class="col-5">
                         <validation-provider v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
@@ -158,6 +174,14 @@
                         <td> {{form.address}} </td>
                       </tr>
                       <tr class="border border-secondary">
+                        <th scope="col">預約日期</th>
+                        <td> {{form.reservation_date}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
+                        <th scope="col">預約時間</th>
+                        <td> {{form.reservation_time}} </td>
+                      </tr>
+                      <tr class="border border-secondary">
                         <th scope="col">留言</th>
                         <td> {{form.message}} </td>
                       </tr>
@@ -187,6 +211,8 @@ export default {
         email: '',
         tel: '',
         address: '',
+        reservation_date: '',
+        reservation_time: '',
         payment: 'WebATM',
         message: ''
       },

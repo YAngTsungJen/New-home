@@ -16,13 +16,13 @@
               </ul>
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                  <router-link class="nav-link dropdown-toggle" to="/about" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" to="/about" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     關於我們
-                  </router-link>
+                  </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goinfo(item)">公司簡介</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goidea(item)">公司理念</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="gomark(item)">公司標誌</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -37,6 +37,22 @@
         </nav>
     </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    goinfo () {
+      this.$router.push('/about')
+    },
+    goidea () {
+      this.$router.push('/goidea')
+    },
+    gomark () {
+      this.$router.push('/gomark')
+    }
+  }
+}
+</script>
 
 <style scoped>
 .topic{

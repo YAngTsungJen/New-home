@@ -37,91 +37,145 @@
                 <img class="img-fluid" :src="tempProduct.imageUrl[0]" alt />
               </div>
               <div class="col-sm-8">
-                <div class="form-group">
-                  <label for="title">建案名稱</label>
-                  <input
-                    id="tempProduct.title"
-                    v-model="tempProduct.title"
-                    type="text"
-                    class="form-control"
-                    placeholder="請輸入標題"
-                  />
-                </div>
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="category">建案位址</label>
+                  <div class="col-md-4 mb-3">
+                    <label for="title">建案名稱</label>
                     <input
-                      id="tempProduct.category"
-                      v-model="tempProduct.category"
-                      type="text"
-                      class="form-control"
-                      placeholder="請輸入分類"
-                    />
+                      id="tempProduct.title" v-model="tempProduct.title" type="text" class="form-control" placeholder="請輸入標題"/>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="col-md-4 mb-3">
+                    <label for="category">區域</label>
+                    <input id="tempProduct.category" v-model="tempProduct.category" type="text" class="form-control" placeholder="請輸入分類"/>
+                  </div>
+                  <div class="col-md-4 mb-3">
                     <label for="unit">單位</label>
-                    <input
-                      id="tempProduct.unit"
-                      v-model="tempProduct.unit"
-                      type="text"
-                      class="form-control"
-                      placeholder="請輸入單位"
-                    />
+                    <input id="tempProduct.unit" v-model="tempProduct.unit" type="text" class="form-control" placeholder="請輸入單位"/>
                   </div>
                 </div>
+                <hr>
                 <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="origin_price">坪數</label>
-                    <input
-                      id="tempProduct.origin_price"
-                      v-model="tempProduct.origin_price"
-                      type="text"
-                      class="form-control"
-                      placeholder="請輸入原價"
-                    />
+                  <div class="col-md-4 mb-3">
+                    <label for="origin_price">原價</label>
+                    <input id="tempProduct.origin_price" v-model="tempProduct.origin_price" type="text" class="form-control" placeholder="請輸入原價"/>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="price">價格</label>
-                    <input
-                      id="tempProduct.price"
-                      v-model="tempProduct.price"
-                      type="text"
-                      class="form-control"
-                      placeholder="請輸入售價"
-                    />
+                  <div class="col-md-4 mb-3">
+                    <label for="price">售價</label>
+                    <input id="tempProduct.price" v-model="tempProduct.price" type="text" class="form-control" placeholder="請輸入售價"/>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="description">產品描述</label>
+                    <textarea name="description" id="tempProduct.description" v-model="tempProduct.description" class="form-control" placeholder="請輸入產品描述"></textarea>
                   </div>
                 </div>
-                <hr />
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="unitprice">單價</label>
+                    <input type="text" class="form-control" id="unitprice" v-model="tempProduct.options.unitprice" placeholder="請輸入單價">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="structure">格局</label>
+                    <input id="structure" v-model="tempProduct.options.structure" type="text" class="form-control" placeholder="請輸入格局">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="homeage">屋齡</label>
+                    <input type="text" class="form-control" id="homeage" v-model="tempProduct.options.homeage" placeholder="請輸入屋齡">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="landnumber">權狀坪數</label>
+                    <input type="text" class="form-control" id="landnumber" v-model="tempProduct.options.landnumber" placeholder="請輸入權狀坪數">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="floor">樓層</label>
+                    <input id="floor" v-model="tempProduct.options.floor" type="text" class="form-control" placeholder="請輸入樓層">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="direction">朝向</label>
+                    <input type="text" class="form-control" id="direction" v-model="tempProduct.options.direction" placeholder="請輸入朝向">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="address">地址</label>
+                    <input type="text" class="form-control" id="address" v-model="tempProduct.options.address" placeholder="請輸入地址">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="car">車位</label>
+                    <input id="car" v-model="tempProduct.options.car" type="text" class="form-control" placeholder="請輸入車位">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="feature">屋況特色</label>
+                    <input id="feature" v-model="tempProduct.options.feature" type="text" class="form-control" placeholder="請輸入屋況特色">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="now">現況</label>
+                    <input type="text" class="form-control" id="now" v-model="tempProduct.options.now" placeholder="請輸入現況">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="type">型態</label>
+                    <input id="type" v-model="tempProduct.options.type" type="text" class="form-control" placeholder="請輸入型態">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="decoration">裝潢程度</label>
+                    <input type="text" class="form-control" id="decoration" v-model="tempProduct.options.decoration" placeholder="請輸入裝潢程度">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="managefees">管理費</label>
+                    <input id="managefees" v-model="tempProduct.options.managefees"
+                    type="text" class="form-control" placeholder="請輸入管理費">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="lease">帶租約</label>
+                    <input type="text" class="form-control" id="lease"
+                    v-model="tempProduct.options.lease" placeholder="請輸入帶租約">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="use">法定用途</label>
+                    <input id="use" v-model="tempProduct.options.use"
+                    type="text" class="form-control" placeholder="請輸入法定用途">
+                  </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="mainbuilding">主建物</label>
+                    <input type="text" class="form-control" id="mainbuilding"
+                    v-model="tempProduct.options.mainbuilding" placeholder="請輸入主建物">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="subbuilding">附屬建物</label>
+                    <input id="subbuilding" v-model="tempProduct.options.subbuilding"
+                    type="text" class="form-control" placeholder="請輸入附屬建物">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="land">土地坪數</label>
+                    <input id="land" v-model="tempProduct.options.land" type="text" class="form-control" placeholder="請輸入土地坪數">
+                  </div>
+                </div>
                 <div class="form-group">
-                  <label for="description">產品描述</label>
-                  <textarea
-                    name="description"
-                    id="tempProduct.description"
-                    v-model="tempProduct.description"
-                    class="form-control"
-                    placeholder="請輸入產品描述"
-                  ></textarea>
+                  <label for="amount">剩餘戶數</label>
+                  <input id="amount" v-model="tempProduct.options.amount" type="text" class="form-control" placeholder="請輸入剩餘戶數">
                 </div>
+                <hr>
                 <div class="form-group">
                   <label for="content">說明內容</label>
-                  <textarea
-                    name="content"
-                    id="tempProduct.content"
-                    v-model="tempProduct.content"
-                    class="form-control"
-                    placeholder="請輸入說明內容"
-                  ></textarea>
+                  <textarea name="content" id="tempProduct.content" v-model="tempProduct.content" class="form-control" placeholder="請輸入說明內容"></textarea>
                 </div>
+                <hr>
                 <div class="form-group">
                   <div class="form-check">
                     <label for="enabled" class="form-check-label"></label>
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      name="enabled"
-                      id="tempProduct.enabled"
-                      v-model="tempProduct.enabled"
-                    />額外服務
+                    <input type="checkbox" class="form-check-input" name="enabled" id="tempProduct.enabled" v-model="tempProduct.enabled"/>啟用
                   </div>
                 </div>
               </div>
@@ -142,7 +196,8 @@ export default {
   data () {
     return {
       tempProduct: {
-        imageUrl: []
+        imageUrl: [],
+        options: {}
       }
     }
   },

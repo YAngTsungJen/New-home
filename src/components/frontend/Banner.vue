@@ -10,20 +10,41 @@
           <div class="carousel-inner letter">
             <div class="carousel-item header-carousel-item bg-cover active" style="background-image: url(https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
               <div class="carousel-caption d-none d-md-block px-3">
-                <h5>人性規劃，藝術建築</h5>
-                <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-6">
+                    <h5>人性規劃，藝術建築</h5>
+                    <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                  </div>
+                  <div class="col-md-3 mt-3">
+                    <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1560185013-ead8277ef8ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80_">
               <div class="carousel-caption d-none d-md-block px-3">
-                <h5>人性規劃，藝術建築</h5>
-                <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-6">
+                    <h5>人性規劃，藝術建築</h5>
+                    <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                  </div>
+                  <div class="col-md-3 mt-3">
+                    <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1503174971373-b1f69850bded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1087&q=80)">
               <div class="carousel-caption d-none d-md-block px-3">
-                <h5>人性規劃，藝術建築</h5>
-                <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-6">
+                    <h5>人性規劃，藝術建築</h5>
+                    <p>滿足現代人『住』的需求，讓你有家的感覺</p>
+                  </div>
+                  <div class="col-md-3 mt-3">
+                    <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

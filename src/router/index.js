@@ -40,9 +40,14 @@ const routes = [
         component: () => import('../views/frontend/Reservation.vue')
       },
       {
-        path: '/test',
-        name: 'Test',
-        component: () => import('../views/frontend/Test.vue')
+        path: '/goidea',
+        name: 'Goidea',
+        component: () => import('../views/frontend/Goidea.vue')
+      },
+      {
+        path: '/gomark',
+        name: 'Gomark',
+        component: () => import('../views/frontend/Gomark.vue')
       }
     ]
   },

@@ -67,9 +67,15 @@ export default {
   data () {
     return {
       isLoading: true,
-      products: [],
+      products: [
+        // {
+        //   options: {}
+        //   }
+      ],
       tempProduct: {
-        imageUrl: []
+        // 第二層結構要定義才能雙向綁定
+        imageUrl: [],
+        options: {}
       },
       pagination: [],
       loadingbtn: '',
@@ -92,12 +98,19 @@ export default {
           this.isLoading = false
           this.products = res.data.data
           this.pagination = res.data.meta.pagination
+          if (this.tempProduct.id || this.isNew) {
+            this.tempProduct = {
+              imageUrl: [],
+              options: {}
+            }
+          }
         })
     },
     openmodal (type, item) {
       if (type === 'new') {
         this.$refs.productModal.tempProduct = {
-          imageUrl: []
+          imageUrl: [],
+          options: {}
         }
         $('#productModal').modal('show')
         this.isNew = true
