@@ -13,6 +13,16 @@
         </div>
         </div>
       </section>
+      <section class="mt-3 py-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <router-link to="/" class="text-muted">首頁</router-link>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">公司簡介</li>
+          </ol>
+        </nav>
+      </section>
       <section class="container mt-5">
         <div class="row">
           <div class="col-md-6">
@@ -21,10 +31,10 @@
           <div class="col-md-6 text-left" style="margin-bottom:10%">
             <h2>捷登開發</h2>
             <small class="mt-3">台中市南屯區五權西路二段748號</small>
-            <p class="mt-3">建築是永恆的藝術，房子對人的影響十分深遠，建築本身就是良心事業。英國前首相邱吉爾曽說：「人造住宅，住宅造人」，一棟良好的住宅，可以影響一個家庭的生活品質，培養下一代人格發展、身心健康，成為社會可用的人才，所以人和住宅的關係，密不可分。
+            <p class="mt-3">建築，不只是一組組建材的構成。建築是一門藝術，將最平庸、樸素、日常周圍的種種幻化成深刻的記憶。英國前首相邱吉爾曽說：「人造住宅，住宅造人」，一棟藝術般的住宅，可以影響一個家庭的生活品質。
             </p>
             <p class="mt-3">
-              太子建設的經營理念「三好一公道」，分別為「地段好、設計好、施工好、價格公道」。在地段選擇上，以交通便利、不淹水、機能完善為優先考量。設計則以貼心、考量全家生活動線、生活機能、採光、通風及空間合理為首要。至於施工，更是不能馬虎，從地質探勘、採用最適合的基礎，注意結構安全，使用無毒建材，讓全家住得安全安心。最後是價格公道，讓購屋大眾買得起，用最輕鬆的價格，就能住進最好的住宅，是太子建設的最大信念。
+              捷登開發的經營理念「人性規劃，藝術建築」，我們已為自身住宅規劃，打造適合每位客戶的最基本『 住 』需求。
             </p>
           </div>
         </div>

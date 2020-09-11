@@ -11,7 +11,19 @@
     &.show
         display: block
 .bar
-    border-bottom: 7px solid rgba(187,200,193,.5);
-    padding-bottom: 1rem
+    background-color: gray;
+    border-radius: 50% 50%;
+    line-height: 100px
     &.focus
-        border-bottom: 7px solid $black;
+        background-color: #ffc8be;
+.progress
+    height: 5px;
+    margin-top: -60px;
+    margin-left: 125px;
+    margin-right: 44px;
+    width: 400px;
+.progress-bar
+    &.step2
+        width: 50%
+    &.step3
+        width: 100%

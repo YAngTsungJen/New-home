@@ -6,11 +6,17 @@
           <div class="mb-md-0 mb-1 pr-3">
             <p class="mb-0"> 捷登建設股份有限公司 Copyright By：洋蔥</p>
           </div>
-          <p class="mb-0 biger ">
-            <i class="fab fa-line pr-3 "></i>
-            <i class="fab fa-facebook-square pr-3"></i>
-            <i class="fas fa-phone-square"></i>
-          </p>
+          <ul class="list-unstyled mb-0 h2 d-flex">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=100000289420313" class="text-white" target="_blank"><i class="fab fa-facebook-square pr-3"></i></a>
+            </li>
+            <li>
+              <a href="#" class="text-white" target="_blank"><i class="fab fa-line pr-3 "></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/YAngTsungJen/New-home" class="text-white" target="_blank"><i class="fab fa-github-square"></i></a>
+            </li>
+          </ul>
           <div>
             <router-link class="nav-link text-light" to="/login">登入</router-link>
           </div>
@@ -27,9 +33,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.biger{
-  font-size: 200%;
-}
-</style>

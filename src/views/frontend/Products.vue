@@ -15,8 +15,18 @@
       </div>
       </div>
     </section>
+    <section class="mt-3 py-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <router-link to="/" class="text-muted">首頁</router-link>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">最新建案</li>
+        </ol>
+      </nav>
+    </section>
     <section class="container mt-5 py-5">
-          <ul class="list-group list-group-horizontal justify-content-md-center">
+          <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
             <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
               <h4>
                 全部建案
@@ -152,5 +162,8 @@ export default {
 }
 .changecolor{
 background-color: #B67965;
+}
+.card-hov{
+  cursor: pointer;
 }
 </style>

@@ -29,7 +29,53 @@
                   <router-link class="nav-link" to="/products">最新建案</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link class="nav-link" to="/reservation">預約專區</router-link>
+                  <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                    <button class="btn btn-more dropdown-toggle" type="button" id="check" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      預約專區
+                      <span class="badge badge-pill badge-danger" v-if="cart.length">{{ cart.length }}</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 500px" aria-labelledby="check">
+                        <section class="px-4 py-3">
+                          <table class="table table-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">案名</th>
+                                <th scope="col">總價</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr v-for="item in cart" :key="item.id">
+                                <td style="
+                                  width: 200px;
+                                  height:120px;
+                                  background-size: cover;
+                                  background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }">
+                                </td>
+                                <td class="align-middle"> {{item.product.title}} </td>
+                                <td class="align-middle"> {{item.product.price}} 萬 </td>
+                                <td class="align-middle text-center">
+                                  <button type="button" class="btn btn-outline-danger btn-sm"
+                                  @click="removeCart(item.product.id)">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr v-if="cart.length === 0">
+                                <td colspan="3" class="text-center">您尚未進行預約喔！</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </section>
+                      <div class="dropdown-divider"></div>
+                        <div class="row d-flex justify-content-center no-gutters">
+                          <button type="button" class="btn btn-cyan mr-auto" @click="removeAllCart()">
+                              <i class="far fa-trash-alt">全部取消</i>
+                          </button>
+                          <button type="button" class="btn btn-more" :disabled="cart.length === 0" @click="goReservation">前往預約專區</button>
+                        </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -39,7 +85,15 @@
 </template>
 
 <script>
+import Toast from '../../Toast'
 export default {
+  data () {
+    return {
+      // 購物車
+      cart: [],
+      isLoading: false
+    }
+  },
   methods: {
     goinfo () {
       this.$router.push('/about')
@@ -49,7 +103,55 @@ export default {
     },
     gomark () {
       this.$router.push('/gomark')
+    },
+    getCart () {
+      this.isLoading = true
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
+      this.$http.get(url).then(res => {
+        this.isLoading = false
+        this.cart = res.data.data
+        console.log(this.cart)
+        // this.$bus.$emit('get-cart', () => {
+        //   this.getCart()
+        // })
+      }).catch(() => {
+        Toast.fire({
+          title: '無法取得資料，稍後再試',
+          icon: 'error'
+        })
+        this.isLoading = false
+      })
+    },
+    removeCart (id) {
+      this.isLoading = true
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`
+      this.$http.delete(url).then(res => {
+        this.isLoading = false
+        this.getCart()
+      }).catch(() => {
+        this.isLoading = false
+      })
+    },
+    removeAllCart () {
+      this.isLoading = true
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/all/product`
+      this.$http.delete(url).then(() => {
+        this.isLoading = false
+        this.getCart()
+      }).catch(() => {
+        this.isLoading = false
+      })
+    },
+    goReservation () {
+      if (this.$route.path === '/reservation') return
+      this.$router.push('/reservation')
     }
+  },
+  created () {
+    this.getCart()
+    this.$bus.$on('get-cart', () => {
+      this.getCart()
+    })
   }
 }
 </script>
@@ -61,5 +163,18 @@ export default {
 }
 .topic>li:hover{
   color: blue;
+}
+.btn-cart{
+  background-color: transparent;
+  position: relative;
+}
+.btn-cart .badge{
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+.dropdown-menu-right{
+  right: 0;
+  left: auto;
 }
 </style>

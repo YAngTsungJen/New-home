@@ -13,6 +13,16 @@
         </div>
         </div>
       </section>
+      <section class="mt-3 py-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <router-link to="/" class="text-muted">首頁</router-link>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">公司理念</li>
+          </ol>
+        </nav>
+      </section>
       <section class="container mt-5">
         <div class="row">
           <div class="col-md-12 text-left" style="margin-bottom:20%">

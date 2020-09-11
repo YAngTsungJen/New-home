@@ -15,30 +15,43 @@
         </div>
         </div>
       </section>
-      <div class="container mt-5 ">
-        <div class="row d-flex justify-content-center p-2 no-gutters ">
-          <div class="col-3">
-            <span>1</span>
-            <p class="bar" :class="{ 'focus': page === 1 }">購物車</p>
-          </div>
-          <div class="col-3">
-            <span>2</span>
-            <p class="bar" :class="{ 'focus': page === 2 }">填寫資料</p>
-          </div>
-          <div class="col-3">
-            <span>3</span>
-            <p class="bar" :class="{ 'focus': page === 3 }">確認訂單</p>
-          </div>
-        </div>
-        <!-- <div class="h-100" v-if="!cart[0]">
-          <div class="row p-5">
-            <div class="col-md-8 mx-auto text-center py-4">
-              <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
-              <router-link to="/products">新案專區</router-link>
+      <!-- 標題 -->
+      <section class="container mt-5 ">
+        <div class="row justify-content-center ">
+          <div class="col-md-8">
+            <div class="row justify-content-center text-black">
+              <div class="col-md-2 mr-5">
+                <div class="text-center">
+                  <p class="bar" :class="{ 'focus': page === 1 || page === 2 || page === 3}">預約資訊</p>
+                </div>
+              </div>
+              <div class="col-md-2 step2 mr-5">
+                <div class="text-center">
+                  <p class="bar " :class="{ 'focus': page === 2 || page === 3 }">填寫資料</p>
+                </div>
+              </div>
+              <div class="col-md-2 step3 mr-5">
+                <div class="text-center">
+                  <p class="bar" :class="{ 'focus': page === 3 }">確認訂單</p>
+                </div>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-bar" :class="{step2:page === 2, step3:page === 3}" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
-        </div> -->
+        </div>
+      </section>
+      <section class="container mt-5 ">
         <div class="row  d-flex justify-content-center p-2 no-gutters">
+          <!-- <div class="h-100" v-if="!cart[0]">
+            <div class="row p-5">
+              <div class="col-md-8 mx-auto text-center py-4">
+                <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
+                <router-link to="/products">新案專區</router-link>
+              </div>
+            </div>
+          </div> -->
           <div class="col-9 step-1" :class="{ 'show': page === 1 }">
             <table class="table tablebg" style="background:#fff;">
               <thead>
@@ -68,9 +81,13 @@
               </tbody>
             </table>
             <div class="row d-flex justify-content-end no-gutters">
-              <button type="button" class="btn btn-success" @click="page = 2">下一步</button>
+              <button type="button" class="btn btn-more" @click="page = 2">下一步</button>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="container mt-5 ">
+        <div class="row  d-flex justify-content-center p-2 no-gutters">
           <div class="col-9 step-2" :class="{ 'show': page === 2 }">
             <div>
               <h4 class="text-left customer">客戶資料</h4>
@@ -123,7 +140,7 @@
                         </validation-provider>
                         <div class="text-right">
                           <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 上一步</button>
-                          <button type="submit" @click="page = 3" class="btn btn-success" :disabled="invalid">下一步</button>
+                          <button type="submit" @click="page = 3" class="btn btn-more" :disabled="invalid">下一步</button>
                         </div>
                       </div>
                     </div>
@@ -186,14 +203,14 @@
                         <td> {{form.message}} </td>
                       </tr>
                   </table>
-                  <button type="submit" class="btn btn-success">確認預約</button>
+                  <button type="submit" class="btn btn-more">確認預約</button>
                   <button type="button" class="btn btn-cyan" @click="backtohome">返回首頁</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </div>
 </template>
 
@@ -282,15 +299,5 @@ export default {
 </script>
 
 <style scoped>
-.container{
-  background: hsla(0,0%,66.7%,.1)
-}
-.tablebg{
-  background:#fff;
 
-}
-.customer{
-  background: olivedrab;
-  padding: 10px;
-}
 </style>

@@ -15,6 +15,19 @@
       </div>
       </div>
     </section>
+    <section class="mt-3 py-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <router-link to="/" class="text-muted">首頁</router-link>
+          </li>
+          <li class="breadcrumb-item">
+            <router-link to="/products" class="text-muted">最新建案</router-link>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+        </ol>
+      </nav>
+    </section>
     <section class="container mt-5 py-5">
       <div class="row">
         <div class="col-md-7 mr-auto">
@@ -175,7 +188,7 @@
     <section container mt-3>
       <div class="row">
         <div class="col">
-          <img src="https://upload.cc/i1/2020/09/10/GOr6IU.jpg" class=" img-fluid" style="height:500x; width:600px;" alt="">
+          <img v-if="product.id === 'Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy'" src="https://upload.cc/i1/2020/09/10/GOr6IU.jpg" class=" img-fluid" style="height:500x; width:600px;" alt="">
         </div>
       </div>
     </section>
@@ -194,25 +207,18 @@
         </div>
       <div>
     </div>
-    <ReserveModal />
     <vue-easy-lightbox
       :visible="visible"
       :imgs="imgs"
       :index="index"
       @hide="handleHide"
     ></vue-easy-lightbox>
-    <div class="confirm" @click.prevent="addTocart">
-      <i class="fas fa-house-user"></i>
-      <span class="badage badage-pill badge-danger" v-if="cart.length" style="transform:translateX(-9px) translateY(4px);">{{ cart.length }}</span>
-    </div>
     </div>
   </div>
 </template>
 
 <script>
 import Toast from '../../Toast'
-import $ from 'jquery'
-import ReserveModal from '../../components/frontend/ReserveModal'
 export default {
   data () {
     return {
@@ -228,12 +234,8 @@ export default {
       isLoading: false
     }
   },
-  components: {
-    ReserveModal
-  },
   created () {
     this.getProduct()
-    this.addTocart()
   },
   methods: {
     show (index) {
@@ -267,9 +269,6 @@ export default {
           icon: 'error'
         })
       })
-    },
-    addTocart () {
-      $('#reserveModal').modal('show')
     },
     addCart (item, quantity = 1) {
       this.isLoading = true
@@ -356,17 +355,5 @@ export default {
   opacity: 50%;
   transition-duration: 0.2s;
   transition: all .8s
-}
-.confirm{
-  background: cadetblue;
-  color: aliceblue;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  position: fixed;
-  top: 20%;
-  right: 5%;
-  border-radius: 50% 50%;
-  cursor: pointer;
 }
 </style>
