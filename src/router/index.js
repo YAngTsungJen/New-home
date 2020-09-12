@@ -43,11 +43,6 @@ const routes = [
         path: '/goidea',
         name: 'Goidea',
         component: () => import('../views/frontend/Goidea.vue')
-      },
-      {
-        path: '/gomark',
-        name: 'Gomark',
-        component: () => import('../views/frontend/Gomark.vue')
       }
     ]
   },

@@ -1,47 +1,43 @@
 <template>
-  <div class="container border">
-    <div class="row">
-      <div class="col-12 col-md float-left ">
-        <img class="img-fluid rounded" width="100%" height="500px" src="https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt />
+  <div>
+    <section class="container mt-5" style="margin-bottom: 350px">
+      <div class="row">
+        <div class="col mt-5 d-flex justify-content-center">
+          <form @submit.prevent="signin">
+            <div class="text-center">
+              <h1>登入</h1>
+            </div>
+            <div class="form-group text-left">
+              <label for="email">信箱</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                v-model="user.email"
+                required
+                autofocus
+              />
+            </div>
+            <div class="form-group text-left">
+              <label for="password">密碼</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                v-model="user.password"
+                required
+              />
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mt-3">登入</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-md-auto">
-        <form @submit.prevent="signin">
-          <div class="text-center">
-            <h1>登入</h1>
-          </div>
-          <div class="form-group text-left">
-            <label for="email">信箱</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              v-model="user.email"
-              required
-              autofocus
-            />
-          </div>
-          <div class="form-group text-left">
-            <label for="password">密碼</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Password"
-              v-model="user.password"
-              required
-            />
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-3">登入</button>
-          </div>
-          <!-- <div class="text-center">
-            <button type="button" class="btn btn-danger mt-3" @click="signout">登出</button>
-          </div> -->
-        </form>
-      </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -57,7 +53,6 @@ export default {
   },
   //  取得
   methods: {
-    // `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
     signin () {
       const api = `${process.env.VUE_APP_APIPATH}auth/login` // api伺服器
       this.$http
@@ -90,19 +85,3 @@ export default {
   }
 }
 </script>
-
-<style>
-/* body {
-  margin: 0 auto;
-  height: 100vh;
-  width: 100vh;
-} */
-.btn {
-  width: 50%;
-}
-.border{
-  border:1px solid wheat;
-  background: aliceblue;
-  padding: 2%;
-}
-</style>

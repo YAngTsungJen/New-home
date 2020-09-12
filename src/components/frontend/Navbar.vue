@@ -22,7 +22,6 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goinfo(item)">公司簡介</a>
                     <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goidea(item)">公司理念</a>
-                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="gomark(item)">公司標誌</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -101,9 +100,6 @@ export default {
     goidea () {
       this.$router.push('/goidea')
     },
-    gomark () {
-      this.$router.push('/gomark')
-    },
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
@@ -111,9 +107,6 @@ export default {
         this.isLoading = false
         this.cart = res.data.data
         console.log(this.cart)
-        // this.$bus.$emit('get-cart', () => {
-        //   this.getCart()
-        // })
       }).catch(() => {
         Toast.fire({
           title: '無法取得資料，稍後再試',

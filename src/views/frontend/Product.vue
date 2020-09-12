@@ -28,7 +28,7 @@
         </ol>
       </nav>
     </section>
-    <section class="container mt-5 py-5">
+    <section class="container mt-1 py-5">
       <div class="row">
         <div class="col-md-7 mr-auto">
           <img :src="product.imageUrl[0]" class=" img-fluid" style="height:500px; width:800px;" alt="">
@@ -61,8 +61,13 @@
             <div class="col-sm-3">地址:</div>
             <div class="col-sm-8 text-left">{{product.options.address}}</div>
           </div>
+          <div class="row mt-sm-2">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11 text-left text-danger h2">{{product.options.amount}}</div>
+          </div>
           <div class="row mt-md-2 justify-content-md-center">
-            <iframe v-if="product.id === 'Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3493196019563!2d120.69987131498561!3d24.089208081665554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb73414071f%3A0x3ebaf9372a193a70!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3MjLlvIQyMeiZnw!5e0!3m2!1szh-TW!2stw!4v1598456264351!5m2!1szh-TW!2stw" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe v-if="product.id === '5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3515820141174!2d120.70033751497303!3d24.089128481668702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb731be23af%3A0xd0c66a969ad6d736!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3!5e0!3m2!1szh-TW!2stw!4v1599900762754!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe v-if="product.id === 'Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.871662001732!2d120.6364423149727!3d24.070823582376825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693bebf32b2559%3A0xc1f4571672d16c26!2zNDE05Y-w5Lit5biC54OP5pel5Y2A5rqq5Y2X6Lev5LiA5q61OTg45be3!5e0!3m2!1szh-TW!2stw!4v1599900944904!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
       </div>
@@ -180,6 +185,7 @@
               <p>
                 {{product.options.feature}}
               </p>
+              <p>{{product.content}}</p>
             </div>
           </div>
         </div>
