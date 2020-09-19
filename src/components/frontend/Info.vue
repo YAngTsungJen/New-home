@@ -3,12 +3,10 @@
         <section class="bg-light icon">
               <div class="card-group ">
                 <div class="card py-5 border border-cyan shadow rounded">
+                  <div class="card-header">
+                    <h2>建築方向 <i class="far fa-building fa-1x"></i></h2>
+                  </div>
                   <div class="card-body">
-                    <div class="row">
-                      <div class="col">
-                        <h2>建築方向 <i class="far fa-building fa-1x"></i></h2>
-                      </div>
-                    </div>
                     <div class="row">
                       <div class="col text-left px-5 py-2">
                         <h4>前院大面寬雙車位</h4>
@@ -22,21 +20,21 @@
                   </div>
                 </div>
                 <div class="card py-5 border border-cyan shadow rounded">
-                  <div class="card-body">
+                  <div class="card-header">
                     <div class="mb-2">
                         <i class="fas fa-map-marker-alt fa-3x"></i>
                     </div>
                     <h3>設計美學</h3>
-                    <img src="https://upload.cc/i1/2020/09/12/e1j5LF.png" class="demo2 img-fluid" alt="">
+                  </div>
+                  <div class="card-body">
+                    <img src="@/assets/image/圖層-1_02.png" class="demo2 img-fluid" alt="">
                   </div>
                 </div>
                 <div class="card py-5 border border-cyan shadow rounded">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col">
-                        <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
-                      </div>
-                    </div>
+                  <div class="card-header">
+                    <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
+                  </div>
+                  <div class="card-body" >
                     <div class="row mt-4">
                       <div class="col text-left px-5" >
                         <p> <a href="https://house.udn.com/house/story/5905/4806277" class="text-color" target="_blank">好好的房子 為什麼會漏水呢？</a></p>
@@ -54,7 +52,7 @@
         <section class="container mt-5">
           <div class="row">
             <div class="col-lg-6">
-              <img src="https://upload.cc/i1/2020/09/08/VtGKJF.jpg" class="img-fluid rounded" alt="" data-aos="fade-right"
+              <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded" alt="" data-aos="fade-right"
                 data-aos-offset="300" data-aos-easing="ease-in-sine">
             </div>
             <div class="col-lg-4 m-auto text-left">
@@ -76,7 +74,7 @@
           </div>
           <div class="row flex-row-reverse mt-4">
             <div class="col-lg-6">
-              <img src="https://upload.cc/i1/2020/09/08/xVbCgY.jpg" class="img-fluid rounded" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+              <img src="@/assets/image/EFFAD910-A97A-4313-BC65-A6EC2182BEB1.jpg" class="img-fluid rounded" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
             </div>
             <div class="col-lg-4 m-auto text-left">
               <dl class="row">

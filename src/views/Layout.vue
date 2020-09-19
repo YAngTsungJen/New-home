@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import Navbar from '../components/frontend/Navbar'
-import Footer from '../components/frontend/Footer'
-import Top from '../components/frontend/Top'
+import Navbar from '@/components/frontend/Navbar'
+import Footer from '@/components/frontend/Footer'
+import Top from '@/components/frontend/Top'
 export default {
   data () {
     return {

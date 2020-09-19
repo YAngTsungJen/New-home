@@ -3,12 +3,13 @@
     <Navbar />
     <Sidebar />
     <router-view :token="token" v-if="checkSuccess" />
+    <!-- :token="token" -->
   </div>
 </template>
 
 <script>
-import Navbar from '../components/backend/Navbar'
-import Sidebar from '../components/backend/Sidebar'
+import Navbar from '@/components/backend/Navbar'
+import Sidebar from '@/components/backend/Sidebar'
 export default {
   data () {
     return {
@@ -21,7 +22,6 @@ export default {
     Sidebar
   },
   created () {
-    // 使用token做驗證
     this.checkLogin()
   },
   methods: {

@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row justify-md-center align-items-center">
           <div class="col" style="margin-top:10%">
-            <h2>{{product.title}}</h2>
+            <h2>{{ product.title }}</h2>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <li class="breadcrumb-item">
             <router-link to="/products" class="text-muted">最新建案</router-link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+          <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
         </ol>
       </nav>
     </section>
@@ -36,7 +36,7 @@
         <div class="col-md-5">
           <div class="row mt-md-2">
             <div class="col mr-auto">
-              <h2 class="text-danger">{{product.price}}<small>萬元</small></h2>
+              <h2 class="text-danger">{{ product.price }}<small>萬元</small></h2>
             </div>
             <div class="col btn-group">
               <button type="button" class="btn btn-more" @click.prevent="addCart(product,product.num)">預約看屋</button>
@@ -45,25 +45,25 @@
           </div>
           <hr>
           <div class="row mt-md-2">
-            <div class="col">格局：{{product.options.structure}}</div>
-            <div class="col">屋齡：{{product.options.homeage}}</div>
-            <div class="col">權狀坪數：{{product.options.landnumber}}</div>
+            <div class="col">格局：{{ product.options.structure }}</div>
+            <div class="col">屋齡：{{ product.options.homeage }}</div>
+            <div class="col">權狀坪數：{{ product.options.landnumber }}</div>
           </div>
           <div class="row mt-sm-2">
             <div class="col-sm-3">樓層:</div>
-            <div class="col-sm-4 text-left">{{product.options.floor}}</div>
+            <div class="col-sm-4 text-left">{{ product.options.floor }}</div>
           </div>
           <div class="row mt-sm-2">
             <div class="col-sm-3">朝向:</div>
-            <div class="col-sm-4 text-left">{{product.options.direction}}</div>
+            <div class="col-sm-4 text-left">{{ product.options.direction }}</div>
           </div>
           <div class="row mt-sm-2">
             <div class="col-sm-3">地址:</div>
-            <div class="col-sm-8 text-left">{{product.options.address}}</div>
+            <div class="col-sm-8 text-left">{{ product.options.address }}</div>
           </div>
           <div class="row mt-sm-2">
             <div class="col-sm-1"></div>
-            <div class="col-sm-11 text-left text-danger h2">{{product.options.amount}}</div>
+            <div class="col-sm-11 text-left text-danger h2">{{ product.options.amount }}</div>
           </div>
           <div class="row mt-md-2 justify-content-md-center">
             <iframe v-if="product.id === '5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3515820141174!2d120.70033751497303!3d24.089128481668702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb731be23af%3A0xd0c66a969ad6d736!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3!5e0!3m2!1szh-TW!2stw!4v1599900762754!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -83,7 +83,7 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>現況：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.now}}
+                {{ product.options.now }}
                 </span>
               </p>
             </div>
@@ -91,7 +91,7 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>型態：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.type}}
+                {{ product.options.type }}
                 </span>
               </p>
             </div>
@@ -99,7 +99,7 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>裝潢程度：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.decoration}}
+                {{ product.options.decoration }}
                 </span>
               </p>
             </div>
@@ -109,7 +109,7 @@
               <p><i class="fas fa-tint pr-2"></i>管理費：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.managefees}}
+                {{ product.options.managefees }}
                 </span>
               </p>
             </div>
@@ -117,7 +117,7 @@
               <p><i class="fas fa-tint pr-2"></i>帶租約：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.lease}}
+                {{ product.options.lease }}
                 </span>
               </p>
             </div>
@@ -125,7 +125,7 @@
               <p><i class="fas fa-tint pr-2"></i>法定用途：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.use}}
+                {{ product.options.use }}
                 </span>
               </p>
             </div>
@@ -135,7 +135,7 @@
               <p><i class="fas fa-tint pr-2"></i>車位：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.car}}
+                {{ product.options.car }}
                 </span>
               </p>
             </div>
@@ -152,7 +152,7 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>主建物：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.mainbuilding}}
+                {{ product.options.mainbuilding }}
                 </span>
               </p>
             </div>
@@ -160,7 +160,7 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>附屬建物：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.subbuilding}}
+                {{ product.options.subbuilding }}
                 </span>
               </p>
             </div>
@@ -168,8 +168,40 @@
               <p><i class="fas fa-weight-hanging pr-2"></i>土地坪數：
                 <span class="border-bottom border-dark text-center"
                 style="display:inline-block; width:30%">
-                {{product.options.land}}
+                {{ product.options.land }}
                 </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <h4 class="text-more">生活機能</h4>
+        </div>
+        <div class="col-md-9 text-left">
+          <div class="row mt-md-2">
+            <div class="col-md-4">
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.convenience }}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.market }}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.park }}
+              </p>
+            </div>
+          </div>
+          <div class="row mt-md-2">
+            <div class="col-md-4">
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.school }}
+              </p>
+            </div>
+            <div class="col-md-4">
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nightmarket }}
               </p>
             </div>
           </div>
@@ -183,25 +215,26 @@
           <div class="row mt-md-2">
             <div class="col-md-8">
               <p>
-                {{product.options.feature}}
+                {{ product.options.feature }}
               </p>
-              <p>{{product.content}}</p>
+              <p>{{ product.content }}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section container mt-3>
+    <section class="container mt-3">
       <div class="row">
-        <div class="col">
+        <!-- <div class="col">
           <img v-if="product.id === 'Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy'" src="https://upload.cc/i1/2020/09/10/GOr6IU.jpg" class=" img-fluid" style="height:500x; width:600px;" alt="">
-        </div>
+        </div> -->
       </div>
     </section>
-    <div class="row process">
-      <div class="col-12">
-        <h2 class="text-center mb-5">建築過程</h2>
-      </div>
+    <div class="container">
+      <div class="row">
+        <div>
+          <h2 class="text-center mb-5">建築過程</h2>
+        </div>
         <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
           <div class="col-sm-3 mb-3">
             <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
@@ -211,20 +244,20 @@
             </div>
           </div>
         </div>
-      <div>
+      </div>
+    <div>
     </div>
-    <vue-easy-lightbox
-      :visible="visible"
-      :imgs="imgs"
-      :index="index"
-      @hide="handleHide"
-    ></vue-easy-lightbox>
+      <vue-easy-lightbox
+        :visible="visible"
+        :imgs="imgs"
+        :index="index"
+        @hide="handleHide"
+      ></vue-easy-lightbox>
     </div>
   </div>
 </template>
 
 <script>
-import Toast from '../../Toast'
 export default {
   data () {
     return {
@@ -270,10 +303,7 @@ export default {
       this.$http.get(url).then(res => {
         this.cart = res.data.data
       }).catch(() => {
-        Toast.fire({
-          title: '無法取得資料，稍後再試',
-          icon: 'error'
-        })
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
       })
     },
     addCart (item, quantity = 1) {
@@ -287,18 +317,12 @@ export default {
         this.isLoading = false
         this.$bus.$emit('get-cart')
         this.getCart()
-        Toast.fire({
-          title: '已幫您加入預約列表，請前往預約專區',
-          icon: 'success'
-        })
+        this.$bus.$emit('msg:push', '已幫您加入預約列表，請前往預約專區', 'success')
       }).catch(error => {
         this.isLoading = false
         const errorData = error.response.data.errors
         if (errorData) {
-          Toast.fire({
-            title: '已經預約此間了',
-            icon: 'warning'
-          })
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         }
       })
     },
@@ -321,10 +345,6 @@ export default {
   list-style-type: none;
   border-bottom: 1px dashed rgba(0,0,0,.2);
   padding: 6px 0 6px 23px;
-}
-.process{
-  margin-bottom: 200px;
-  padding: 3rem 3rem;
 }
 .work-item{
   height: 300px;

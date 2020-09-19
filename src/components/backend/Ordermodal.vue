@@ -15,23 +15,23 @@
                 <tbody>
                   <tr>
                     <th scope="row">email</th>
-                    <td>{{order.user.email}}</td>
+                    <td>{{ order.user.email }}</td>
                   </tr>
                   <tr>
                     <th scope="row">收件人姓名</th>
-                    <td>{{order.user.name}}</td>
+                    <td>{{ order.user.name }}</td>
                   </tr>
                   <tr>
                     <th scope="row">收件人電話</th>
-                    <td>{{order.user.tel}}</td>
+                    <td>{{ order.user.tel }}</td>
                   </tr>
                   <tr>
                     <th scope="row">收件人地址</th>
-                    <td>{{order.user.address}}</td>
+                    <td>{{ order.user.address }}</td>
                   </tr>
                   <tr>
                     <th scope="row">留言</th>
-                    <td>{{order.message}}</td>
+                    <td>{{ order.message }}</td>
                   </tr>
                 </tbody>
               </table>

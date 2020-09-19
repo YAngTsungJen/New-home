@@ -26,21 +26,21 @@
       </nav>
     </section>
     <section class="container mt-5 py-5">
-          <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
-            <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
-              <h4>
-                全部建案
-              </h4>
-            </li>
-            <li class="list-group-item" @click.prevent="filterCategory = item"
-                :class="{ active: item === filterCategory }"
-                v-for="item in categories" :key="item"> {{item}}
-            </li>
-          </ul>
+      <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
+        <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
+          <h4>
+            全部建案
+          </h4>
+        </li>
+        <li class="list-group-item" @click.prevent="filterCategory = item"
+            :class="{ active: item === filterCategory }"
+            v-for="item in categories" :key="item"> {{ item }}
+        </li>
+      </ul>
     </section>
     <section class="container mt-5 py-5">
       <div class="row row-cols-1 row-cols-md-3">
-        <div class="col-4 mb-4" v-for="item in filterCategories" :key="item.id">
+        <div class="col-md-4 mb-4" v-for="item in filterCategories" :key="item.id">
           <div class="card h-100 Regular shadow work-item">
             <div @click="goPage(item)">
               <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="">
@@ -49,7 +49,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}
-                <span class="badge badge-pill badge-success float-right ">{{item.category}}</span>
+                <span class="badge badge-pill badge-success float-right ">{{ item.category }}</span>
               </h5>
             </div>
           </div>
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import Pagination from '../../components/Pagination'
+import Pagination from '@/components/Pagination'
 export default {
   data () {
     return {
@@ -93,7 +93,6 @@ export default {
         )
         .then((response) => {
           this.products = response.data.data
-          console.log(this.products)
           this.pagination = response.data.meta.pagination
           this.isLoading = false
           const { categoryName } = this.$route.params
@@ -125,7 +124,6 @@ export default {
 <style scoped>
 .work-item{
   height: 430px;
-  /* width: 400px; */
 }
 .fadder{
   height:300px;

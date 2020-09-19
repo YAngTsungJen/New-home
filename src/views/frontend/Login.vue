@@ -51,7 +51,6 @@ export default {
       }
     }
   },
-  //  取得
   methods: {
     signin () {
       const api = `${process.env.VUE_APP_APIPATH}auth/login` // api伺服器
@@ -66,21 +65,16 @@ export default {
             expired * 1000
           )}; path=/`
           this.$router.push('admin/products')
-          //  window.location = 'learn.html';
-          //  不能移到 post 外面，因為非同步的觀念，會變成先轉址，在執行post
-          this.$bus.$emit('message:push',
+          this.$bus.$emit('msg:push',
             '登入成功',
             'success')
         })
-        .catch((error) => {
-          this.$bus.$emit('message:push',
+        .catch((danger) => {
+          this.$bus.$emit('msg:push',
           `登入失敗惹，好糗Σ( ° △ °|||)︴
-            ${error}`,
+            ${danger}`,
           'danger')
         })
-    },
-    signout () {
-      document.cookie = '`token =; expires =`'
     }
   }
 }

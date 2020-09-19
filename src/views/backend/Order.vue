@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <loading :active.sync="isLoading"></loading> -->
+        <loading :active.sync="isLoading"></loading>
         <div class="table-responsive">
           <table class="table table-striped mt-4">
             <thead>
@@ -15,13 +15,13 @@
             </thead>
             <tbody v-for="item in orders" :key="item.id">
               <tr>
-                <th scope="row"> {{ item.products.length}} </th>
+                <th scope="row"> {{ item.products.length }} </th>
                 <th scope="row"> {{ item.created.datetime }} </th>
                 <th scope="row">
                   <ul class="list-unstyled">
                     <li v-for="(product, i) in item.products"
                       :key="i">
-                      {{ product.product.title }} 數量：{{ product.quantity}}{{ product.product.unit }}
+                      {{ product.product.title }} 數量：{{ product.quantity }}{{ product.product.unit }}
                     </li>
                   </ul>
                 </th>
@@ -60,8 +60,9 @@
 </template>
 
 <script>
-import Pagination from '../../components/Pagination'
-import Ordermodal from '../../components/backend/Ordermodal'
+// import Toast from '@/Toast'
+import Pagination from '@/components/Pagination'
+import Ordermodal from '@/components/backend/Ordermodal'
 export default {
   data () {
     return {
@@ -69,7 +70,8 @@ export default {
       pagination: {},
       order: {
         user: {}
-      }
+      },
+      isLoading: true
     }
   },
   components: {
@@ -81,13 +83,20 @@ export default {
   },
   methods: {
     getOrders (page = 1) {
+      this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders?page=${page}`
       this.$http.get(url).then((res) => {
         this.orders = res.data.data
         this.pagination = res.data.meta.pagination
+        this.isLoading = false
       })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+          this.isLoading = false
+        })
     },
     updatePayment (item) {
+      this.isLoading = true
       let url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${item.id}/paid`
       if (!item.paid) {
         url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders/${item.id}/unpaid`
@@ -95,7 +104,13 @@ export default {
       this.$http
         .patch(url, item.id)
         .then(() => {
+          this.$bus.$emit('msg:push', '付款狀態修改成功', 'success')
           this.getOrders()
+          this.isLoading = false
+        })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+          this.isLoading = false
         })
     },
     openModal (item) {

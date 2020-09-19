@@ -20,8 +20,8 @@
                     關於我們
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goinfo(item)">公司簡介</a>
-                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goidea(item)">公司理念</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goinfo()">公司簡介</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goidea()">公司理念</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -51,8 +51,8 @@
                                   background-size: cover;
                                   background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }">
                                 </td>
-                                <td class="align-middle"> {{item.product.title}} </td>
-                                <td class="align-middle"> {{item.product.price}} 萬 </td>
+                                <td class="align-middle"> {{ item.product.title }} </td>
+                                <td class="align-middle"> {{ item.product.price }} 萬 </td>
                                 <td class="align-middle text-center">
                                   <button type="button" class="btn btn-outline-danger btn-sm"
                                   @click="removeCart(item.product.id)">
@@ -84,11 +84,9 @@
 </template>
 
 <script>
-import Toast from '../../Toast'
 export default {
   data () {
     return {
-      // 購物車
       cart: [],
       isLoading: false
     }
@@ -106,12 +104,8 @@ export default {
       this.$http.get(url).then(res => {
         this.isLoading = false
         this.cart = res.data.data
-        console.log(this.cart)
       }).catch(() => {
-        Toast.fire({
-          title: '無法取得資料，稍後再試',
-          icon: 'error'
-        })
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         this.isLoading = false
       })
     },
@@ -121,7 +115,9 @@ export default {
       this.$http.delete(url).then(res => {
         this.isLoading = false
         this.getCart()
+        this.$bus.$emit('msg:push', '預約取消', 'danger')
       }).catch(() => {
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         this.isLoading = false
       })
     },
@@ -131,7 +127,9 @@ export default {
       this.$http.delete(url).then(() => {
         this.isLoading = false
         this.getCart()
+        this.$bus.$emit('msg:push', '全部取消', 'danger')
       }).catch(() => {
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         this.isLoading = false
       })
     },

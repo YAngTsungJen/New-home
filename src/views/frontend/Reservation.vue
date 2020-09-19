@@ -69,8 +69,8 @@
                     height:120px;
                     background-size: cover;
                     background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></th>
-                  <td> {{item.product.title}} </td>
-                  <td> {{item.product.price}} 萬 </td>
+                  <td> {{ item.product.title }} </td>
+                  <td> {{ item.product.price }} 萬 </td>
                   <td>
                     <button type="button" class="btn btn-outline-danger btn-sm"
                     @click="removeCart(item.product.id)">
@@ -100,35 +100,35 @@
                           tag="div">
                             <label for="name" class="col-form-label col-form-label-sm">姓名</label>
                             <input type="text" name="姓名" id="name" class="form-control form-control-sm" :class="classes" v-model="form.name">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <validation-provider rules="required|email" v-slot="{ errors, classes }" class="form-group mt-3"
                         tag="div">
                             <label for="email" class="col-form-label col-form-label-sm">信箱</label>
                             <input type="email" name="信箱" id="email" class="form-control form-control-sm" :class="classes" v-model="form.email">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <validation-provider rules="required|min:8" v-slot="{ errors, classes }" class="form-group mt-3"
                           tag="div">
                             <label for="tel" class="col-form-label col-form-label-sm">電話</label>
                             <input type=" tel" name="電話" id="tel" class="form-control form-control-sm" :class="classes" v-model="form.tel">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
                             <label for="address" class="col-form-label col-form-label-sm">地址</label>
                             <input type="text" name="地址" id="address" class="form-control form-control-sm" :class="classes"
                                 v-model="form.address">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
                             <label for="reservation_date" class="col-form-label col-form-label-sm">預約日期</label>
                             <input type="date" name="預約日期" id="reservation_date" class="form-control form-control-sm" :class="classes" v-model="form.reservation_date">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <validation-provider rules="required" v-slot="{ errors, classes }" class="form-group mt-3" tag="div">
                             <label for="reservation_time" class="col-form-label col-form-label-sm">預約時間</label>
                             <input type="time" name="預約時間" id="reservation_time" class="form-control form-control-sm" :class="classes" v-model="form.reservation_time">
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                       </div>
                       <div class="col-5">
@@ -136,7 +136,7 @@
                             <label for="message" class="col-form-label col-form-label-sm">留言</label>
                             <textarea type="text" name="留言" id="message" rows="6" placeholder="請留言給告知我們" class="form-control form-control-sm" :class="classes"
                                 v-model="form.message"></textarea>
-                            <span class="invalid-feedback"> {{errors[0]}} </span>
+                            <span class="invalid-feedback"> {{ errors[0] }} </span>
                         </validation-provider>
                         <div class="text-right">
                           <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 上一步</button>
@@ -166,8 +166,8 @@
                       height:120px;
                       background-size: cover;
                       background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></th>
-                    <td> {{item.product.title}} </td>
-                    <td>  {{item.product.price}} 萬 </td>
+                    <td> {{ item.product.title }} </td>
+                    <td>  {{ item.product.price }} 萬 </td>
                   </tr>
                 </tbody>
               </table>
@@ -176,31 +176,31 @@
                   <table class="table table-borderless  ">
                       <tr class="border border-secondary">
                         <th scope="col">姓名</th>
-                        <td> {{form.name}} </td>
+                        <td> {{ form.name }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">信箱</th>
-                        <td> {{form.email}} </td>
+                        <td> {{ form.email }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">電話</th>
-                        <td> {{form.tel}} </td>
+                        <td> {{ form.tel }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">地址</th>
-                        <td> {{form.address}} </td>
+                        <td> {{ form.address }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">預約日期</th>
-                        <td> {{form.reservation_date}} </td>
+                        <td> {{ form.reservation_date }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">預約時間</th>
-                        <td> {{form.reservation_time}} </td>
+                        <td> {{ form.reservation_time }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">留言</th>
-                        <td> {{form.message}} </td>
+                        <td> {{ form.message }} </td>
                       </tr>
                   </table>
                   <button type="submit" class="btn btn-more">確認預約</button>
@@ -215,7 +215,6 @@
 </template>
 
 <script>
-import Toast from '../../Toast'
 export default {
   data () {
     return {
@@ -247,10 +246,7 @@ export default {
         this.cart = res.data.data
         this.isLoading = false
       }).catch(() => {
-        Toast.fire({
-          title: '無法取得資料，稍後再試',
-          icon: 'error'
-        })
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         this.isLoading = false
       })
     },
@@ -282,10 +278,7 @@ export default {
       this.$http.post(url)
         .then(() => {
           this.getsingleOrder()
-          Toast.fire({
-            title: '預約成功',
-            icon: 'success'
-          })
+          this.$bus.$emit('msg:push', '預約成功', 'success')
         })
     },
     backtohome () {

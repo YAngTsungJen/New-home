@@ -1,5 +1,7 @@
 <template>
     <div>
+      <loading :active.sync="isLoading">
+      </loading>
       <div class="mt-4 text-right">
         <button type="button" class="btn btn-primary" @click.prevent="openModal('new')" >建立優惠券</button>
       </div>
@@ -41,8 +43,8 @@
 
 <script>
 import $ from 'jquery'
-import CouponModal from '../../components/backend/CouponModal'
-import DelCouponModal from '../../components/backend/DelCouponModal'
+import CouponModal from '@/components/backend/CouponModal'
+import DelCouponModal from '@/components/backend/DelCouponModal'
 export default {
   data () {
     return {
@@ -54,7 +56,8 @@ export default {
         enabled: false,
         deadline_at: ''
       },
-      isNew: false
+      isNew: false,
+      isLoading: false
     }
   },
   components: {
@@ -63,10 +66,12 @@ export default {
   },
   methods: {
     getCoupons (page = 1) {
+      this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupons?page=${page}`
       this.$http.get(url).then(res => {
         this.coupons = res.data.data
         this.pagination = res.data.meta.pagination
+        this.isLoading = false
       })
     },
     openModal (type, item) {

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <loading :active.sync="isLoading">
+    </loading>
     <div
       id="productModal"
       class="modal fade"
@@ -11,7 +13,7 @@
         <div class="modal-content">
           <div class="modal-header bg-dark text-white">
             <h5 class="modal-title" id="exampleModalLabel ">
-              <span>{{isNew ?'新增房間':'重訂房間'}}</span>
+              <span>{{ isNew ?'新增房間':'重訂房間' }}</span>
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -178,6 +180,26 @@
                     <input type="checkbox" class="form-check-input" name="enabled" id="tempProduct.enabled" v-model="tempProduct.enabled"/>啟用
                   </div>
                 </div>
+                <div class="form-check form-check-inline mb-2">
+                  <input type="checkbox" id="convenience" class="form-check-input" value="便利商店" v-model="tempProduct.options.convenience">
+                  <label for="convenience" class="form-check-label mr-2">便利商店</label>
+                </div>
+                <div class="form-check form-check-inline mb-2">
+                  <input type="checkbox" id="market" class="form-check-input" value="傳統市場" v-model="tempProduct.options.market">
+                  <label for="market" class="form-check-label mr-2">傳統市場</label>
+                </div>
+                <div class="form-check form-check-inline mb-2">
+                  <input type="checkbox" id="park" class="form-check-input" value="公園綠地" v-model="tempProduct.options.park">
+                  <label for="park" class="form-check-label mr-2">公園綠地</label>
+                </div>
+                <div class="form-check form-check-inline mb-2">
+                  <input type="checkbox" id="school" class="form-check-input" value="學校" v-model="tempProduct.options.school">
+                  <label for="school" class="form-check-label mr-2">學校</label>
+                </div>
+                <div class="form-check form-check-inline mb-2">
+                  <input type="checkbox" id="nightmarket" class="form-check-input" value="夜市" v-model="tempProduct.options.nightmarket">
+                  <label for="nightmarket" class="form-check-label mr-2">夜市</label>
+                </div>
               </div>
             </div>
           </div>
@@ -198,7 +220,8 @@ export default {
       tempProduct: {
         imageUrl: [],
         options: {}
-      }
+      },
+      isLoading: false
     }
   },
   props: ['isNew'],
@@ -225,14 +248,10 @@ export default {
       $('#productModal').modal('hide')
     },
     upload () {
-      // 選取 DOM 中的檔案資訊
       const cust = document.querySelector('#cust').files[0]
-
-      // 轉成 Form Data
       const formData = new FormData()
       formData.append('file', cust)
-      // 路由、驗證
-      // axios.defaults.headers.common.Authorization = `Bearer ${this.token}`
+      this.isLoading = true
       const el = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage`
       this.$http
         .post(el, formData, {
@@ -241,10 +260,16 @@ export default {
           }
         })
         .then((res) => {
-          this.tempProduct.imageUrl.push(res.data.data.path)
-          document.querySelector('#cust').value = '' // 讓input清空
+          if (res.status === 200) {
+            this.isLoading = false
+            this.tempProduct.imageUrl.push(res.data.data.path)
+            document.querySelector('#cust').value = ''
+          }
         })
-      // 請自行完成 Ajax 範例
+        .catch(() => {
+          this.isLoading = false
+          document.querySelector('#cust').value = ''
+        })
     }
   }
 }

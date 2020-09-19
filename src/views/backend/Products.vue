@@ -12,20 +12,20 @@
               <tr>
                 <th width="140">建案位址</th>
                 <th width="250">建案名稱</th>
-                <th width="250">額外服務</th>
+                <th width="250">設施服務</th>
                 <th width="140">坪數</th>
                 <th width="140">價格</th>
-                <th width="250">設施服務</th>
+                <th width="250">按鈕</th>
                 <th width="140">編輯</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(item) in products" :key=" item.id">
-                <th scope="row">{{item.category}}</th>
-                <td width="300">{{item.title}}</td>
+                <th scope="row">{{ item.category }}</th>
+                <td width="300">{{ item.title }}</td>
                 <td></td>
-                <td>{{item.origin_price}}</td>
-                <td>{{item.price}}</td>
+                <td>{{ item.origin_price }}</td>
+                <td>{{ item.price }}</td>
                 <td>
                   <label class="switch">
                     <input type="checkbox" disabled :checked="item.enabled" />
@@ -60,17 +60,14 @@
 
 <script>
 import $ from 'jquery'
-import Pagination from '../../components/Pagination'
-import Productmodal from '../../components/backend/Productmodal'
-import DelProducts from '../../components/backend/DelProducts'
+import Pagination from '@/components/Pagination'
+import Productmodal from '@/components/backend/Productmodal'
+import DelProducts from '@/components/backend/DelProducts'
 export default {
   data () {
     return {
       isLoading: true,
       products: [
-        // {
-        //   options: {}
-        //   }
       ],
       tempProduct: {
         // 第二層結構要定義才能雙向綁定
@@ -105,6 +102,10 @@ export default {
             }
           }
         })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+          this.isLoading = false
+        })
     },
     openmodal (type, item) {
       if (type === 'new') {
@@ -125,13 +126,6 @@ export default {
   },
   created () {
     this.getProducts()
-    // 使用token做驗證
-    // this.token = document.cookie.replace(/(?:(?:^|.*;\s*)iscookie\s*=\s*([^;]*).*$)|^.*$/, '$1')
-    // this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`
-    const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/products`
-    this.$http.get(url).then((res) => {
-      this.products = res.data.data
-    })
   }
 }
 </script>
