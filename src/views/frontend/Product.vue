@@ -183,25 +183,11 @@
         <div class="col-md-9 text-left">
           <div class="row mt-md-2">
             <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.convenience }}
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nearplace[0] }}
               </p>
             </div>
             <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.market }}
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.park }}
-              </p>
-            </div>
-          </div>
-          <div class="row mt-md-2">
-            <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.school }}
-              </p>
-            </div>
-            <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nightmarket }}
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nearplace [1] }}
               </p>
             </div>
           </div>

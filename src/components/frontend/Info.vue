@@ -69,7 +69,7 @@
                 <dd class="col-sm-6 mt-2"></dd>
                 <dt class="col-sm-12 text-danger mt-2"><h2>全新大四房前院美墅</h2></dt>
               </dl>
-              <router-link href="#" to="/products" class="btn btn-outline-more">查看更多</router-link>
+              <router-link href="#" to="/product/Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy" class="btn btn-outline-more">查看更多</router-link>
             </div>
           </div>
           <div class="row flex-row-reverse mt-4">
@@ -79,7 +79,7 @@
             <div class="col-lg-4 m-auto text-left">
               <dl class="row">
                 <dt class="col-lg-6 mt-4 text-left">
-                  <h3>瑞城傳家</h3>
+                  <h3>東城名邸</h3>
                 </dt>
                 <dd class="col-lg-6"></dd>
                 <dt class="col-lg-3 mt-2">語錄</dt>
@@ -90,7 +90,7 @@
                 <dd class="col-sm-6 mt-2"></dd>
                 <dt class="col-sm-12 text-danger mt-2"><h2>塗城商圈學區透天住宅</h2></dt>
               </dl>
-              <router-link href="#" to="/products" class="btn btn-outline-more">查看更多</router-link>
+              <router-link href="#" to="/product/5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz" class="btn btn-outline-more">查看更多</router-link>
             </div>
           </div>
         </section>

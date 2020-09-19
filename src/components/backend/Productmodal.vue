@@ -181,23 +181,23 @@
                   </div>
                 </div>
                 <div class="form-check form-check-inline mb-2">
-                  <input type="checkbox" id="convenience" class="form-check-input" value="便利商店" v-model="tempProduct.options.convenience">
+                  <input type="checkbox" id="convenience" class="form-check-input" value="便利商店" v-model="tempProduct.options.nearplace">
                   <label for="convenience" class="form-check-label mr-2">便利商店</label>
                 </div>
                 <div class="form-check form-check-inline mb-2">
-                  <input type="checkbox" id="market" class="form-check-input" value="傳統市場" v-model="tempProduct.options.market">
+                  <input type="checkbox" id="market" class="form-check-input" value="傳統市場" v-model="tempProduct.options.nearplace">
                   <label for="market" class="form-check-label mr-2">傳統市場</label>
                 </div>
                 <div class="form-check form-check-inline mb-2">
-                  <input type="checkbox" id="park" class="form-check-input" value="公園綠地" v-model="tempProduct.options.park">
+                  <input type="checkbox" id="park" class="form-check-input" value="公園綠地" v-model="tempProduct.options.nearplace">
                   <label for="park" class="form-check-label mr-2">公園綠地</label>
                 </div>
                 <div class="form-check form-check-inline mb-2">
-                  <input type="checkbox" id="school" class="form-check-input" value="學校" v-model="tempProduct.options.school">
+                  <input type="checkbox" id="school" class="form-check-input" value="學校" v-model="tempProduct.options.nearplace">
                   <label for="school" class="form-check-label mr-2">學校</label>
                 </div>
                 <div class="form-check form-check-inline mb-2">
-                  <input type="checkbox" id="nightmarket" class="form-check-input" value="夜市" v-model="tempProduct.options.nightmarket">
+                  <input type="checkbox" id="nightmarket" class="form-check-input" value="夜市" v-model="tempProduct.options.nearplace">
                   <label for="nightmarket" class="form-check-label mr-2">夜市</label>
                 </div>
               </div>

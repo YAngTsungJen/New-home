@@ -72,7 +72,9 @@ export default {
       tempProduct: {
         // 第二層結構要定義才能雙向綁定
         imageUrl: [],
-        options: {}
+        options: {
+          nearplace: []
+        }
       },
       pagination: [],
       loadingbtn: '',
@@ -98,7 +100,9 @@ export default {
           if (this.tempProduct.id || this.isNew) {
             this.tempProduct = {
               imageUrl: [],
-              options: {}
+              options: {
+                nearplace: []
+              }
             }
           }
         })
@@ -111,7 +115,9 @@ export default {
       if (type === 'new') {
         this.$refs.productModal.tempProduct = {
           imageUrl: [],
-          options: {}
+          options: {
+            nearplace: []
+          }
         }
         $('#productModal').modal('show')
         this.isNew = true
