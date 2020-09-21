@@ -9,12 +9,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <router-link class="nav-link" to="/">首頁 <span class="sr-only">(current)</span></router-link>
-                </li>
-              </ul>
-              <ul class="navbar-nav">
+              <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" to="/about" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     關於我們

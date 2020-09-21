@@ -31,7 +31,7 @@
     <section class="container mt-1 py-5">
       <div class="row">
         <div class="col-md-7 mr-auto">
-          <img :src="product.imageUrl[0]" class=" img-fluid" style="height:500px; width:800px;" alt="">
+          <img :src="product.imageUrl[0]" class=" img-fluid w-100" alt="">
         </div>
         <div class="col-md-5">
           <div class="row mt-md-2">
@@ -187,7 +187,7 @@
               </p>
             </div>
             <div class="col-md-4">
-              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nearplace [1] }}
+              <p><i class="fas fa-weight-hanging pr-2"></i>{{ product.options.nearplace[1] }}
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@
         <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
           <div class="col-sm-3 mb-3">
             <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
-              <img :src="item" class=" img-fluid" style="height:300px;" alt="">
+              <img :src="item" class=" img-fluid w-100" alt="">
               <span class="ink"></span>
               <span class="search"><i class="fas fa-search-plus"></i></span>
             </div>

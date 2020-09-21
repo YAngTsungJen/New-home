@@ -4,31 +4,33 @@
         <div class="row">
           <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1434742937189-458c80959a6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1108&q=80)">
           </div>
-        <div class="container">
-          <div class="row justify-md-center align-items-center">
-            <div class="col" style="margin-top:10%">
-              <h2>公司簡介</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2>公司簡介</h2>
+              </div>
             </div>
           </div>
         </div>
-        </div>
       </section>
-      <section class="mt-3 py-2">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <router-link to="/" class="text-muted">首頁</router-link>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">公司簡介</li>
-          </ol>
-        </nav>
+      <section class="container">
+        <div class="row">
+          <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <router-link to="/" class="text-muted">首頁</router-link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">公司簡介</li>
+            </ol>
+          </nav>
+        </div>
       </section>
       <section class="container mt-2">
         <div class="row">
-          <div class="col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.8205192015084!2d120.63468101508602!3d24.14294048439724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dc5d0ca15bf%3A0xf0d3bd57d702500!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5LqU5qyK6KW_6Lev5LqM5q61NzQ46Jmf!5e0!3m2!1szh-TW!2stw!4v1599631134463!5m2!1szh-TW!2stw" width="300" height="225" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <div class="col-12 col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.8205192015084!2d120.63468101508602!3d24.14294048439724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dc5d0ca15bf%3A0xf0d3bd57d702500!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5LqU5qyK6KW_6Lev5LqM5q61NzQ46Jmf!5e0!3m2!1szh-TW!2stw!4v1599631134463!5m2!1szh-TW!2stw" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w-100"></iframe>
           </div>
-          <div class="col-md-6 text-left" style="margin-bottom:10%">
+          <div class="col-12 col-lg-6 text-left">
             <h2>捷登開發</h2>
             <small class="mt-3">台中市南屯區五權西路二段748號</small>
             <p class="mt-3">建築，不只是一組組建材的構成。建築是一門藝術，將最平庸、樸素、日常周圍的種種幻化成深刻的記憶。英國前首相邱吉爾曽說：「人造住宅，住宅造人」，一棟藝術般的住宅，可以影響一個家庭的生活品質。

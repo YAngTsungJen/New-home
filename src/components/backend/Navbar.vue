@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-tan sticky-top">
+    <div class="sticky-top bg-tan">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <router-link class="navbar-brand mr-5" to="/admin/products"> House </router-link>

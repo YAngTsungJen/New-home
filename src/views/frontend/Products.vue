@@ -15,35 +15,39 @@
       </div>
       </div>
     </section>
-    <section class="mt-3 py-2">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <router-link to="/" class="text-muted">首頁</router-link>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">最新建案</li>
-        </ol>
-      </nav>
+    <section class="container">
+      <div class="row">
+        <nav aria-label="breadcrumb" class="mt-3">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <router-link to="/" class="text-muted">首頁</router-link>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">最新建案</li>
+          </ol>
+        </nav>
+      </div>
     </section>
-    <section class="container mt-5 py-5">
-      <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
-        <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
-          <h4>
-            全部建案
-          </h4>
-        </li>
-        <li class="list-group-item" @click.prevent="filterCategory = item"
-            :class="{ active: item === filterCategory }"
-            v-for="item in categories" :key="item"> {{ item }}
-        </li>
-      </ul>
+    <section class="container mt-2 py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9">
+          <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
+            <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
+              全部建案
+            </li>
+            <li class="list-group-item" @click.prevent="filterCategory = item"
+                :class="{ active: item === filterCategory }"
+                v-for="item in categories" :key="item"> {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="container mt-5 py-5">
-      <div class="row row-cols-1 row-cols-md-3">
-        <div class="col-md-4 mb-4" v-for="item in filterCategories" :key="item.id">
+    <section class="container">
+      <div class="row">
+        <div class="col-12 col-lg-4" v-for="item in filterCategories" :key="item.id">
           <div class="card h-100 Regular shadow work-item">
             <div @click="goPage(item)">
-              <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="">
+              <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="建案照片">
               <span class="ink"></span>
               <span class="search"><i class="fas fa-search-plus"></i></span>
             </div>
@@ -126,7 +130,6 @@ export default {
   height: 430px;
 }
 .fadder{
-  height:300px;
   overflow: hidden;
   width: 100%;
 }
