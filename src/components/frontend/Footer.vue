@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-dark py-2 mt-4 mr-auto">
+    <div class="bg-dark py-2 mr-auto">
       <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-center align-items-md-center align-items-start text-white">
           <div class="mb-md-0 mb-1 pr-3">

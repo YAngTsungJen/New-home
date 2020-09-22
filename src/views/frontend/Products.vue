@@ -4,11 +4,11 @@
     </loading>
     <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
       <div class="row">
-        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0;background-position:center center; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
         </div>
       <div class="container">
-        <div class="row justify-md-center align-items-center">
-          <div class="col" style="margin-top:10%">
+        <div class="row">
+          <div class="col">
             <h2>最新建案</h2>
           </div>
         </div>
@@ -44,10 +44,10 @@
     </section>
     <section class="container">
       <div class="row">
-        <div class="col-12 col-lg-4" v-for="item in filterCategories" :key="item.id">
+        <div class="col-md-4 mt-3" v-for="item in filterCategories" :key="item.id">
           <div class="card h-100 Regular shadow work-item">
             <div @click="goPage(item)">
-              <img :src="item.imageUrl[0]" class="img-fluid fadder" alt="建案照片">
+              <img :src="item.imageUrl[0]" class="card-img-top img-fluid fadder" alt="建案照片">
               <span class="ink"></span>
               <span class="search"><i class="fas fa-search-plus"></i></span>
             </div>

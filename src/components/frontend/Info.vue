@@ -3,7 +3,7 @@
       <section class="icon mt-5">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-4 text-center">
+            <div class="col-12 col-lg-4 text-center mt-3">
               <h2>建築方向 <i class="far fa-building fa-1x"></i></h2>
                 <div class="row">
                   <div class="col text-left mt-3">
@@ -16,16 +16,15 @@
                   </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 text-center">
-              <i class="fas fa-map-marker-alt fa-3x"></i>
-              <h3 class="mt-3">設計美學</h3>
-                <div class="row">
-                  <div class="col">
-                    <img src="@/assets/image/圖層-1_02.png" class="img-fluid w-100" alt="Logo">
+            <div class="col-12 col-lg-4 d-none d-lg-block  text-center mt-3">
+              <h2>設計美學</h2>
+                <div class="row h-75 justify-content-center align-items-center">
+                  <div class="col-10">
+                    <img src="@/assets/image/圖層-1_02.png" class="img-fluid" alt="Logo">
                   </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 text-center">
+            <div class="col-12 col-lg-4 text-center mt-3">
               <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
               <div class="row justify-content-center">
                 <div class="col text-left mt-3" >
@@ -41,68 +40,71 @@
           </div>
         </div>
       </section>
-      <section class="container mt-5">
+      <section class="container mt-3">
         <div class="row">
-          <div class="col-lg-6">
-            <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded w-100" alt="" data-aos="fade-right"
-              data-aos-offset="300" data-aos-easing="ease-in-sine">
-          </div>
-          <div class="col-lg-4 m-auto text-left">
-            <dl class="row">
-              <dt class="col-lg-6 mt-4">
-                <h3>溪南稻香</h3>
-              </dt>
-              <dd class="col-lg-6"></dd>
-              <dt class="col-lg-3 mt-2">語錄</dt>
-              <dd class="col-lg-9 mt-2">
-                <p>一畝地，一畝田，走過田耕走過故鄉，捷徑品茶道，登梗稻香聞，最是相思</p>
-              </dd>
-              <dt class="col-sm-6 mt-2">寧靜社區別墅</dt>
-              <dd class="col-sm-6 mt-2"></dd>
-              <dt class="mt-2"><h2>全新大四房前院美墅</h2></dt>
-            </dl>
-            <router-link href="#" to="/product/Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy" class="btn btn-outline-more">查看更多</router-link>
+          <div class="col-lg-10 mx-auto">
+            <div class="row">
+              <div class="col-lg-6 pr-sm-0">
+                <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded w-100" alt="" data-aos="fade-right"
+                  data-aos-offset="300" data-aos-easing="ease-in-sine">
+              </div>
+              <div class="col-lg-6 m-auto text-left">
+                <div class="row align-items-center h-100 mt-3">
+                  <div class="col-12 col-lg-11 m-auto">
+                    <h3 class="text-center mt-3 pr-5" style="display: inline;">溪南稻香</h3>
+                    <span class="badge badge-more">寧靜社區別墅</span>
+                    <p class="mt-3">一畝地，一畝田，走過田耕走過故鄉，捷徑品茶道，登梗稻香聞，最是相思</p>
+                    <h5>全新建案，最後三房</h5>
+                    <div class="text-right">
+                      <router-link href="#" to="/product/Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy" class="btn btn-outline-more">查看更多</router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row flex-row-reverse mt-4">
-          <div class="col-lg-6">
-            <img src="@/assets/image/EFFAD910-A97A-4313-BC65-A6EC2182BEB1.jpg" class="img-fluid rounded" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          </div>
-          <div class="col-lg-4 m-auto text-left">
-            <dl class="row justify-content-center">
-              <dt class="col-lg-6 mt-4">
-                <h3>東城名邸</h3>
-              </dt>
-              <dd class="col-lg-6"></dd>
-              <dt class="col-lg-3 mt-2">語錄</dt>
-              <dd class="col-lg-9 mt-2">
-                <p>傳承世代根基，尋根的源頭</p>
-              </dd>
-              <dt class="col-lg-6 mt-2">優質精選學區住宅</dt>
-              <dd class="col-lg-6 mt-2"></dd>
-              <dt class="mt-2"><h2>塗城商圈學區透天住宅</h2></dt>
-            </dl>
-            <router-link href="#" to="/product/5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz" class="btn btn-outline-more">查看更多</router-link>
+        <div>
+          <div class="col-lg-10 mx-auto mt-3">
+            <div class="row">
+              <div class="col-lg-6 pr-sm-0 order-lg-2">
+                <img src="@/assets/image/a1.png" class="img-fluid rounded w-100" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+              </div>
+              <div class="col-lg-6 text-left order-lg-1">
+                <div class="row align-items-center h-100 mt-3">
+                  <div class="col-12 col-lg-11 m-auto ">
+                    <h3 class="text-center mt-3 pr-5" style="display: inline;">東城名邸</h3>
+                    <span class="badge badge-more">優質精選學區住宅</span>
+                    <p class="mt-3">傳承世代根基，尋根的源頭</p>
+                    <h5>塗城商圈學區透天住宅</h5>
+                    <div class="text-right">
+                      <router-link href="#" to="/product/5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz" class="btn btn-outline-more">查看更多</router-link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <section >
-        <div class="container-fluid w-100">
-          <div class="row flex-row-reverse no-gutters" style="height:50vh;">
-            <div class="col-12 col-lg-6 bg-cover" style="background-image:url(https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEylgd9&auto=format&fit=crop&w=634&q=80); position:relative;">
+        <div class="container-fluid d-none d-lg-block mt-1">
+          <div class="row">
+            <div class="col-12 col-lg-6 bg-cover order-1" style="background-image:url(https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEylgd9&auto=format&fit=crop&w=634&q=80); position:relative;">
               <div class="row inner">
                 <div class="col-sm-8 mt-2 p-4" style="writing-mode: vertical-rl" data-aos="zoom-in">
-                  <h3 >愛家的人有福了</h3>
+                  <h3>愛家的人有福了</h3>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-6 text-white" style="background-color: #D2A273;">
-              <div class="row justify-content-center">
-                <h2>你買的不是價格，是價值
-                </h2>
-                <h3>喜歡就進來看看吧</h3>
-                <div class="col-6">
-                  <router-link href="#" to="/about" class="btn btn-outline-more">查看更多</router-link>
+            <div class="col-12 col-lg-6 text-black" style="background-color: #FAEBD7; height:50vh;">
+              <div class="row justify-content-center align-items-center h-100">
+                <div class="col-lg-9">
+                  <h3>你買的不是價格是價值，所以喜歡就進來看看吧
+                  </h3>
+                  <div class="text-right">
+                    <router-link href="#" to="/about" class="btn btn-outline-more">查看更多</router-link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -154,19 +156,4 @@
   text-decoration:none;
   color: #c96758;
 }
-/* .demo2{
-  height:200px;
-  width:200px;
-  text-align: center;
-  vertical-align: middle;
-  transform: rotate(0deg);
-  transition: width 2s,height 2s,transform 2s;
-}
-.demo2:hover{
-  transition: width 2s ,height 2s, transform 2s;
-  transition-timing-function: ease;
-  transform: rotate(360deg);
-  width:300px;
-  height:300px;
-} */
 </style>

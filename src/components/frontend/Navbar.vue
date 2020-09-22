@@ -28,14 +28,15 @@
                       預約專區
                       <span class="badge badge-pill badge-danger" v-if="cart.length">{{ cart.length }}</span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right" style="min-width: 500px" aria-labelledby="check">
-                        <section class="px-4 py-3">
+                    <div class="dropdown-menu dropdown-menu-right p-3" style="min-width: 500px" aria-labelledby="check">
+                        <section class="table-responsive">
                           <table class="table table-sm">
                             <thead>
                               <tr>
-                                <th scope="col"></th>
+                                <th scope="col">小圖</th>
                                 <th scope="col">案名</th>
                                 <th scope="col">總價</th>
+                                <th scope="col"></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -60,14 +61,13 @@
                               </tr>
                             </tbody>
                           </table>
+                          <div class="btn-toolbar justify-content-between">
+                            <button type="button" class="btn btn-cyan" @click="removeAllCart()">
+                                <i class="far fa-trash-alt">全部取消</i>
+                            </button>
+                            <button type="button" class="btn btn-more " :disabled="cart.length === 0" @click="goReservation">前往預約專區</button>
+                          </div>
                         </section>
-                      <div class="dropdown-divider"></div>
-                        <div class="row d-flex justify-content-center no-gutters">
-                          <button type="button" class="btn btn-cyan mr-auto" @click="removeAllCart()">
-                              <i class="far fa-trash-alt">全部取消</i>
-                          </button>
-                          <button type="button" class="btn btn-more" :disabled="cart.length === 0" @click="goReservation">前往預約專區</button>
-                        </div>
                     </div>
                   </div>
                 </li>
