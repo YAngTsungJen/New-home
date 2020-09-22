@@ -56,7 +56,7 @@
                     <p class="mt-3">一畝地，一畝田，走過田耕走過故鄉，捷徑品茶道，登梗稻香聞，最是相思</p>
                     <h5>全新建案，最後三房</h5>
                     <div class="text-right">
-                      <router-link href="#" to="/product/Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy" class="btn btn-outline-more">查看更多</router-link>
+                      <router-link href="#" to="/product/VKR07jUxm5xfRbFkxESxWCmL9XpDnhXRXXeD8UgfU5NeAWeImR0synlPE8H8MtbE" class="btn btn-outline-more">查看更多</router-link>
                     </div>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div>
-          <div class="col-lg-10 mx-auto mt-3">
+          <div class="col-lg-10 mx-auto mt-3 mb-2">
             <div class="row">
               <div class="col-lg-6 pr-sm-0 order-lg-2">
                 <img src="@/assets/image/a1.png" class="img-fluid rounded w-100" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -78,7 +78,7 @@
                     <p class="mt-3">傳承世代根基，尋根的源頭</p>
                     <h5>塗城商圈學區透天住宅</h5>
                     <div class="text-right">
-                      <router-link href="#" to="/product/5TxmlusQj3g7NZdwCueGs8WEcny9Mk0pHmvkgs7A55bXSZ1uIJUPcry9hZYaEaAz" class="btn btn-outline-more">查看更多</router-link>
+                      <router-link href="#" to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
                     </div>
                   </div>
                 </div>

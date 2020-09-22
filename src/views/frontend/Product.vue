@@ -4,7 +4,7 @@
     </loading>
     <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
       <div class="row">
-        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0;background-position:center center; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
         </div>
       <div class="container">
         <div class="row justify-md-center align-items-center">
@@ -35,7 +35,7 @@
         <div class="col-md-12 mx-auto">
           <div class="row">
             <div class="col-lg-6">
-              <img src="@/assets/image/a1.png" class=" img-fluid w-100 h-100" alt="東城名邸">
+              <img :src="product.imageUrl[0]" class=" img-fluid w-100 h-100" alt="東城名邸">
             </div>
             <div class="col-lg-6">
               <div class="row align-items-center justify-content-between">
@@ -62,8 +62,9 @@
               </div>
               <div class="row align-items-center">
                 <div class="col-12 col-md-9">
-                  <iframe v-if="product.id === 'iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3515820141174!2d120.70033751497303!3d24.089128481668702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb731be23af%3A0xd0c66a969ad6d736!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3!5e0!3m2!1szh-TW!2stw!4v1599900762754!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'Wlg47fGHULDc0AIDvRBvF2CIYvFLs4FqkvGt9AzvUcDseWpwwLzMZLJAkaQHFpZy'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.871662001732!2d120.6364423149727!3d24.070823582376825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693bebf32b2559%3A0xc1f4571672d16c26!2zNDE05Y-w5Lit5biC54OP5pel5Y2A5rqq5Y2X6Lev5LiA5q61OTg45be3!5e0!3m2!1szh-TW!2stw!4v1599900944904!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <iframe v-if="product.id === 'iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3515820162884!2d120.70033215056259!3d24.089128481592304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cb731be23af%3A0xd0c66a969ad6d736!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5aGX5Z-O6LevNDky5be3!5e0!3m2!1szh-TW!2stw!4v1600789738007!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <iframe v-if="product.id === 'VKR07jUxm5xfRbFkxESxWCmL9XpDnhXRXXeD8UgfU5NeAWeImR0synlPE8H8MtbE'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.8664672763607!2d120.64029235056238!3d24.071006482293452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693becb1fce0b3%3A0x36ba29b32842d2c1!2zNDE05Y-w5Lit5biC54OP5pel5Y2A5rqq5Y2X6Lev5LiA5q61OTg46Jmf!5e0!3m2!1szh-TW!2stw!4v1600789614579!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <iframe v-if="product.id === 'oHeXJYRE8zvwn5qqpTfTvrJbpisQy95QhTF4ugyMFGdHzFWr4CWLDGEgyl3dRCGi'" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.7978062347556!2d120.67532655056291!3d24.10860498083814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693cf02798535f%3A0x73e92a6cc248018f!2zNDEy5Y-w5Lit5biC5aSn6YeM5Y2A5p2x5qau6LevNTY35be3!5e0!3m2!1szh-TW!2stw!4v1600790617497!5m2!1szh-TW!2stw" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
               </div>
             </div>
@@ -213,16 +214,18 @@
     </section>
     <section class="container">
       <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 mx-auto text-center">
           <h2 class="text-center mb-5">建築過程</h2>
         </div>
         <div class="col-12">
-          <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
-            <div class="col-sm-3 mb-3">
-              <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
-                <img :src="item" class=" img-fluid w-100" alt="">
-                <span class="ink"></span>
-                <span class="search"><i class="fas fa-search-plus"></i></span>
+          <div class="row">
+            <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
+              <div class="col-sm-3 mb-3">
+                <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
+                  <img :src="item" class=" img-fluid w-100" alt="">
+                  <span class="ink"></span>
+                  <span class="search"><i class="fas fa-search-plus"></i></span>
+                </div>
               </div>
             </div>
           </div>
