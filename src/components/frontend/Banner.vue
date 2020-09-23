@@ -9,9 +9,10 @@
           </ol>
           <div class="carousel-inner letter">
             <div class="carousel-item header-carousel-item bg-cover active" style="background-image: url(https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
-              <div class="carousel-caption d-none d-md-block px-3 my-auto">
-                <div class="row justify-content-md-center">
+              <div class="carousel-caption px-3 my-auto">
+                <div class="row justify-content-md-center align-items-center h-100">
                   <div class="col-md-6">
+                    <h2>捷登開發</h2>
                     <h5>這是哪裡，我想住進去</h5>
                     <p>這是一個城市，我離不開，我想改變目前的生活品質</p>
                   </div>
@@ -23,8 +24,9 @@
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1560185013-ead8277ef8ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80_">
               <div class="carousel-caption d-none d-md-block px-3">
-                <div class="row justify-content-md-center">
+                <div class="row justify-content-md-center align-items-center h-100">
                   <div class="col-md-6">
+                    <h2>捷登開發</h2>
                     <h5>人性規劃，藝術建築</h5>
                     <p>滿足現代人『住』的需求，讓你有家的感覺</p>
                   </div>
@@ -36,8 +38,9 @@
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1503174971373-b1f69850bded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1087&q=80)">
               <div class="carousel-caption d-none d-md-block px-3">
-                <div class="row justify-content-md-center">
+                <div class="row justify-content-md-center align-items-center h-100">
                   <div class="col-md-6">
+                    <h2>捷登開發</h2>
                     <h5>想追求品牌的建築嗎？</h5>
                     <p>你有多久沒有這樣面子裡子，都仔細看的室界</p>
                   </div>
@@ -70,7 +73,9 @@
   background-position: center center;
 }
 .carousel-caption{
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  transform: translateY(-50%);
 }
 .letter{
   font-family: "Everett-Light-web", sans-serif;

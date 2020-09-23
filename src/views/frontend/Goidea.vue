@@ -1,16 +1,16 @@
 <template>
     <div class="mt-5">
-      <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
-        <div class="row">
-          <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0; background-image: url(https://images.unsplash.com/photo-1581397867283-2809afb770f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-          </div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2>公司理念</h2>
+      <section class="container-fluid text-white banner-img">
+        <div class="container h-100">
+          <div class="row h-100">
+            <div class="col-md-12 h-100">
+              <div class="d-flex align-items-end h-100">
+                <div class="mb-5">
+                  <h2>公司理念</h2>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
       <section class="container">
@@ -41,6 +41,10 @@
 <style scoped>
 .bg-cover{
   background-size: cover;
-  background-position: center center;
+}
+.banner-img{
+  background-image: url(https://images.unsplash.com/photo-1581397867283-2809afb770f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-position:center center;
+  height: 300px;
 }
 </style>

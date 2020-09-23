@@ -2,29 +2,17 @@
     <div>
       <loading :active.sync="isLoading">
       </loading>
-      <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
-        <div class="row">
-          <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0;background-position:center center; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-          </div>
-        <div class="container">
-          <div class="row justify-md-center align-items-center">
-            <div class="col" style="margin-top:10%">
-              <h2>預約專區</h2>
+      <section class="container-fluid text-white banner-img">
+        <div class="container h-100">
+          <div class="row h-100">
+            <div class="col-md-12 h-100">
+              <div class="d-flex align-items-end h-100">
+                <div class="mb-5">
+                  <h2>預約專區</h2>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        </div>
-      </section>
-      <section class="container">
-        <div class="row">
-          <nav aria-label="breadcrumb" class="mt-3">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <router-link to="/" class="text-muted">首頁</router-link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">預約專區</li>
-            </ol>
-          </nav>
         </div>
       </section>
       <section class="container mt-5 ">
@@ -290,3 +278,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.banner-img{
+  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-position:center center;
+  height: 300px;
+}
+</style>

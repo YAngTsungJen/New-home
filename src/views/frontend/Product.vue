@@ -2,17 +2,17 @@
   <div>
     <loading :active.sync="isLoading">
     </loading>
-    <section class="container-fluid bg-dark py-5 text-white" style="position: relative; height:50vh">
-      <div class="row">
-        <div class="col-md-12 bg-cover" style="position: absolute;top: 0;bottom: 0;background-position:center center; background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-        </div>
-      <div class="container">
-        <div class="row justify-md-center align-items-center">
-          <div class="col" style="margin-top:10%">
-            <h2>{{ product.title }}</h2>
+    <section class="container-fluid text-white banner-img">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-md-12 h-100">
+            <div class="d-flex align-items-end h-100">
+              <div class="mb-5">
+                <h2>{{ product.title }}</h2>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
     <section class="container">
@@ -37,25 +37,27 @@
             <div class="col-lg-6">
               <img :src="product.imageUrl[0]" class=" img-fluid w-100 h-100" alt="東城名邸">
             </div>
-            <div class="col-lg-6">
-              <div class="row align-items-center justify-content-between">
-                <div class="col-md-6">
-                  <h2 class="text-danger">{{ product.price }}<small>萬元</small></h2>
-                </div>
-                <div class="col-md-6">
+            <div class="col-lg-6 mt-3">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="d-flex">
+                    <h2 class="text-danger">{{ product.price }}<small>萬元</small></h2>
+                    <div class="ml-auto">
                   <button type="button" class="btn btn-light" @click.prevent="back()">返回</button>
                   <button type="button" class="btn btn-more" @click.prevent="addCart(product,product.num)">預約看屋</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-12 col-md-9" style="font-size: 20px;">
                   <ul class="list-unstyled my-1">
-                    <li>格局：{{ product.options.structure }}</li>
-                    <li>屋齡：{{ product.options.homeage }}</li>
-                    <li>權狀坪數：{{ product.options.landnumber }}</li>
-                    <li>樓層：{{ product.options.floor }}</li>
-                    <li>朝向：{{ product.options.direction }}</li>
-                    <li>地址：{{ product.options.address }}</li>
+                    <li>格局：  {{ product.options.structure }}</li>
+                    <li>屋齡：  {{ product.options.homeage }}</li>
+                    <li>權狀坪數：  {{ product.options.landnumber }}</li>
+                    <li>樓層：  {{ product.options.floor }}</li>
+                    <li>朝向：  {{ product.options.direction }}</li>
+                    <li>地址：  {{ product.options.address }}</li>
                     <li class="text-danger h3 mt-3">{{ product.options.amount }}</li>
                   </ul>
                 </div>
@@ -83,7 +85,7 @@
             <div class="col-12">
               <h4 class="text-more">房屋資料</h4>
             </div>
-            <div class="col-12 col-md-12 text-left">
+            <div class="col-12 text-left">
               <div class="row">
                 <div class="col-md-3">
                   <p><i class="fas fa-house-user pr-2"></i>現況：
@@ -93,7 +95,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <p><i class="fas fa-laptop-house pr-2"></i>型態：
                     <span class="text-center"
                     style="display:inline-block; width:30%">
@@ -101,7 +103,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <p><i class="fas fa-dungeon pr-2"></i>裝潢程度：
                     <span class="text-center"
                     style="display:inline-block; width:30%">
@@ -119,7 +121,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <p><i class="fas fa-fan pr-2"></i>帶租約：
                     <span class="text-center"
                     style="display:inline-block; width:30%">
@@ -127,7 +129,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <p><i class="fas fa-archway pr-2"></i>法定用途：
                     <span class="text-center"
                     style="display:inline-block; width:30%">
@@ -162,7 +164,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                   <p><i class="fas fa-landmark pr-2"></i>附屬建物：
                     <span
                     style="display:inline-block; width:30%">
@@ -170,7 +172,7 @@
                     </span>
                   </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <p><i class="fas fa-landmark pr-2"></i>土地坪數：
                     <span
                     style="display:inline-block; width:30%">
@@ -226,7 +228,7 @@
             <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
               <div class="col-sm-3 mb-3">
                 <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
-                  <img :src="item" class=" img-fluid w-100" alt="">
+                  <img :src="item" class=" img-fluid w-100" alt="建案照片">
                   <span class="ink"></span>
                   <span class="search"><i class="fas fa-search-plus"></i></span>
                 </div>
@@ -371,5 +373,10 @@ export default {
   opacity: 50%;
   transition-duration: 0.2s;
   transition: all .8s
+}
+.banner-img{
+  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-position:center center;
+  height: 300px;
 }
 </style>

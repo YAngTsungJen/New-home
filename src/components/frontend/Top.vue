@@ -42,7 +42,7 @@ export default {
   height: 50px;
   line-height: 50px;
   position: fixed;
-  top: 80%;
+  top: 90%;
   right: 5%;
 }
 </style>
