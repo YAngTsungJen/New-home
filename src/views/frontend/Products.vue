@@ -77,7 +77,7 @@ export default {
     return {
       products: [],
       filterCategory: '',
-      categories: ['烏日區', '大里區', '彰化區'],
+      categories: ['烏日區', '大里區', '南屯區', '南區', '西區'],
       isLoading: false,
       pagination: {}
     }
