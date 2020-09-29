@@ -23,7 +23,7 @@
               </div>
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1560185013-ead8277ef8ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80_">
-              <div class="carousel-caption d-none d-md-block px-3">
+              <div class="carousel-caption px-3 my-auto">
                 <div class="row justify-content-md-center align-items-center h-100">
                   <div class="col-md-6">
                     <h2>捷登開發</h2>
@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="carousel-item header-carousel-item bg-cover" style="background-image: url(https://images.unsplash.com/photo-1503174971373-b1f69850bded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1087&q=80)">
-              <div class="carousel-caption d-none d-md-block px-3">
+              <div class="carousel-caption px-3 my-auto">
                 <div class="row justify-content-md-center align-items-center h-100">
                   <div class="col-md-6">
                     <h2>捷登開發</h2>
@@ -79,5 +79,8 @@
 }
 .letter{
   font-family: "Everett-Light-web", sans-serif;
+}
+.carousel-caption{
+  bottom:auto;
 }
 </style>

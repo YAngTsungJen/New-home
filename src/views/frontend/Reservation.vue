@@ -28,14 +28,6 @@
       </section>
       <section class="container mt-5 ">
         <div class="row justify-content-center">
-          <!-- <div class="h-100" v-if="!cart[0]">
-            <div class="row p-5">
-              <div class="col-md-8 mx-auto text-center py-4">
-                <h2 class="mb-5"> 還未做任何預約喔，請返回新案專區！</h2>
-                <router-link to="/products">新案專區</router-link>
-              </div>
-            </div>
-          </div> -->
           <div class="col-md-10 mx-auto step-1" :class="{ 'show': page === 1 }">
             <table class="table table-bordered text-center" style="background: #f8f9fa;">
               <thead>
@@ -70,7 +62,7 @@
           </div>
         </div>
       </section>
-      <section class="container ">
+      <section class="container mb-3">
         <div class="row justify-content-center">
           <div class="col-md-10 mx-auto step-2" :class="{ 'show': page === 2 }">
             <div>

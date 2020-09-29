@@ -90,7 +90,7 @@
                 <div class="col-md-3">
                   <p><i class="fas fa-house-user pr-2"></i>現況：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.now }}
                     </span>
                   </p>
@@ -98,7 +98,7 @@
                 <div class="col-md-4">
                   <p><i class="fas fa-laptop-house pr-2"></i>型態：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.type }}
                     </span>
                   </p>
@@ -106,7 +106,7 @@
                 <div class="col-md-5">
                   <p><i class="fas fa-dungeon pr-2"></i>裝潢程度：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.decoration }}
                     </span>
                   </p>
@@ -116,7 +116,7 @@
                 <div class="col-md-3">
                   <p><i class="fas fa-blender pr-2"></i>管理費：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.managefees }}
                     </span>
                   </p>
@@ -124,7 +124,7 @@
                 <div class="col-md-4">
                   <p><i class="fas fa-fan pr-2"></i>帶租約：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.lease }}
                     </span>
                   </p>
@@ -132,7 +132,7 @@
                 <div class="col-md-5">
                   <p><i class="fas fa-archway pr-2"></i>法定用途：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.use }}
                     </span>
                   </p>
@@ -142,7 +142,7 @@
                 <div class="col-md-3">
                   <p><i class="fas fa-car pr-2"></i>車位：
                     <span class="text-center"
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.car }}
                     </span>
                   </p>
@@ -159,7 +159,7 @@
                 <div class="col-lg-3">
                   <p><i class="fas fa-landmark pr-2"></i>主建物：
                     <span
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.mainbuilding }}
                     </span>
                   </p>
@@ -167,7 +167,7 @@
                 <div class="col-lg-4">
                   <p><i class="fas fa-landmark pr-2"></i>附屬建物：
                     <span
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.subbuilding }}
                     </span>
                   </p>
@@ -175,7 +175,7 @@
                 <div class="col-md-5">
                   <p><i class="fas fa-landmark pr-2"></i>土地坪數：
                     <span
-                    style="display:inline-block; width:30%">
+                    style="display:inline-block;">
                     {{ product.options.land }}
                     </span>
                   </p>

@@ -127,11 +127,11 @@ export default {
 
 <style scoped>
 .work-item{
-  height: 430px;
+  height: 100%;
 }
 .fadder{
   overflow: hidden;
-  width: 100%;
+  height: 100%;
 }
 .search{
   font-size: 80px;
@@ -171,5 +171,10 @@ background-color: #B67965;
   background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
   background-position:center center;
   height: 300px;
+}
+@media (max-width: 575px) {
+  .list-group-horizontal {
+  flex-direction: column;
+  }
 }
 </style>

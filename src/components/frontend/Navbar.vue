@@ -15,8 +15,8 @@
                     關於我們
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goinfo()">公司簡介</a>
-                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="goidea()">公司理念</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="go('about')">公司簡介</a>
+                    <a class="dropdown-item" style="cursor: pointer;" @click.prevent="go('goidea')">公司理念</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -28,7 +28,7 @@
                       預約專區
                       <span class="badge badge-pill badge-danger" v-if="cart.length">{{ cart.length }}</span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right p-3" style="min-width: 500px" aria-labelledby="check">
+                    <div class="dropdown-menu dropdown-menu-right p-3 size" aria-labelledby="check">
                         <section class="table-responsive">
                           <table class="table table-sm">
                             <thead>
@@ -87,11 +87,8 @@ export default {
     }
   },
   methods: {
-    goinfo () {
-      this.$router.push('/about')
-    },
-    goidea () {
-      this.$router.push('/goidea')
+    go (page) {
+      this.$router.push(`/${page}`)
     },
     getCart () {
       this.isLoading = true
@@ -165,5 +162,15 @@ export default {
 .dropdown-menu-right{
   right: 0;
   left: auto;
+}
+@media (max-width: 575px) {
+  .size{
+    min-width: 300px;
+  }
+}
+@media (min-width: 576px) {
+  .size{
+    min-width: 500px;
+  }
 }
 </style>
