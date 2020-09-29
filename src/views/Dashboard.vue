@@ -3,7 +3,6 @@
     <Navbar />
     <Sidebar />
     <router-view :token="token" v-if="checkSuccess" />
-    <!-- :token="token" -->
   </div>
 </template>
 
