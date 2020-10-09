@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <Navbar />
-        <router-view></router-view>
-        <Footer />
-        <Top/>
-    </div>
+  <div>
+    <Navbar />
+    <router-view></router-view>
+    <Footer />
+    <Top/>
+  </div>
 </template>
 
 <script>
-import Navbar from '@/components/frontend/Navbar'
-import Footer from '@/components/frontend/Footer'
-import Top from '@/components/frontend/Top'
+import Navbar from '@/components/frontend/Navbar.vue'
+import Footer from '@/components/frontend/Footer.vue'
+import Top from '@/components/frontend/Top.vue'
 export default {
   data () {
     return {

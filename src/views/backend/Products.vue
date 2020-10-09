@@ -49,7 +49,7 @@
         </div>
       </div>
       <!-- 分頁元件 -->
-      <pagination class="justify-content-center" :pages="pagination" @update="getProducts"></pagination>
+      <Pagination class="justify-content-center" :pages="pagination" @update="getProducts"></Pagination>
       <!-- 新增和編輯 -->
       <Productmodal ref="productModal" :isNew = 'isNew' @update = "getProducts" />
       <!-- 刪除元件 -->
@@ -60,20 +60,20 @@
 
 <script>
 import $ from 'jquery'
-import Pagination from '@/components/Pagination'
-import Productmodal from '@/components/backend/Productmodal'
-import DelProducts from '@/components/backend/DelProducts'
+import Pagination from '@/components/Pagination.vue'
+import Productmodal from '@/components/backend/Productmodal.vue'
+import DelProducts from '@/components/backend/DelProducts.vue'
 export default {
   data () {
     return {
       isLoading: true,
-      products: [
-      ],
+      products: [],
       tempProduct: {
         // 第二層結構要定義才能雙向綁定
-        imageUrl: [],
+        imageUrl: [''],
         options: {
-          nearplace: []
+          nearplace: [],
+          map: []
         }
       },
       pagination: [],
@@ -87,7 +87,6 @@ export default {
     Productmodal,
     DelProducts
   },
-  props: ['token'],
   methods: {
     getProducts (num = 1) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/products?page=${num}`
@@ -99,9 +98,10 @@ export default {
           this.pagination = res.data.meta.pagination
           if (this.tempProduct.id || this.isNew) {
             this.tempProduct = {
-              imageUrl: [],
+              imageUrl: [''],
               options: {
-                nearplace: []
+                nearplace: [],
+                map: []
               }
             }
           }
@@ -114,9 +114,10 @@ export default {
     openmodal (type, item) {
       if (type === 'new') {
         this.$refs.productModal.tempProduct = {
-          imageUrl: [],
+          imageUrl: [''],
           options: {
-            nearplace: []
+            nearplace: [],
+            map: []
           }
         }
         $('#productModal').modal('show')

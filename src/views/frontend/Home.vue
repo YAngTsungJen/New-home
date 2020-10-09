@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Banner from '@/components/frontend/Banner'
-import Info from '@/components/frontend/Info'
+import Banner from '@/components/frontend/Banner.vue'
+import Info from '@/components/frontend/Info.vue'
 export default {
   data () {
     return {

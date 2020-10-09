@@ -180,6 +180,11 @@
                     <input type="checkbox" class="form-check-input" name="enabled" id="tempProduct.enabled" v-model="tempProduct.enabled"/>啟用
                   </div>
                 </div>
+                <hr>
+                <div class="form-group">
+                  <label for="map">地圖資料</label>
+                  <input type="text" class="form-control" id="map" v-model="tempProduct.options.map" placeholder="請輸入map地圖">
+                </div>
                 <div class="form-check form-check-inline mb-2">
                   <input type="checkbox" id="convenience" class="form-check-input" value="便利商店" v-model="tempProduct.options.nearplace">
                   <label for="convenience" class="form-check-label mr-2">便利商店</label>
