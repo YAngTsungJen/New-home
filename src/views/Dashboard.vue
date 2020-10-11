@@ -37,9 +37,11 @@ export default {
         .then((res) => {
           this.checkSuccess = true
           this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
           this.$router.push('/login')
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     }
   }

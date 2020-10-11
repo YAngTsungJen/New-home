@@ -15,9 +15,7 @@
                   <h2>捷登開發</h2>
                   <h5>這是哪裡，我想住進去</h5>
                   <p>這是一個城市，我離不開，我想改變目前的生活品質</p>
-                </div>
-                <div class="col-md-3 mt-3">
-                  <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  <router-link  to="/products" class="btn btn-more">立即預約</router-link>
                 </div>
               </div>
             </div>
@@ -29,9 +27,7 @@
                   <h2>捷登開發</h2>
                   <h5>人性規劃，藝術建築</h5>
                   <p>滿足現代人『住』的需求，讓你有家的感覺</p>
-                </div>
-                <div class="col-md-3 mt-3">
-                  <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  <router-link  to="/products" class="btn btn-more">立即預約</router-link>
                 </div>
               </div>
             </div>
@@ -43,9 +39,7 @@
                   <h2>捷登開發</h2>
                   <h5>想追求品牌的建築嗎？</h5>
                   <p>你有多久沒有這樣面子裡子，都仔細看的室界</p>
-                </div>
-                <div class="col-md-3 mt-3">
-                  <router-link  to="/products" class="btn btn-outline-more">立即預約</router-link>
+                  <router-link  to="/products" class="btn btn-more">立即預約</router-link>
                 </div>
               </div>
             </div>

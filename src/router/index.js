@@ -40,9 +40,19 @@ const routes = [
         component: () => import('../views/frontend/Reservation.vue')
       },
       {
-        path: '/goidea',
-        name: 'Goidea',
-        component: () => import('../views/frontend/Goidea.vue')
+        path: '/order',
+        name: 'Order',
+        component: () => import('../views/frontend/Order.vue')
+      },
+      {
+        path: '/cartcheck',
+        name: 'Cartcheck',
+        component: () => import('../views/frontend/Cartcheck.vue')
+      },
+      {
+        path: '/success',
+        name: 'Success',
+        component: () => import('../views/frontend/Success.vue')
       }
     ]
   },

@@ -237,6 +237,10 @@ export default {
         .get(url).then((res) => {
           $('#productModal').modal('show')
           this.tempProduct = res.data.data
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     updateProduct () {
@@ -249,6 +253,10 @@ export default {
       this.$http[http](url, this.tempProduct)
         .then((res) => {
           this.$emit('update')
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
       $('#productModal').modal('hide')
     },
@@ -270,10 +278,12 @@ export default {
             this.tempProduct.imageUrl.push(res.data.data.path)
             document.querySelector('#cust').value = ''
           }
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
           this.isLoading = false
           document.querySelector('#cust').value = ''
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     }
   }

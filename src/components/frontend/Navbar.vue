@@ -10,17 +10,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" to="/about" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                關於我們
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" style="cursor: pointer;" @click.prevent="go('about')">公司簡介</a>
-                <a class="dropdown-item" style="cursor: pointer;" @click.prevent="go('goidea')">公司理念</a>
-              </div>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/about">關於捷登</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/products">最新建案</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/cartcheck">cart</router-link>
             </li>
             <li class="nav-item">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
@@ -87,9 +84,6 @@ export default {
     }
   },
   methods: {
-    go (page) {
-      this.$router.push(`/${page}`)
-    },
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`

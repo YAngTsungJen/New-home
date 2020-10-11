@@ -2,51 +2,90 @@
   <div>
     <section class="icon mt-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-4 text-center mt-3">
-            <h2>建築方向 <i class="far fa-building fa-1x"></i></h2>
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-6 text-center mt-3 mb-3">
+            <h2><i class="far fa-building fa-1x"></i> 建築方向 </h2>
               <div class="row">
                 <div class="col text-left mt-3">
-                  <h4>前院大面寬雙車位</h4>
-                  <h4 class="mt-3">全齡化社會，空間概念應用</h4>
-                  <h4 class="mt-3">電梯輔助</h4>
-                  <h4 class="mt-3">室內採光、隔熱遮陽、通風換氣，保持室內自然空氣品</h4>
-                  <h4 class="mt-3">建材嚴選</h4>
-                  <h4 class="mt-4 text-danger">親力親為確保「先建後售」品質建築履歷更保安心</h4>
+                  <h5>前院大面寬雙車位</h5>
+                  <h5 class="mt-3">全齡化社會，空間概念應用</h5>
+                  <h5 class="mt-3">電梯輔助</h5>
+                  <h5 class="mt-3">室內採光、隔熱遮陽、通風換氣，保持室內自然空氣品</h5>
+                  <h5 class="mt-3">建材嚴選</h5>
+                  <h5 class="mt-3">親力親為確保「先建後售」品質建築履歷更保安心</h5>
                 </div>
               </div>
           </div>
-          <div class="col-12 col-lg-4 d-none d-lg-block  text-center mt-3">
-            <h2>設計美學</h2>
-              <div class="row h-75 justify-content-center align-items-center">
-                <div class="col-10">
-                  <img src="@/assets/image/圖層-1_02.png" class="img-fluid" alt="Logo">
-                </div>
-              </div>
-          </div>
-          <div class="col-12 col-lg-4 text-center mt-3">
+          <div class="col-12 col-lg-6 text-center mt-3">
             <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
             <nav class="row justify-content-center">
-              <ul class="col text-left mt-3 list-unstyled">
-                <li><a href="https://house.udn.com/house/story/5905/4806277" class="text-color" target="_blank">好好的房子 為什麼會漏水呢？</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4825992" class="text-color" target="_blank">台中豪宅房市熱 千萬頂級床具、廚具紛紛進駐七期</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4825395" class="text-color" target="_blank">開放式廚房中看不中用？ 過來人曝一缺點「會後悔」</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4809470" class="text-color" target="_blank">他為買屋房間床位傷腦筋</a></li>
-                <li><a href="https://house.udn.com/house/story/5889/4853746" class="text-color" target="_blank">交通與產業撐盤 草屯人口逆勢成長帶動房市升溫</a></li>
-                <li><a href="https://house.udn.com/house/story/5887/4840698" class="text-color" target="_blank">房價上漲全因剛性需求？學者：大家要面對現實</a></li>
+              <ul class="col text-left mt-3 list-unstyled touch-hover">
+                <li><a href="https://house.udn.com/house/story/5905/4806277" class="text-color h5" target="_blank">好好的房子 為什麼會漏水呢？</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4825992" class="text-color mt-3 h5" target="_blank">台中豪宅房市熱 千萬頂級床具、廚具紛紛進駐七期</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4825395" class="text-color mt-3 h5" target="_blank">開放式廚房中看不中用？ 過來人曝一缺點「會後悔」</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4809470" class="text-color mt-3 h5" target="_blank">他為買屋房間床位傷腦筋</a></li>
+                <li><a href="https://house.udn.com/house/story/5889/4853746" class="text-color mt-3 h5" target="_blank">交通與產業撐盤 草屯人口逆勢成長帶動房市升溫</a></li>
+                <li><a href="https://house.udn.com/house/story/5887/4840698" class="text-color mt-3 h5" target="_blank">房價上漲全因剛性需求？學者：大家要面對現實</a></li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
     </section>
-    <section class="container mt-3">
+    <section>
+      <div class="container mt-4">
+          <div class="brown text-center mb-3">
+            <h2 style="color: sandybrown;">最多買家關注</h2>
+          </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mt-2">
+            <div class="card run">
+              <img src="@/assets/image/11D7FD3E-C091-45D1-BC58-094F4A5D2E24.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h2>溪南道香</h2>
+                <p class="card-text"> 台中市烏日區溪南路一段988號</p>
+                <div class="text-right">
+                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2">
+            <div class="card run">
+              <img src="@/assets/image/S__4128789.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h2>雙車美墅</h2>
+                <p class="card-text">台中市西區向上路一段79巷</p>
+                <div class="text-right">
+                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-2">
+            <div class="card run">
+              <img src="@/assets/image/S__4128803.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h2>南屯大院</h2>
+                <p class="card-text">台中市南屯區黎明路二段</p>
+                <div class="text-right">
+                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container mt-4">
       <div class="row">
         <div class="col-lg-10 mx-auto">
+          <div class="brown text-center mb-3">
+            <h2 style="color: sandybrown;">熱銷建案</h2>
+          </div>
           <div class="row">
             <div class="col-lg-6 pr-sm-0">
-              <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded w-100" alt="" data-aos="fade-right"
-                data-aos-offset="300" data-aos-easing="ease-in-sine">
+              <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded w-100">
             </div>
             <div class="col-lg-6 m-auto text-left">
               <div class="row align-items-center h-100 mt-3">
@@ -68,14 +107,14 @@
         <div class="col-lg-10 mx-auto mt-3 mb-2">
           <div class="row">
             <div class="col-lg-6 pr-sm-0 order-lg-2">
-              <img src="@/assets/image/a1.png" class="img-fluid rounded w-100" alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+              <img src="@/assets/image/S__4128803.jpg" class="img-fluid rounded w-100">
             </div>
             <div class="col-lg-6 text-left order-lg-1">
               <div class="row align-items-center h-100 mt-3">
                 <div class="col-12 col-lg-11 m-auto ">
                   <h3 class="text-center mt-3 pr-5" style="display: inline;">東城名邸</h3>
                   <span class="badge badge-more">優質精選學區住宅</span>
-                  <p class="mt-3">傳承世代根基，尋根的源頭</p>
+                  <p class="mt-3">傳承世代根基，尋根的源頭，言中彼此帶幽玄，盡向言中辨正偏，孤負一條官驛路，茫茫沉在月明前</p>
                   <h5>塗城商圈學區透天住宅</h5>
                   <div class="text-right">
                     <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
@@ -92,12 +131,12 @@
         <div class="row">
           <div class="col-12 col-lg-6 bg-cover order-1" style="background-image:url(https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEylgd9&auto=format&fit=crop&w=634&q=80); position:relative;">
             <div class="row inner">
-              <div class="col-sm-8 mt-2 p-4" style="writing-mode: vertical-rl" data-aos="zoom-in">
+              <div class="col-sm-8 mt-2 p-4" style="writing-mode: vertical-rl; transform:translateX(50px)" data-aos="zoom-in">
                 <h3>愛家的人有福了</h3>
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6 text-black" style="background-color: #FAEBD7; height:50vh;">
+          <div class="col-12 col-lg-6 text-black" style="background-color: #FAEBD7; height:300px;">
             <div class="row justify-content-center align-items-center h-100">
               <div class="col-lg-9">
                 <h3>你買的不是價格是價值，所以喜歡就進來看看吧
@@ -140,7 +179,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  right: 20%;
 }
 .middle {
     float: none;
@@ -155,5 +194,67 @@
 .text-color{
   text-decoration:none;
   color: #c96758;
+  display: block;
+}
+.touch-hover li:hover a{
+  background-color: rgba(0, 0, 0, .1);
+}
+.brown h2{
+  display: inline-block;
+  position: relative;
+}
+.brown h2::before{
+  content: '';
+  width: 200px;
+  height: 2px;
+  top: 0;
+  bottom: 0;
+  right: 120%;
+  margin: auto;
+  background: sandybrown;
+  position: absolute;
+}
+.brown h2::after{
+  content: '';
+  width: 200px;
+  height: 2px;
+  top: 0;
+  bottom: 0;
+  left: 120%;
+  margin: auto;
+  background: sandybrown;
+  position: absolute;
+}
+.card-body h2:hover, .card-body p:hover{
+  color: #fe9c46;
+}
+.run{
+  display: flex;
+}
+.run p::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 5px;
+  margin: 5px 0;
+  background-color: #ff0;
+  transition: width .5s .3s;
+}
+.run:hover p::after{
+  width: 100%;
+}
+.img-fluid:hover{
+  transform: scale(.95);
+  transition: ease .5s .2s;
+}
+@media screen and (max-width:991px ){
+  .brown h2::after, .brown h2::before{
+    width: 100px;
+  }
+}
+@media screen and (max-width:768px ){
+  .brown h2::after, .brown h2::before{
+    display: none;
+  }
 }
 </style>

@@ -72,7 +72,11 @@ export default {
         this.coupons = res.data.data
         this.pagination = res.data.meta.pagination
         this.isLoading = false
+        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
       })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     openModal (type, item) {
       if (type === 'new') {

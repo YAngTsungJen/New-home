@@ -188,7 +188,7 @@
             <div class="col-12">
               <h4 class="text-more">生活機能</h4>
             </div>
-            <div class="col-md-9 text-left">
+            <div class="col-md-9 text-left" v-if="product.options.nearplace">
               <div class="row mt-md-2">
                 <div class="col-md-4">
                   <p><i class="fas fa-store pr-2"></i>{{ product.options.nearplace[0] }}
@@ -262,7 +262,6 @@ export default {
       imgs: [],
       visible: false,
       index: null,
-      cart: [],
       isLoading: false
     }
   },
@@ -285,20 +284,11 @@ export default {
         .then((response) => {
           this.product = response.data.data
           this.imgs = response.data.data.imageUrl
-          this.cart = response.data.data
           this.isLoading = false
-          console.log(this.product)
         }).catch(() => {
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
-    },
-    getCart () {
-      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
-      this.$http.get(url).then(res => {
-        this.cart = res.data.data
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-      })
     },
     addCart (item, quantity = 1) {
       this.isLoading = true
@@ -310,7 +300,6 @@ export default {
       this.$http.post(url, cart).then(() => {
         this.isLoading = false
         this.$bus.$emit('get-cart')
-        this.getCart()
         this.$bus.$emit('msg:push', '已幫您加入預約列表，請前往預約專區', 'success')
       }).catch(error => {
         this.isLoading = false

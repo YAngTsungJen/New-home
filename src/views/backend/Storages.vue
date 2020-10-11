@@ -70,6 +70,7 @@ export default {
         this.storages = res.data.data
         this.pagination = res.data.meta.pagination
         this.isLoading = false
+        this.$bus.$emit('msg:push', '有成功喔', 'success')
       })
         .catch(() => {
           this.isLoading = false

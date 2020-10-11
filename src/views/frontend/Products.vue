@@ -104,6 +104,10 @@ export default {
             this.filterCategory = categoryName
           }
         })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+          this.isLoading = false
+        })
     }
   },
   created () {

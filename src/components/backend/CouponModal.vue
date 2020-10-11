@@ -88,6 +88,9 @@ export default {
         $('#couponModal').modal('show')
         const dedlineAt = this.tempCoupon.deadline.datetime.split(' ');
         [this.due_date, this.due_time] = dedlineAt
+        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+      }).catch(() => {
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
       })
     },
     updateCoupon () {
@@ -103,8 +106,10 @@ export default {
         this.$emit('update')
         this.due_date = ''
         this.due_time = ''
+        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
       }).catch(() => {
         $('#couponModal').modal('hide')
+        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
       })
     }
   }
