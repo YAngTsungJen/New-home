@@ -42,7 +42,7 @@
             <div class="card run">
               <img src="@/assets/image/11D7FD3E-C091-45D1-BC58-094F4A5D2E24.jpg" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>溪南道香</h2>
+                <h2>溪南稻鄉</h2>
                 <p class="card-text"> 台中市烏日區溪南路一段988號</p>
                 <div class="text-right">
                   <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
@@ -57,7 +57,7 @@
                 <h2>雙車美墅</h2>
                 <p class="card-text">台中市西區向上路一段79巷</p>
                 <div class="text-right">
-                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/oHeXJYRE8zvwn5qqpTfTvrJbpisQy95QhTF4ugyMFGdHzFWr4CWLDGEgyl3dRCGi" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
                 <h2>南屯大院</h2>
                 <p class="card-text">台中市南屯區黎明路二段</p>
                 <div class="text-right">
-                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/Dl2uHpZi2Nr4c5qY6tW40zfvDqH4IeJcHllXXBCP1UIJbLzp6vMfOyCZzj51jnrR" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
