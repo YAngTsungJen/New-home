@@ -19,9 +19,9 @@
       <div class="row justify-content-center">
         <div class="col-md-10">
           <ul class="list">
-            <li :class="{ 'done': page === 1 || page === 2 || page === 3}">預約資訊</li>
-            <li class="bar1" :class="{ 'done': page === 2 || page === 3}">填寫資料</li>
-            <li class="bar2" :class="{ 'done': page === 3 }">確認訂單</li>
+            <li :class="{ 'done': page === 1 || page === 2 || page === 3}">1</li>
+            <li class="bar1" :class="{ 'done': page === 2 || page === 3}">2</li>
+            <li class="bar2" :class="{ 'done': page === 3 }">3</li>
           </ul>
         </div>
       </div>
@@ -30,7 +30,7 @@
       <div class="row justify-content-center">
         <div class="col-md-10 mx-auto step-2" :class="{ 'show': page === 2 }">
           <div>
-            <h4 class="text-center">客戶資料</h4>
+            <h2 class="text-center">客戶資料</h2>
             <span >
               <validation-observer v-slot="{ invalid }">
                 <form @submit.prevent="createOrder" class="text-left pr-3">
@@ -79,8 +79,33 @@
                           <span class="invalid-feedback"> {{ errors[0] }} </span>
                       </validation-provider>
                       <div class="text-right">
-                        <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 上一步</button>
+                        <router-link to="/reservation" class="btn btn-cyan">
+                          上一步
+                        </router-link>
                         <button type="submit" class="btn btn-more" :disabled="invalid">下一步</button>
+                      </div>
+                      <div>
+                        <h3 class="text-center">預約摘要</h3>
+              <table class="table table-bordered text-center" style="background: #f8f9fa;">
+                <thead>
+                  <tr>
+                    <th scope="col-3"></th>
+                    <th scope="col-3">案名</th>
+                    <th scope="col-3">售價</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in cart" :key="item.id">
+                    <td scope="row" style="
+                      width: 200px;
+                      height:200px;
+                      background-size: cover;
+                      background-position: center center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></td>
+                    <td class="align-middle"> {{ item.product.title }} </td>
+                    <td class="align-middle"> {{ item.product.price }} 萬 </td>
+                  </tr>
+                </tbody>
+              </table>
                       </div>
                     </div>
                   </div>

@@ -32,15 +32,16 @@
         <div class="row justify-content-center">
           <div class="col-md-10">
             <ul class="list">
-              <li :class="{ 'done': page === 1 || page === 2 || page === 3}">預約資訊</li>
-              <li class="bar1" :class="{ 'done': page === 2 || page === 3}">填寫資料</li>
-              <li class="bar2" :class="{ 'done': page === 3 }">確認訂單</li>
+              <li :class="{ 'done': page === 1 || page === 2 || page === 3}">1</li>
+              <li class="bar1" :class="{ 'done': page === 2 || page === 3}">2</li>
+              <li class="bar2" :class="{ 'done': page === 3 }">3</li>
             </ul>
           </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-3">
           <div class="row justify-content-center">
             <div class="col-md-10 mx-auto step-1" :class="{ 'show': page === 1 }">
+              <h2 class="text-center mb-3">預約資料</h2>
               <table class="table table-bordered text-center" style="background: #f8f9fa;">
                 <thead>
                   <tr>

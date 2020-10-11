@@ -19,9 +19,9 @@
       <div class="row justify-content-center">
         <div class="col-md-10">
           <ul class="list">
-            <li :class="{ 'done': page === 1 || page === 2 || page === 3}">預約資訊</li>
-            <li class="bar1" :class="{ 'done': page === 2 || page === 3}">填寫資料</li>
-            <li class="bar2" :class="{ 'done': page === 3 }">確認訂單</li>
+            <li :class="{ 'done': page === 1 || page === 2 || page === 3}">1</li>
+            <li class="bar1" :class="{ 'done': page === 2 || page === 3}">2</li>
+            <li class="bar2" :class="{ 'done': page === 3 }">3</li>
           </ul>
         </div>
       </div>
@@ -33,16 +33,16 @@
             <table class="table table-bordered text-center" style="background: #f8f9fa;">
               <thead>
                 <tr>
-                  <th scope="col-2"></th>
-                  <th scope="col-2">案名</th>
-                  <th scope="col-2">售價</th>
+                  <th scope="col-5"></th>
+                  <th scope="col">案名</th>
+                  <th scope="col">售價</th>
                 </tr>
               </thead>
               <tbody v-for="item in order.products" :key="item.id">
                 <tr>
                   <th scope="row" style="
-                    width: 150px;
-                    height:200px;
+                    width: 300px;
+                    height:300px;
                     background-size: cover;
                     background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></th>
                   <td class="align-middle"> {{ item.product.title }} </td>
@@ -50,46 +50,43 @@
                 </tr>
               </tbody>
             </table>
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-md-10">
+              <div class="row justify-content-start">
+                <div class="col-md-12">
                   <table class="table table-bordered text-left" style="background: #f8f9fa;">
                       <tr class="border border-secondary">
                         <th scope="col">姓名</th>
-                        <td> {{ form.name }} </td>
+                        <td> {{ order.user.name }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">信箱</th>
-                        <td> {{ form.email }} </td>
+                        <td> {{ order.user.email }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">電話</th>
-                        <td> {{ form.tel }} </td>
+                        <td> {{ order.user.tel }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">地址</th>
-                        <td> {{ form.address }} </td>
+                        <td> {{ order.user.address }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">預約日期</th>
-                        <td> {{ form.reservation_date }} </td>
+                        <td> {{ order.reservation_date }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">預約時間</th>
-                        <td> {{ form.reservation_time }} </td>
+                        <td> {{ order.reservation_time }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">留言</th>
-                        <td> {{ form.message }} </td>
+                        <td> {{ order.message }} </td>
                       </tr>
                   </table>
-                  <div class="btn-toolbar justify-content-between">
-                    <button type="button" class="btn btn-cyan" @click="backtohome">返回首頁</button>
+                  <div class="btn-toolbar justify-content-end">
                     <button type="submit" class="btn btn-more">確認預約</button>
                   </div>
                 </div>
               </div>
-            </div>
           </form>
         </div>
       </div>
@@ -147,9 +144,6 @@ export default {
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
         })
-    },
-    backtohome () {
-      this.$router.push('/')
     }
   },
   created () {
