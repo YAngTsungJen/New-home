@@ -109,6 +109,7 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`
       this.$http.delete(url).then(res => {
         this.getCart()
+        this.$bus.$emit('get-cart')
         this.isLoading = false
         this.$bus.$emit('msg:push', '取消預約此間', 'danger')
       }).catch(() => {
