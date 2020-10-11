@@ -17,9 +17,6 @@
               <router-link class="nav-link" to="/products">最新建案</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/cartcheck">cart</router-link>
-            </li>
-            <li class="nav-item">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <button class="btn btn-more dropdown-toggle" type="button" id="check" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   預約專區
