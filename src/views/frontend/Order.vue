@@ -80,7 +80,7 @@
                       </validation-provider>
                       <div class="text-right">
                         <button type="button" class="btn btn-cyan" @click.prevent="page = 1"> 上一步</button>
-                        <button type="submit" @click="page = 3" class="btn btn-more" :disabled="invalid">下一步</button>
+                        <button type="submit" class="btn btn-more" :disabled="invalid">下一步</button>
                       </div>
                     </div>
                   </div>
@@ -136,6 +136,7 @@ export default {
       this.$http.post(url, order).then(res => {
         this.$bus.$emit('get-cart')
         this.$bus.$emit('msg:push', '成功建立訂單囉', 'success')
+        this.orderId = res.data.data.id
         this.$router.push(`/cartcheck/${res.data.data.id}`)
         this.getCart()
         this.isLoading = false

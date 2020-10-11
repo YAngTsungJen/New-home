@@ -45,7 +45,7 @@ const routes = [
         component: () => import('../views/frontend/Order.vue')
       },
       {
-        path: '/cartcheck',
+        path: '/cartcheck/:orderId',
         name: 'Cartcheck',
         component: () => import('../views/frontend/Cartcheck.vue')
       },

@@ -69,7 +69,6 @@
                 </tbody>
               </table>
               <div class="row d-flex justify-content-end no-gutters">
-                <!-- <button type="button" class="btn btn-more" @click="page = 2">下一步</button> -->
                 <router-link to="/order" class="btn btn-more">
                   下一步
                 </router-link>
