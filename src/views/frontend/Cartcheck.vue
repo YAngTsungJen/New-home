@@ -29,6 +29,7 @@
     <section class="container mb-3">
       <div class="row justify-content-center">
         <div class="col-md-10 mx-auto step-3" :class="{ 'show': page === 3 }">
+          <h2 class="text-center mb-3">預約明細</h2>
           <form @submit.prevent="payOrder()">
             <table class="table table-bordered text-center" style="background: #f8f9fa;">
               <thead>
@@ -68,14 +69,6 @@
                       <tr class="border border-secondary">
                         <th scope="col">地址</th>
                         <td> {{ order.user.address }} </td>
-                      </tr>
-                      <tr class="border border-secondary">
-                        <th scope="col">預約日期</th>
-                        <td> {{ order.reservation_date }} </td>
-                      </tr>
-                      <tr class="border border-secondary">
-                        <th scope="col">預約時間</th>
-                        <td> {{ order.reservation_time }} </td>
                       </tr>
                       <tr class="border border-secondary">
                         <th scope="col">留言</th>

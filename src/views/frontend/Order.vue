@@ -86,26 +86,26 @@
                       </div>
                       <div>
                         <h3 class="text-center">預約摘要</h3>
-              <table class="table table-bordered text-center" style="background: #f8f9fa;">
-                <thead>
-                  <tr>
-                    <th scope="col-3"></th>
-                    <th scope="col-3">案名</th>
-                    <th scope="col-3">售價</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="item in cart" :key="item.id">
-                    <td scope="row" style="
-                      width: 200px;
-                      height:200px;
-                      background-size: cover;
-                      background-position: center center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></td>
-                    <td class="align-middle"> {{ item.product.title }} </td>
-                    <td class="align-middle"> {{ item.product.price }} 萬 </td>
-                  </tr>
-                </tbody>
-              </table>
+                        <table class="table table-bordered text-center" style="background: #f8f9fa;">
+                          <thead>
+                            <tr>
+                              <th scope="col-3"></th>
+                              <th scope="col-3">案名</th>
+                              <th scope="col-3">售價</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr v-for="item in cart" :key="item.id">
+                              <td scope="row" style="
+                                width: 200px;
+                                height:200px;
+                                background-size: cover;
+                                background-position: center center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></td>
+                              <td class="align-middle"> {{ item.product.title }} </td>
+                              <td class="align-middle"> {{ item.product.price }} 萬 </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
