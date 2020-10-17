@@ -215,9 +215,9 @@
   position: absolute;
 }
 // Navbar
-// .dropdown-menu-right{
-//   overflow-y: none;
-// }
+.table-responsive{
+  overflow-y: scroll;
+}
 .topic{
   font-size:20px;
   color:palegreen;
