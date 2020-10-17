@@ -57,24 +57,3 @@
     </header>
   </div>
 </template>
-
-<style  scoped>
-.header-carousel-item{
-  height: 100vh;
-}
-.bg-cover{
-  background-size: cover;
-  background-position: center center;
-}
-.carousel-caption{
-  background-color: rgba(0, 0, 0, 0.5);
-  top: 50%;
-  transform: translateY(-50%);
-}
-.letter{
-  font-family: "Everett-Light-web", sans-serif;
-}
-.carousel-caption{
-  bottom:auto;
-}
-</style>

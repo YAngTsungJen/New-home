@@ -83,15 +83,18 @@ export default {
   methods: {
     getCoupon (id) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${id}`
-      this.$http.get(url).then((res) => {
-        this.tempCoupon = res.data.data
-        $('#couponModal').modal('show')
-        const dedlineAt = this.tempCoupon.deadline.datetime.split(' ');
-        [this.due_date, this.due_time] = dedlineAt
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-      })
+      this.$http
+        .get(url)
+        .then((res) => {
+          this.tempCoupon = res.data.data
+          const dedlineAt = this.tempCoupon.deadline.datetime.split(' ');
+          [this.due_date, this.due_time] = dedlineAt
+          $('#couponModal').modal('show')
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
+        .catch(() => {
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     updateCoupon () {
       let url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon`
@@ -101,16 +104,18 @@ export default {
         http = 'patch'
       }
       this.tempCoupon.deadline_at = `${this.due_date} ${this.due_time}`
-      this.$http[http](url, this.tempCoupon).then((res) => {
-        $('#couponModal').modal('hide')
-        this.$emit('update')
-        this.due_date = ''
-        this.due_time = ''
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      }).catch(() => {
-        $('#couponModal').modal('hide')
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-      })
+      this.$http[http](url, this.tempCoupon)
+        .then((res) => {
+          this.$emit('update')
+          this.due_date = ''
+          this.due_time = ''
+          $('#couponModal').modal('hide')
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
+        .catch(() => {
+          $('#couponModal').modal('hide')
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     }
   }
 }

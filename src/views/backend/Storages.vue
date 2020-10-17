@@ -48,7 +48,6 @@ import Delfilemodal from '@/components/backend/Delfilemodal.vue'
 export default {
   data () {
     return {
-      categories: ['烏日區', '大里區', '彰化區'],
       storages: [],
       tempStorage: {},
       pagination: {},
@@ -66,20 +65,22 @@ export default {
     getFiles (page = 1) {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage?page=${page}`
-      this.$http.get(url).then((res) => {
-        this.storages = res.data.data
-        this.pagination = res.data.meta.pagination
-        this.isLoading = false
-        this.$bus.$emit('msg:push', '有成功喔', 'success')
-      })
+      this.$http
+        .get(url)
+        .then((res) => {
+          this.storages = res.data.data
+          this.pagination = res.data.meta.pagination
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '有成功喔', 'success')
+        })
         .catch(() => {
           this.isLoading = false
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     openModal (item) {
-      $('#delFileModal').modal('show')
       this.tempStorage = { ...item }
+      $('#delFileModal').modal('show')
     }
   }
 }

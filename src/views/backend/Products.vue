@@ -89,11 +89,11 @@ export default {
   },
   methods: {
     getProducts (num = 1) {
-      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/products?page=${num}`
       this.isLoading = true
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/products?page=${num}`
       this.$http
-        .get(url).then((res) => {
-          this.isLoading = false
+        .get(url)
+        .then((res) => {
           this.products = res.data.data
           this.pagination = res.data.meta.pagination
           if (this.tempProduct.id || this.isNew) {
@@ -105,11 +105,12 @@ export default {
               }
             }
           }
+          this.isLoading = false
           this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     openmodal (type, item) {
@@ -121,11 +122,11 @@ export default {
             map: []
           }
         }
-        $('#productModal').modal('show')
         this.isNew = true
+        $('#productModal').modal('show')
       } else if (type === 'edit') {
-        this.$refs.productModal.getProduct(item.id)
         this.isNew = false
+        this.$refs.productModal.getProduct(item.id)
       } else if (type === 'del') {
         this.tempProduct = { ...item }
         $('#delProductModal').modal('show')

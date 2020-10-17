@@ -13,11 +13,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.wrap{
-  min-height: calc(100vh - 112px);
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-</style>

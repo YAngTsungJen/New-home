@@ -68,27 +68,30 @@ export default {
     getCoupons (page = 1) {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupons?page=${page}`
-      this.$http.get(url).then(res => {
-        this.coupons = res.data.data
-        this.pagination = res.data.meta.pagination
-        this.isLoading = false
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      })
+      this.$http
+        .get(url)
+        .then(res => {
+          this.coupons = res.data.data
+          this.pagination = res.data.meta.pagination
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
         .catch(() => {
+          this.isLoading = false
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     openModal (type, item) {
       if (type === 'new') {
-        $('#couponModal').modal('show')
-        this.$refs.couponModal.tempCoupons = {}
         this.isNew = true
+        this.$refs.couponModal.tempCoupons = {}
+        $('#couponModal').modal('show')
       } else if (type === 'edit') {
-        this.$refs.couponModal.getCoupon(item.id)
         this.isNew = false
+        this.$refs.couponModal.getCoupon(item.id)
       } else if (type === 'del') {
-        $('#delCouponModal').modal('show')
         this.tempCoupons = { ...item }
+        $('#delCouponModal').modal('show')
       }
     }
   },

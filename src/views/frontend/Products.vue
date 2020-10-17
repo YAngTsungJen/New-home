@@ -91,22 +91,21 @@ export default {
     },
     getProducts () {
       this.isLoading = true
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
       this.$http
-        .get(
-          `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/products`
-        )
+        .get(url)
         .then((response) => {
           this.products = response.data.data
           this.pagination = response.data.meta.pagination
-          this.isLoading = false
           const { categoryName } = this.$route.params
           if (categoryName) {
             this.filterCategory = categoryName
           }
+          this.isLoading = false
         })
         .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     }
   },
@@ -115,70 +114,12 @@ export default {
   },
   computed: {
     filterCategories () {
-      if (this.filterCategory) {
-        return this.products.filter((item) => {
-          const data = item.category
-            .toLowerCase()
-            .includes(this.filterCategory.toLowerCase())
-          return data
-        })
-      }
-      return this.products
+      return this.products.filter((item) =>
+        item.category
+          .toLowerCase()
+          .includes(this.filterCategory.toLowerCase())
+      )
     }
   }
 }
 </script>
-
-<style scoped>
-.work-item{
-  height: 100%;
-}
-.fadder{
-  overflow: hidden;
-  height: 100%;
-}
-.search{
-  font-size: 80px;
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  color: white;
-  opacity: 0;
-}
-.ink{
-  height: 100%;
-  width: 100%;
-  background: #e7a247;
-  position: absolute;
-  left: 0;
-  opacity: 0;
-}
-.work-item:hover .search{
-  cursor: pointer;
-  opacity: 1;
-  transition-duration: 0.2s;
-  transition: all .8s
-}
-.work-item:hover .ink{
-  cursor: pointer;
-  opacity: 50%;
-  transition-duration: 0.2s;
-  transition: all .8s
-}
-.changecolor{
-background-color: #B67965;
-}
-.card-hov{
-  cursor: pointer;
-}
-.banner-img{
-  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-position:center center;
-  height: 300px;
-}
-@media (max-width: 575px) {
-  .list-group-horizontal {
-  flex-direction: column;
-  }
-}
-</style>

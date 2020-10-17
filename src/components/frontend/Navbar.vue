@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"></loading>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #B67965;">
       <div class="container">
         <router-link class="navbar-brand" to="/">捷登開發
@@ -36,8 +37,8 @@
                         <tbody>
                           <tr v-for="item in cart" :key="item.id">
                             <td style="
-                              width: 200px;
-                              height:120px;
+                              width: 150px;
+                              height:100px;
                               background-size: cover;
                               background-position: center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }">
                             </td>
@@ -84,37 +85,46 @@ export default {
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
-      this.$http.get(url).then(res => {
-        this.isLoading = false
-        this.cart = res.data.data
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .get(url)
+        .then(res => {
+          this.cart = res.data.data
+          this.isLoading = false
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     removeCart (id) {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`
-      this.$http.delete(url).then(res => {
-        this.isLoading = false
-        this.getCart()
-        this.$bus.$emit('msg:push', '預約取消', 'danger')
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .delete(url)
+        .then(res => {
+          this.getCart()
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '預約取消', 'danger')
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     removeAllCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/all/product`
-      this.$http.delete(url).then(() => {
-        this.isLoading = false
-        this.getCart()
-        this.$bus.$emit('msg:push', '全部取消', 'danger')
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .delete(url)
+        .then(() => {
+          this.getCart()
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '全部取消', 'danger')
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     goReservation () {
       if (this.$route.path === '/reservation') return
@@ -132,36 +142,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.topic{
-  font-size:20px;
-  color:palegreen;
-}
-.topic>li:hover{
-  color: blue;
-}
-.btn-cart{
-  background-color: transparent;
-  position: relative;
-}
-.btn-cart .badge{
-  position: absolute;
-  top: -1px;
-  right: -1px;
-}
-.dropdown-menu-right{
-  right: 0;
-  left: auto;
-}
-@media (max-width: 575px) {
-  .size{
-    min-width: 300px;
-  }
-}
-@media (min-width: 576px) {
-  .size{
-    min-width: 500px;
-  }
-}
-</style>

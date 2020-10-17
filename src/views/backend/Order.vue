@@ -84,15 +84,17 @@ export default {
     getOrders (page = 1) {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/orders?page=${page}`
-      this.$http.get(url).then((res) => {
-        this.orders = res.data.data
-        this.pagination = res.data.meta.pagination
-        this.isLoading = false
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      })
-        .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+      this.$http
+        .get(url)
+        .then((res) => {
+          this.orders = res.data.data
+          this.pagination = res.data.meta.pagination
           this.isLoading = false
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     updatePayment (item) {
@@ -104,13 +106,13 @@ export default {
       this.$http
         .patch(url, item.id)
         .then(() => {
-          this.$bus.$emit('msg:push', '付款狀態修改成功', 'success')
           this.getOrders()
           this.isLoading = false
+          this.$bus.$emit('msg:push', '付款狀態修改成功', 'success')
         })
         .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     openModal (item) {

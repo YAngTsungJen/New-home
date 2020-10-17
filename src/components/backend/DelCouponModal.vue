@@ -37,11 +37,13 @@ export default {
   methods: {
     delCoupon () {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/coupon/${this.tempCoupons.id}`
-      this.$http.delete(url).then(() => {
-        $('#delCouponModal').modal('hide')
-        this.$emit('update')
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      })
+      this.$http
+        .delete(url)
+        .then(() => {
+          this.$emit('update')
+          $('#delCouponModal').modal('hide')
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
         .catch(() => {
           $('#delCouponModal').modal('hide')
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')

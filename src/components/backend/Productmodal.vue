@@ -234,9 +234,10 @@ export default {
     getProduct (num) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${num}`
       this.$http
-        .get(url).then((res) => {
-          $('#productModal').modal('show')
+        .get(url)
+        .then((res) => {
           this.tempProduct = res.data.data
+          $('#productModal').modal('show')
           this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
@@ -261,10 +262,10 @@ export default {
       $('#productModal').modal('hide')
     },
     upload () {
+      this.isLoading = true
       const cust = document.querySelector('#cust').files[0]
       const formData = new FormData()
       formData.append('file', cust)
-      this.isLoading = true
       const el = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage`
       this.$http
         .post(el, formData, {
@@ -274,15 +275,15 @@ export default {
         })
         .then((res) => {
           if (res.status === 200) {
-            this.isLoading = false
             this.tempProduct.imageUrl.push(res.data.data.path)
             document.querySelector('#cust').value = ''
+            this.isLoading = false
           }
           this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
-          this.isLoading = false
           document.querySelector('#cust').value = ''
+          this.isLoading = false
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     }

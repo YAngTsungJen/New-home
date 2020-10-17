@@ -5,27 +5,27 @@
         <div class="row align-items-center">
           <div class="col-12 col-lg-6 text-center mt-3 mb-3">
             <h2><i class="far fa-building fa-1x"></i> 建築方向 </h2>
-              <div class="row">
-                <div class="col text-left mt-3">
-                  <h5>前院大面寬雙車位</h5>
-                  <h5 class="mt-3">全齡化社會，空間概念應用</h5>
-                  <h5 class="mt-3">電梯輔助</h5>
-                  <h5 class="mt-3">室內採光、隔熱遮陽、通風換氣，保持室內自然空氣品</h5>
-                  <h5 class="mt-3">建材嚴選</h5>
-                  <h5 class="mt-3">親力親為確保「先建後售」品質建築履歷更保安心</h5>
-                </div>
-              </div>
+            <nav class="row justify-content-center">
+              <ul class="col text-left mt-3 list-unstyled">
+                <li class="text-color">前院大面寬雙車位</li>
+                <li class="text-color">全齡化社會，空間概念應用</li>
+                <li class="text-color">電梯輔助</li>
+                <li class="text-color">室內採光、隔熱遮陽、通風換氣，保持室內自然空氣品</li>
+                <li class="text-color">建材嚴選</li>
+                <li class="text-color">親力親為確保「先建後售」品質建築履歷更保安心</li>
+              </ul>
+            </nav>
           </div>
           <div class="col-12 col-lg-6 text-center mt-3">
             <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
             <nav class="row justify-content-center">
-              <ul class="col text-left mt-3 list-unstyled touch-hover">
-                <li><a href="https://house.udn.com/house/story/5905/4806277" class="text-color h5" target="_blank">好好的房子 為什麼會漏水呢？</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4825992" class="text-color mt-3 h5" target="_blank">台中豪宅房市熱 千萬頂級床具、廚具紛紛進駐七期</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4825395" class="text-color mt-3 h5" target="_blank">開放式廚房中看不中用？ 過來人曝一缺點「會後悔」</a></li>
-                <li><a href="https://house.udn.com/house/story/5905/4809470" class="text-color mt-3 h5" target="_blank">他為買屋房間床位傷腦筋</a></li>
-                <li><a href="https://house.udn.com/house/story/5889/4853746" class="text-color mt-3 h5" target="_blank">交通與產業撐盤 草屯人口逆勢成長帶動房市升溫</a></li>
-                <li><a href="https://house.udn.com/house/story/5887/4840698" class="text-color mt-3 h5" target="_blank">房價上漲全因剛性需求？學者：大家要面對現實</a></li>
+              <ul class="col text-left mt-3 list-unstyled underline">
+                <li><a href="https://house.udn.com/house/story/5905/4806277" class="text-color" target="_blank">好好的房子 為什麼會漏水呢？</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4825992" class="text-color" target="_blank">台中豪宅房市熱 千萬頂級床具、廚具紛紛進駐七期</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4825395" class="text-color" target="_blank">開放式廚房中看不中用？ 過來人曝一缺點「會後悔」</a></li>
+                <li><a href="https://house.udn.com/house/story/5905/4809470" class="text-color" target="_blank">他為買屋房間床位傷腦筋</a></li>
+                <li><a href="https://house.udn.com/house/story/5889/4853746" class="text-color" target="_blank">交通與產業撐盤 草屯人口逆勢成長帶動房市升溫</a></li>
+                <li><a href="https://house.udn.com/house/story/5887/4840698" class="text-color" target="_blank">房價上漲全因剛性需求？學者：大家要面對現實</a></li>
               </ul>
             </nav>
           </div>
@@ -39,7 +39,7 @@
           </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mt-2">
-            <div class="card run">
+            <div class="card">
               <img src="@/assets/image/11D7FD3E-C091-45D1-BC58-094F4A5D2E24.jpg" class="card-img-top" alt="">
               <div class="card-body">
                 <h2>溪南稻鄉</h2>
@@ -51,7 +51,7 @@
             </div>
           </div>
           <div class="col-md-4 mt-2">
-            <div class="card run">
+            <div class="card">
               <img src="@/assets/image/S__4128789.jpg" class="card-img-top" alt="">
               <div class="card-body">
                 <h2>雙車美墅</h2>
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="col-md-4 mt-2">
-            <div class="card run">
+            <div class="card">
               <img src="@/assets/image/S__4128803.jpg" class="card-img-top" alt="">
               <div class="card-body">
                 <h2>南屯大院</h2>
@@ -85,7 +85,7 @@
           </div>
           <div class="row">
             <div class="col-lg-6 pr-sm-0">
-              <img src="@/assets/image/S__32948241.jpg" class="img-fluid rounded w-100">
+              <img src="@/assets/image/S__32948241.jpg" class="img-fluid w-100">
             </div>
             <div class="col-lg-6 m-auto text-left">
               <div class="row align-items-center h-100 mt-3">
@@ -107,7 +107,7 @@
         <div class="col-lg-10 mx-auto mt-3 mb-2">
           <div class="row">
             <div class="col-lg-6 pr-sm-0 order-lg-2">
-              <img src="@/assets/image/S__4128803.jpg" class="img-fluid rounded w-100">
+              <img src="@/assets/image/S__4128803.jpg" class="img-fluid w-100">
             </div>
             <div class="col-lg-6 text-left order-lg-1">
               <div class="row align-items-center h-100 mt-3">
@@ -152,109 +152,3 @@
     </section>
   </div>
 </template>
-
-<style scoped>
-.bg-cover{
-  background-size: cover;
-  background-position: center center;
-}
-@media (min-width: 768px) {
-  .text-md-dark{
-  color: #333;
-  }
-}
-@media (max-width: 767.98px) {
-  .int{
-    color: #fff9f7;
-    height: 250px;
-    background: rgba(76,74,70,.57);
-  }
-}
-.icon{
-  color: #B67965;
-}
-.inner{
-  color: #fff9f7;
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 20%;
-}
-.middle {
-    float: none;
-    display: inline-block;
-    vertical-align: middle;
-}
-.ink{
-  height: 100px;
-  width: 100px;
-  background: #000;
-}
-.text-color{
-  text-decoration:none;
-  color: #c96758;
-  display: block;
-}
-.touch-hover li:hover a{
-  background-color: rgba(0, 0, 0, .1);
-}
-.brown h2{
-  display: inline-block;
-  position: relative;
-}
-.brown h2::before{
-  content: '';
-  width: 200px;
-  height: 2px;
-  top: 0;
-  bottom: 0;
-  right: 120%;
-  margin: auto;
-  background: sandybrown;
-  position: absolute;
-}
-.brown h2::after{
-  content: '';
-  width: 200px;
-  height: 2px;
-  top: 0;
-  bottom: 0;
-  left: 120%;
-  margin: auto;
-  background: sandybrown;
-  position: absolute;
-}
-.card-body h2:hover, .card-body p:hover{
-  color: #fe9c46;
-}
-.run{
-  display: flex;
-}
-.run p::after{
-  content: '';
-  display: block;
-  width: 0;
-  height: 5px;
-  margin: 5px 0;
-  background-color: #ff0;
-  transition: width .5s .3s;
-}
-.run:hover p::after{
-  width: 100%;
-}
-.img-fluid:hover{
-  transform: scale(.95);
-  transition: ease .5s .2s;
-}
-@media screen and (max-width:991px ){
-  .brown h2::after, .brown h2::before{
-    width: 100px;
-  }
-}
-@media screen and (max-width:768px ){
-  .brown h2::after, .brown h2::before{
-    display: none;
-  }
-}
-</style>

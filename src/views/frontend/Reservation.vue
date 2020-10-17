@@ -96,26 +96,32 @@ export default {
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
-      this.$http.get(url).then(res => {
-        this.cart = res.data.data
-        this.isLoading = false
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .get(url)
+        .then(res => {
+          this.cart = res.data.data
+          this.isLoading = false
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     removeCart (id) {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping/${id}`
-      this.$http.delete(url).then(res => {
-        this.getCart()
-        this.$bus.$emit('get-cart')
-        this.isLoading = false
-        this.$bus.$emit('msg:push', '取消預約此間', 'danger')
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .delete(url)
+        .then(res => {
+          this.getCart()
+          this.$bus.$emit('get-cart')
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '取消預約此間', 'danger')
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     }
   },
   created () {
@@ -123,11 +129,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.banner-img{
-  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-position:center center;
-  height: 300px;
-}
-</style>

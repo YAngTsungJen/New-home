@@ -284,15 +284,17 @@ export default {
       this.visible = false
     },
     getProduct () {
-      const id = this.$route.params.id
       this.isLoading = true
+      const id = this.$route.params.id
+      const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/product/${id}`
       this.$http
-        .get(`${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/product/${id}`)
+        .get(url)
         .then((response) => {
           this.product = response.data.data
           this.imgs = response.data.data.imageUrl
           this.isLoading = false
-        }).catch(() => {
+        })
+        .catch(() => {
           this.isLoading = false
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
@@ -304,17 +306,20 @@ export default {
         product: item.id,
         quantity
       }
-      this.$http.post(url, cart).then(() => {
-        this.isLoading = false
-        this.$bus.$emit('get-cart')
-        this.$bus.$emit('msg:push', '已幫您加入預約列表，請前往預約專區', 'success')
-      }).catch(error => {
-        this.isLoading = false
-        const errorData = error.response.data.errors
-        if (errorData) {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        }
-      })
+      this.$http
+        .post(url, cart)
+        .then(() => {
+          this.$bus.$emit('get-cart')
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '已幫您加入預約列表，請前往預約專區', 'success')
+        })
+        .catch(error => {
+          const errorData = error.response.data.errors
+          if (errorData) {
+            this.isLoading = false
+            this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+          }
+        })
     },
     back () {
       this.$router.push('/products')
@@ -322,47 +327,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.work-item{
-  height: 300px;
-}
-.fadder{
-  height:200px;
-  overflow: hidden;
-  width: 100%;
-}
-.search{
-  font-size: 80px;
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  color: white;
-  opacity: 0;
-}
-.ink{
-  height: 300px;
-  width: 286px;
-  background: #e7a247;
-  position: absolute;
-  left: 0;
-  opacity: 0;
-}
-.work-item:hover .search{
-  cursor: pointer;
-  opacity: 1;
-  transition-duration: 0.2s;
-  transition: all .8s
-}
-.work-item:hover .ink{
-  cursor: pointer;
-  opacity: 50%;
-  transition-duration: 0.2s;
-  transition: all .8s
-}
-.banner-img{
-  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-position:center center;
-  height: 300px;
-}
-</style>

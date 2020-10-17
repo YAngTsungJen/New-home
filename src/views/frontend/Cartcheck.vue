@@ -113,29 +113,31 @@ export default {
     getOrder () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders/${this.orderId}`
-      this.$http.get(url)
+      this.$http
+        .get(url)
         .then((res) => {
           this.order = res.data.data
           this.isLoading = false
         })
         .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     },
     payOrder () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders/${this.orderId}/paying`
-      this.$http.post(url)
+      this.$http
+        .post(url)
         .then(() => {
           this.getOrder()
-          this.$bus.$emit('msg:push', '預約成功', 'success')
-          this.isLoading = false
           this.$router.push('/success')
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '預約成功', 'success')
         })
         .catch(() => {
-          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
           this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
         })
     }
   },
@@ -145,11 +147,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.banner-img{
-  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-position:center center;
-  height: 300px;
-}
-</style>

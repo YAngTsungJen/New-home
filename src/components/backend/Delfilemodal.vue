@@ -55,11 +55,13 @@ export default {
   methods: {
     delFile () {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/storage/${this.tempStorage.id}`
-      this.$http.delete(url).then(res => {
-        $('#delFileModal').modal('hide')
-        this.$emit('update')
-        this.$bus.$emit('msg:push', '拿到資料囉', 'success')
-      })
+      this.$http
+        .delete(url)
+        .then(res => {
+          this.$emit('update')
+          $('#delFileModal').modal('hide')
+          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+        })
         .catch(() => {
           $('#delFileModal').modal('hide')
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')

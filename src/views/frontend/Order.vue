@@ -84,34 +84,38 @@
                         </router-link>
                         <button type="submit" class="btn btn-more" :disabled="invalid">下一步</button>
                       </div>
-                      <div>
-                        <h3 class="text-center">預約摘要</h3>
-                        <table class="table table-bordered text-center" style="background: #f8f9fa;">
-                          <thead>
-                            <tr>
-                              <th scope="col-3"></th>
-                              <th scope="col-3">案名</th>
-                              <th scope="col-3">售價</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr v-for="item in cart" :key="item.id">
-                              <td scope="row" style="
-                                width: 200px;
-                                height:200px;
-                                background-size: cover;
-                                background-position: center center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></td>
-                              <td class="align-middle"> {{ item.product.title }} </td>
-                              <td class="align-middle"> {{ item.product.price }} 萬 </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </div>
                   </div>
                 </form>
               </validation-observer>
             </span>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div>
+            <h3 class="text-center mb-3 mt-3">預約摘要</h3>
+            <table class="table table-bordered text-center" style="background: #f8f9fa;">
+              <thead>
+                <tr>
+                  <th scope="col-3"></th>
+                  <th scope="col-3">案名</th>
+                  <th scope="col-3">售價</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in cart" :key="item.id">
+                  <td scope="row" style="
+                    width: 200px;
+                    height:200px;
+                    background-size: cover;
+                    background-position: center center;" class="rounded-0" :style="{ backgroundImage: `url(${ item.product.imageUrl[0] })` }"></td>
+                  <td class="align-middle"> {{ item.product.title }} </td>
+                  <td class="align-middle"> {{ item.product.price }} 萬 </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -146,29 +150,35 @@ export default {
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
-      this.$http.get(url).then(res => {
-        this.cart = res.data.data
-        this.isLoading = false
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .get(url)
+        .then(res => {
+          this.cart = res.data.data
+          this.isLoading = false
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     },
     createOrder () {
       this.isLoading = true
       const order = { ...this.form }
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/orders`
-      this.$http.post(url, order).then(res => {
-        this.$bus.$emit('get-cart')
-        this.$bus.$emit('msg:push', '成功建立訂單囉', 'success')
-        this.orderId = res.data.data.id
-        this.$router.push(`/cartcheck/${res.data.data.id}`)
-        this.getCart()
-        this.isLoading = false
-      }).catch(() => {
-        this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
-        this.isLoading = false
-      })
+      this.$http
+        .post(url, order)
+        .then(res => {
+          this.$bus.$emit('get-cart')
+          this.orderId = res.data.data.id
+          this.getCart()
+          this.$router.push(`/cartcheck/${res.data.data.id}`)
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '成功建立訂單囉', 'success')
+        })
+        .catch(() => {
+          this.isLoading = false
+          this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
+        })
     }
   },
   created () {
@@ -176,11 +186,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.banner-img{
-  background-image: url(https://images.unsplash.com/photo-1466350380309-a09bb7347af9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-position:center center;
-  height: 300px;
-}
-</style>
