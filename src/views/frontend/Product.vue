@@ -2,7 +2,7 @@
   <div>
     <loading :active.sync="isLoading">
     </loading>
-    <section class="container-fluid text-white banner-img">
+    <section class="container-fluid text-white banner-img banner-product">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-md-12 h-100">
@@ -235,7 +235,7 @@
           <div class="row">
             <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
               <div class="col-sm-3 mb-3">
-                <div class="card Regular shadow fadder work-item fadder" style="width: 18rem;" @click="show(index)">
+                <div class="card Regular shadow process-img work-item" style="width: 18rem;" @click="show(index)">
                   <img :src="item" class=" img-fluid w-100" alt="建案照片">
                   <span class="ink"></span>
                   <span class="search"><i class="fas fa-search-plus"></i></span>

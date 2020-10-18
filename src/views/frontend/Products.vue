@@ -2,7 +2,7 @@
   <div class="mt-5">
     <loading :active.sync="isLoading">
     </loading>
-    <section class="container-fluid text-white banner-img">
+    <section class="container-fluid text-white banner-img banner-product">
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-md-12 h-100">

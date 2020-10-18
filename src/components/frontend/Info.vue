@@ -35,7 +35,7 @@
     <section>
       <div class="container mt-4">
           <div class="brown text-center mb-3">
-            <h2 style="color: sandybrown;">最多買家關注</h2>
+            <h2>最多買家關注</h2>
           </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mt-2">
@@ -81,7 +81,7 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <div class="brown text-center mb-3">
-            <h2 style="color: sandybrown;">熱銷建案</h2>
+            <h2>熱銷建案</h2>
           </div>
           <div class="row">
             <div class="col-lg-6 pr-sm-0">
