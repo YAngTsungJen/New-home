@@ -8,21 +8,21 @@ Installing
 > - Node: @vue/cli 4.5.4
 2. 專案套件
 > -   "aos": "^3.0.0-beta.6",<br>
-    "axios": "^0.20.0",<br>
-    "bootstrap": "^4.5.2",<br>
-    "core-js": "^3.6.5",<br>
-    "jquery": "^3.5.1",<br>
-    "leaflet": "^1.6.0",<br>
-    "popper.js": "^1.16.1",<br>
-    "sweetalert2": "^9.17.1",<br>
-    "swiper": "^5.3.7",<br>
-    "vee-validate": "^3.3.9",<br>
-    "vue": "^2.6.11",<br>
-    "vue-awesome-swiper": "^4.1.1",<br>
-    "vue-axios": "^2.1.5",<br>
-    "vue-easy-lightbox": "^0.14.0",<br>
-    "vue-loading-overlay": "^3.4.0",<br>
-    "vue-router": "^3.2.0"<br>
+> -    "axios": "^0.20.0",<br>
+> -    "bootstrap": "^4.5.2",<br>
+> -    "core-js": "^3.6.5",<br>
+> -    "jquery": "^3.5.1",<br>
+> -    "leaflet": "^1.6.0",<br>
+> -    "popper.js": "^1.16.1",<br>
+> -    "sweetalert2": "^9.17.1",<br>
+> -    "swiper": "^5.3.7",<br>
+> -    "vee-validate": "^3.3.9",<br>
+> -    "vue": "^2.6.11",<br>
+> -    "vue-awesome-swiper": "^4.1.1",<br>
+> -    "vue-axios": "^2.1.5",<br>
+> -    "vue-easy-lightbox": "^0.14.0",<br>
+> -    "vue-loading-overlay": "^3.4.0",<br>
+> -    "vue-router": "^3.2.0"<br>
 3.安裝步驟
 > - 開啟終端機到存放專案本機位置並執行
 > - git clone git@github.com:YAngTsungJen/New-home.git
