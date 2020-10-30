@@ -7,7 +7,7 @@ Installing
 > - Vue: v12.18.2
 > - Node: @vue/cli 4.5.4
 2. 專案套件
--   "aos": "^3.0.0-beta.6",
+> -   "aos": "^3.0.0-beta.6",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
@@ -24,9 +24,9 @@ Installing
     "vue-loading-overlay": "^3.4.0",
     "vue-router": "^3.2.0"
 3.安裝步驟
-- 開啟終端機到存放專案本機位置並執行
-- git clone git@github.com:YAngTsungJen/New-home.git
-- 專案套件安裝：
+> - 開啟終端機到存放專案本機位置並執行
+> - git clone git@github.com:YAngTsungJen/New-home.git
+> - 專案套件安裝：
     1. 使用終端機切換目錄到專案： rich-house
     2. 使用終端機安裝套件： npm install
  
