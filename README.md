@@ -24,13 +24,13 @@ Installing
 > -    "vue-loading-overlay": "^3.4.0",<br>
 > -    "vue-router": "^3.2.0"<br>
 
-3.安裝步驟
+3. 安裝步驟
 
 > - 開啟終端機到存放專案本機位置並執行
 > - git clone git@github.com:YAngTsungJen/New-home.git
 > - 專案套件安裝：
-    1. 使用終端機切換目錄到專案： rich-house
-    2. 使用終端機安裝套件： npm install
+   > - 1. 使用終端機切換目錄到專案： rich-house
+   > - 2. 使用終端機安裝套件： npm install
  
 # 主要功能
 消費者：
