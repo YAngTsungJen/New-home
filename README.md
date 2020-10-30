@@ -7,7 +7,7 @@ Installing
 > - Vue: v12.18.2
 > - Node: @vue/cli 4.5.4
 2. 專案套件
-> -   "aos": "^3.0.0-beta.6", 
+> -   "aos": "^3.0.0-beta.6",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
