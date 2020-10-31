@@ -70,7 +70,7 @@
                 </tbody>
               </table>
               <div class="row d-flex justify-content-end no-gutters">
-                <router-link to="/order" class="btn btn-more">
+                <router-link to="/order" class="btn btn-more mb-3">
                   下一步
                 </router-link>
               </div>

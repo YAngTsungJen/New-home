@@ -5,7 +5,7 @@
         <div class="col mt-5 d-flex justify-content-center">
           <form @submit.prevent="signin">
             <div class="text-center">
-              <h1>登入</h1>
+              <h2>登入</h2>
             </div>
             <div class="form-group text-left">
               <label for="email">信箱</label>

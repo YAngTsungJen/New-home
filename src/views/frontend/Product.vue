@@ -64,21 +64,7 @@
               </div>
               <div class="row align-items-center">
                 <div class="col-12 col-md-9">
-                  <iframe v-if="product.id === 'Z1o643AM5ILxxi6AzP2Q2LDcsYEIHUT5IeBpaRmyPayDHBMBhQX8qmfE11iYmYLj'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'VKR07jUxm5xfRbFkxESxWCmL9XpDnhXRXXeD8UgfU5NeAWeImR0synlPE8H8MtbE'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'oHeXJYRE8zvwn5qqpTfTvrJbpisQy95QhTF4ugyMFGdHzFWr4CWLDGEgyl3dRCGi'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'JG1aGxiAnPd0NskqCHFr0PgmwuJbXMAF3pVyILHQ8eRZqUi4CytBdbzjVDsB8uQu'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'Dl2uHpZi2Nr4c5qY6tW40zfvDqH4IeJcHllXXBCP1UIJbLzp6vMfOyCZzj51jnrR'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'SU75tJRRp0bCerRNb8D5eN0KulA9N9qRPOBTF5JeVODDmkgTDjQ2ysfZQuXDyvST'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'S6Z9wW65tGUfuqP9P7WKQyWSQesFtBguK8FYFKYkt7a7fCgMQC3999IW2KRAXReY'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'VCd0JC33EhbdsE8fbqAKAceW5OMkijW7JJJLLFdNr313QBXvijt7NrPRHygV9Gsi'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'HpTPbMD8tjlvzEMpXnontzUdpJ04tUyBPYFWH7KfQyRNRUHh3RFpSarfQ0oo0khM'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === '7EuQB9sVQ5GhBRqnqJLNgogrW8rLzaF28dSpCuaoo0uVA52plx4nl1nxUD1xeZcu'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'XryQgQaatBtEeBDWs7bvQ8k0UKsVH271qNrwziMlrjbnaDqxR5yeaKW1kZz3qG5M'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'Akgsfls6nml2YWIakGkx4h6WaHJhQYGMDVfL4w0tA2ce6qHAMkHVSIZacsCmlkBw'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === '7WYjlKHJgsfqGXDccAgUmWkyO6mdRO4foBymcffoPIG2M86lU6IXVAb7GFVLV7D5'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  <iframe v-if="product.id === 'EGog8qizEoNVpMGRyUSjQeWmgCf0j5obNRgQnQRyqBvBaTU6JpnYQXr1I2nynifw'" :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  <iframe :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
               </div>
             </div>
