@@ -14,7 +14,7 @@
           <a class="page-link" href="#" @click.prevent="updatePage(item)">{{ item }}</a>
         </li>
         <li class="page-item" :class="{'disabled': pages.current_page === pages.total_pages }">
-          <a class="page-link" href="#" @click.prevent="updatㄉㄜePage(pages.current_page + 1)">Next</a>
+          <a class="page-link" href="#" @click.prevent="updatePage(pages.current_page + 1)">Next</a>
         </li>
       </ul>
     </nav>
