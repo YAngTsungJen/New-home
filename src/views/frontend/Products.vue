@@ -45,11 +45,8 @@
     <section class="container">
       <div class="row">
         <div class="col-md-4 mt-3" v-for="item in filterCategories" :key="item.id">
-          <div class="card h-100 Regular shadow work-item">
-            <div @click="goPage(item)">
-              <img :src="item.imageUrl[0]" class="card-img-top img-fluid fadder" alt="建案照片">
-              <span class="ink"></span>
-              <span class="search"><i class="fas fa-search-plus"></i></span>
+          <div class="card">
+            <div @click="goPage(item)" class="card-img-sm" :style="{background: `url(${item.imageUrl[0]}) center center no-repeat`, backgroundSize: 'cover'}">
             </div>
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}

@@ -9,45 +9,6 @@
   background-size: cover;
   background-position: center center;
 }
-.ink{
-  height: 100%;
-  width: 100%;
-  background: #e7a247;
-  position: absolute;
-  left: 0;
-  opacity: 0;
-}
-.search{
-  font-size: 80px;
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  color: white;
-  opacity: 0;
-}
-.work-item:hover .ink, .work-item:hover .search{
-  cursor: pointer;
-  transition-duration: 0.2s;
-  transition: all .8s
-}
-.work-item:hover .ink{
-  opacity: .5;
-}
-.work-item:hover .search{
-  opacity: 1;
-}
-.work-item{
-  height: 100%;
-}
-.process-img{
-  height:200px;
-  overflow: hidden;
-  width: 100%;
-}
-.fadder{
-  overflow: hidden;
-  height: 100%;
-}
 .banner-img{
   background-position:center center;
   height: 300px;

@@ -221,10 +221,7 @@
           <div class="row">
             <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
               <div class="col-sm-3 mb-3">
-                <div class="card Regular shadow process-img work-item" style="width: 18rem;" @click="show(index)">
-                  <img :src="item" class=" img-fluid w-100" alt="建案照片">
-                  <span class="ink"></span>
-                  <span class="search"><i class="fas fa-search-plus"></i></span>
+                <div @click="show(index)" class="card card-img-sm" :style="{background: `url(${item}) center center no-repeat`, backgroundSize: 'cover', height:'300px', width: '18rem'}">
                 </div>
               </div>
             </div>
