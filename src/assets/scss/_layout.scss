@@ -15,7 +15,7 @@
   background: #e7a247;
   position: absolute;
   left: 0;
-  opacity: .0001;
+  opacity: 0;
 }
 .search{
   font-size: 80px;
@@ -31,7 +31,7 @@
   transition: all .8s
 }
 .work-item:hover .ink{
-  opacity: 50%;
+  opacity: .5;
 }
 .work-item:hover .search{
   opacity: 1;
