@@ -2,5 +2,6 @@
 @import "./variables";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap";
-@import "./layout.scss";
-@import "./card"
+@import "./helpers";
+@import "./card";
+@import "./loading";

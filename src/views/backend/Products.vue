@@ -1,57 +1,59 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"></loading>
+    <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
+    </loading>
     <div class="container">
-      <div class="text-right mt-4" width="200px">
-        <button type="button" class="btn btn-primary" @click="openmodal('new')">新增房間</button>
+      <div class="text-right mt-4">
+        <button type="button" class="btn btn-more" @click="openmodal('new')">新增房間</button>
       </div>
-      <div class="row">
-        <div class="table-responsive">
-          <table class="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th width="140">建案位址</th>
-                <th width="250">建案名稱</th>
-                <th width="250">設施服務</th>
-                <th width="140">坪數</th>
-                <th width="140">價格</th>
-                <th width="250">按鈕</th>
-                <th width="140">編輯</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(item) in products" :key=" item.id">
-                <th scope="row">{{ item.category }}</th>
-                <td width="300">{{ item.title }}</td>
-                <td></td>
-                <td>{{ item.origin_price }}</td>
-                <td>{{ item.price }}</td>
-                <td>
-                  <label class="switch">
-                    <input type="checkbox" disabled :checked="item.enabled" />
-                    <span class="slider round"></span>
-                  </label>
-                </td>
-                <td width="180">
-                  <div class="btn-group">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary btn-sm" @click.prevent="openmodal('edit',item)"
-                      >加入
-                    </button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" @click.prevent="openmodal('del',item)"
-                    >取消</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="table-responsive mt-2">
+        <table class="table table-striped table-more">
+          <thead>
+            <tr>
+              <th width="140">建案位址</th>
+              <th width="250">建案名稱</th>
+              <th width="250">設施服務</th>
+              <th width="140">坪數</th>
+              <th width="140">價格</th>
+              <th width="250">按鈕</th>
+              <th width="140">編輯</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item) in products" :key=" item.id">
+              <th scope="row">{{ item.category }}</th>
+              <td width="300">{{ item.title }}</td>
+              <td></td>
+              <td>{{ item.origin_price }}</td>
+              <td>{{ item.price }}</td>
+              <td>
+                <label class="switch">
+                  <input type="checkbox" disabled :checked="item.enabled" />
+                  <span class="slider round"></span>
+                </label>
+              </td>
+              <td width="180">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-more btn-sm" @click.prevent="openmodal('edit',item)"
+                    >更新
+                  </button>
+                  <button type="button" class="btn btn-dark btn-sm" @click.prevent="openmodal('del',item)"
+                  >刪除</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <!-- 分頁元件 -->
       <Pagination class="justify-content-center" :pages="pagination" @update="getProducts"></Pagination>
       <!-- 新增和編輯 -->
-      <Productmodal ref="productModal" :isNew = 'isNew' @update = "getProducts" />
+      <Productmodal ref="productModal" :product="tempProduct" :isNew = 'isNew' @update = "getProducts" />
       <!-- 刪除元件 -->
       <DelProducts ref="delProductModal" :temp-product = 'tempProduct' @update = "getProducts" />
     </div>
@@ -70,13 +72,14 @@ export default {
       products: [],
       tempProduct: {
         // 第二層結構要定義才能雙向綁定
-        imageUrl: [''],
+        imageUrl: [],
         options: {
           nearplace: [],
-          map: []
+          map: [],
+          images: []
         }
       },
-      pagination: [],
+      pagination: {},
       loadingbtn: '',
       isNew: false,
       enabled: true
@@ -101,12 +104,12 @@ export default {
               imageUrl: [''],
               options: {
                 nearplace: [],
-                map: []
+                map: [],
+                images: []
               }
             }
           }
           this.isLoading = false
-          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
           this.isLoading = false
@@ -119,7 +122,8 @@ export default {
           imageUrl: [''],
           options: {
             nearplace: [],
-            map: []
+            map: [],
+            images: []
           }
         }
         this.isNew = true

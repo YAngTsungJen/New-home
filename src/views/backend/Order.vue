@@ -1,6 +1,10 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"></loading>
+    <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
+    </loading>
     <div class="table-responsive">
       <table class="table table-striped mt-4">
         <thead>

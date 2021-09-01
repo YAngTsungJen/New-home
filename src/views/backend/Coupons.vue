@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
     </loading>
     <div class="mt-4 text-right">
       <button type="button" class="btn btn-primary" @click.prevent="openModal('new')" >建立優惠券</button>

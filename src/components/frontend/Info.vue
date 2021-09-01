@@ -52,12 +52,12 @@
           </div>
           <div class="col-md-4 mt-2">
             <div class="card">
-              <img src="@/assets/image/S__4128789.jpg" class="card-img-top" alt="">
+              <img src="https://i.imgur.com/PVEslL1.jpg" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>雙車美墅</h2>
+                <h2>瑞誠傳家</h2>
                 <p class="card-text">台中市西區向上路一段79巷</p>
                 <div class="text-right">
-                  <router-link to="/product/oHeXJYRE8zvwn5qqpTfTvrJbpisQy95QhTF4ugyMFGdHzFWr4CWLDGEgyl3dRCGi" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/u4jh3X1C3lzlKyHKdLpLoMjA1DKMXYXxQzMr9aTm0REcWEzopTh0Eip17m0A93jl" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
             <div class="card">
               <img src="@/assets/image/S__4128803.jpg" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>南屯大院</h2>
+                <h2>東城名邸</h2>
                 <p class="card-text">台中市南屯區黎明路二段</p>
                 <div class="text-right">
                   <router-link to="/product/Dl2uHpZi2Nr4c5qY6tW40zfvDqH4IeJcHllXXBCP1UIJbLzp6vMfOyCZzj51jnrR" class="btn btn-outline-more">查看更多</router-link>

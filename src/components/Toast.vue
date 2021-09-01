@@ -47,7 +47,11 @@ export default {
   data () {
     return {
       msgs: [
-        // 丟message進去
+        // {
+        //   msg: '', // 後端回傳
+        //   status: 'danger',
+        //   timestamp: 1234596,
+        // },
       ]
     }
   },

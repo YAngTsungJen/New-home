@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
     </loading>
     <section class="container-fluid text-white banner-img banner-product">
       <div class="container h-100">
@@ -50,7 +53,7 @@
                 </div>
               </div>
               <div class="row mt-3">
-                <div class="col-12 col-md-9" style="font-size: 20px;">
+                <div class="col-12" style="font-size: 20px;">
                   <ul class="list-unstyled my-1">
                     <li>格局：  {{ product.options.structure }}</li>
                     <li>屋齡：  {{ product.options.homeage }}</li>
@@ -63,7 +66,7 @@
                 </div>
               </div>
               <div class="row align-items-center">
-                <div class="col-12 col-md-9">
+                <div class="col-12">
                   <iframe :src="product.options.map" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
               </div>
@@ -183,14 +186,14 @@
             </div>
             <div class="col-md-9 text-left" v-if="product.options.nearplace">
               <div class="row mt-md-2">
-                <div class="col-md-4">
-                  <p><i class="fas fa-store pr-2"></i>{{ product.options.nearplace[0] }}
+                <div class="col-md-3" v-for="(item,key) in product.options.nearplace" :key="key">
+                  <p><i class="fas fa-store pr-2"></i>{{ item }}
                   </p>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <p><i class="fab fa-app-store-ios pr-2"></i>{{ product.options.nearplace[1] }}
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -204,7 +207,6 @@
                   <p>
                     {{ product.options.feature }}
                   </p>
-                  <p>{{ product.content }}</p>
                 </div>
               </div>
             </div>
@@ -218,11 +220,9 @@
           <h2 class="text-center mb-5">建築過程</h2>
         </div>
         <div class="col-12">
-          <div class="row">
-            <div class="d-flex flex-wrap" v-for="(item,index) in product.imageUrl" :key="index">
-              <div class="col-sm-3 mb-3">
-                <div @click="show(index)" class="card card-img-sm" :style="{background: `url(${item}) center center no-repeat`, backgroundSize: 'cover', height:'300px', width: '18rem'}">
-                </div>
+          <div class="row no-gutters justify-content-lg-center mb-2">
+            <div class="col-md-6 col-lg-3" v-for="(item,index) in product.options.images" :key="index">
+              <div @click="show(index)" class="card card-img-sm mb-4 mb-lg-0" :style="{background: `url(${item}) center center no-repeat`, backgroundSize: 'cover', height:'300px', width: '18rem'}">
               </div>
             </div>
           </div>
@@ -274,7 +274,7 @@ export default {
         .get(url)
         .then((response) => {
           this.product = response.data.data
-          this.imgs = response.data.data.imageUrl
+          this.imgs = response.data.data.options.images
           this.isLoading = false
         })
         .catch(() => {

@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
     </loading>
     <div
       id="productModal"
@@ -36,7 +39,23 @@
                   <label for="cust">上傳圖片網址</label>
                   <input type="file" id="cust" class="form-control" @change="upload()" />
                 </div>
-                <img class="img-fluid" :src="tempProduct.imageUrl[0]" alt />
+                <img class="img-fluid" :src="tempProduct.imageUrl[0]" />
+                <!-- 延伸技巧，多圖 -->
+                <div class="mt-5" v-if="tempProduct.options.images">
+                  <div v-for="(image, key) in tempProduct.options.images" :key="key" class="mb-3 input-group" >
+                    <input type="url" class="form-control"
+                            placeholder="請輸入連結" v-model="tempProduct.options.images[key]">
+                    <img class="img-fluid my-2" :src="tempProduct.options.images[key]" />
+                    <button type="button" class="btn btn-outline-danger" @click="tempProduct.options.images.splice(key, 1)">
+                      移除
+                    </button>
+                  </div>
+                  <div v-if="tempProduct.options.images[tempProduct.options.images.length - 1] || !tempProduct.options.images.length">
+                    <button @click="tempProduct.options.images.push('')" class="btn btn-outline-primary btn-sm d-block w-100">
+                      新增圖片
+                    </button>
+                  </div>
+                </div>
               </div>
               <div class="col-sm-8">
                 <div class="form-row">
@@ -107,11 +126,11 @@
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="car">車位</label>
-                    <input id="car" v-model="tempProduct.options.car" type="text" class="form-control" placeholder="請輸入車位">
+                    <input  type="text" id="car" class="form-control" v-model="tempProduct.options.car" placeholder="請輸入車位">
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="feature">屋況特色</label>
-                    <input id="feature" v-model="tempProduct.options.feature" type="text" class="form-control" placeholder="請輸入屋況特色">
+                    <label for="content">說明內容</label>
+                    <input type="text" class="form-control" name="content" id="tempProduct.content" v-model="tempProduct.content" placeholder="請輸入說明內容">
                   </div>
                 </div>
                 <hr>
@@ -170,8 +189,8 @@
                 </div>
                 <hr>
                 <div class="form-group">
-                  <label for="content">說明內容</label>
-                  <textarea name="content" id="tempProduct.content" v-model="tempProduct.content" class="form-control" placeholder="請輸入說明內容"></textarea>
+                  <label for="feature">屋況特色</label>
+                  <textarea id="feature" v-model="tempProduct.options.feature" type="text" class="form-control" placeholder="請輸入屋況特色"></textarea>
                 </div>
                 <hr>
                 <div class="form-group">
@@ -229,7 +248,30 @@ export default {
       isLoading: false
     }
   },
-  props: ['isNew'],
+  props: {
+    product: {
+      type: Object,
+      default () {
+        return {
+          imageUrl: [],
+          options: {}
+        }
+      }
+    },
+    isNew: {
+      type: Boolean,
+      required: true
+    }
+  },
+  // 使用 watch 監聽props的 product，當product有變動時，觸發watch功能
+  watch: {
+    product () {
+      this.tempProduct = this.product
+      if (!this.tempProduct.options.images) {
+        this.tempProduct.options.images = []
+      }
+    }
+  },
   methods: {
     getProduct (num) {
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${num}`
@@ -238,7 +280,6 @@ export default {
         .then((res) => {
           this.tempProduct = res.data.data
           $('#productModal').modal('show')
-          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
@@ -247,14 +288,16 @@ export default {
     updateProduct () {
       let http = 'post'
       let url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product`
+      let status = '新增成功囉，ya ~'
       if (!this.isNew) {
         http = 'patch'
         url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
+        status = '更新成功囉，ya ~'
       }
       this.$http[http](url, this.tempProduct)
         .then((res) => {
           this.$emit('update')
-          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
+          this.$bus.$emit('msg:push', status, 'success')
         })
         .catch(() => {
           this.$bus.$emit('msg:push', '無法取得資料，稍後再試', 'danger')
@@ -275,11 +318,11 @@ export default {
         })
         .then((res) => {
           if (res.status === 200) {
+            this.$bus.$emit('msg:push', '上傳成功囉，ya ~', 'success')
             this.tempProduct.imageUrl.push(res.data.data.path)
             document.querySelector('#cust').value = ''
             this.isLoading = false
           }
-          this.$bus.$emit('msg:push', '拿到資料囉', 'success')
         })
         .catch(() => {
           document.querySelector('#cust').value = ''

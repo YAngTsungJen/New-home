@@ -1,10 +1,15 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"></loading>
+    <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
+    </loading>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #B67965;">
       <div class="container">
-        <router-link class="navbar-brand" to="/">捷登開發
-          <i class="fas fa-home"></i>
+        <router-link class="navbar-brand" to="/">
+        <img src="@/assets/image/圖層-1_02.png" width="120" class="img-fluid mr-4 mb-3" alt="店圖">
+        <h2 class="d-inline-block">捷登開發</h2>
         </router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -15,7 +20,7 @@
               <router-link class="nav-link" to="/about">關於捷登</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/products">最新建案</router-link>
+              <router-link class="nav-link" to="/products">作品介紹</router-link>
             </li>
             <li class="nav-item">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">

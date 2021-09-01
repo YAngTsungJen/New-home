@@ -1,6 +1,9 @@
 <template>
   <div>
     <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
     </loading>
     <section class="container-fluid text-white banner-img banner-product">
       <div class="container h-100">

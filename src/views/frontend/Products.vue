@@ -1,6 +1,9 @@
 <template>
   <div class="mt-5">
     <loading :active.sync="isLoading">
+      <div class="loadingio-spinner-pulse-n5w7ej7np6"><div class="ldio-y8241lbpf5">
+      <div></div><div></div><div></div>
+      </div></div>
     </loading>
     <section class="container-fluid text-white banner-img banner-product">
       <div class="container h-100">
@@ -27,10 +30,10 @@
         </nav>
       </div>
     </section>
-    <section class="container mt-2 py-5">
+    <section class="container pb-3">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-9">
-          <ul class="list-group list-group-horizontal justify-content-md-center card-hov">
+        <div class="col-md-3">
+          <ul class="list-group justify-content-md-center card-hov">
             <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
               全部建案
             </li>
@@ -40,18 +43,18 @@
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section class="container">
-      <div class="row">
-        <div class="col-md-4 mt-3" v-for="item in filterCategories" :key="item.id">
-          <div class="card">
-            <div @click="goPage(item)" class="card-img-sm" :style="{background: `url(${item.imageUrl[0]}) center center no-repeat`, backgroundSize: 'cover'}">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{ item.title }}
-                <span class="badge badge-pill badge-success float-right ">{{ item.category }}</span>
-              </h5>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4" v-for="item in filterCategories" :key="item.id">
+              <div class="card">
+                <div @click="goPage(item)" class="card-img-sm" :style="{background: `url(${item.imageUrl[0]}) center center no-repeat`, backgroundSize: 'cover'}">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}
+                    <span class="badge badge-pill badge-success float-right ">{{ item.category }}</span>
+                  </h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>

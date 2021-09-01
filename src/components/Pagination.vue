@@ -3,18 +3,22 @@
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item" :class="{ disabled: pages.current_page === 1 }">
-          <a class="page-link" href="#">Previous</a>
+          <a class="page-link" href="#" aria-label="Previous" @click.prevent="updatePage(pages.current_page - 1)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
         </li>
         <li
+          v-for="page in pages.total_pages"
           class="page-item"
-          :class="{active: pages.current_page === item}"
-          v-for="item in pages.total_pages"
-          :key="item"
+          :class="{ active: page === pages.current_page}"
+          :key="page.current_page"
         >
-          <a class="page-link" href="#" @click.prevent="updatePage(item)">{{ item }}</a>
+          <a class="page-link" href="#" @click.prevent="updatePage(page)">{{ page }}</a>
         </li>
-        <li class="page-item" :class="{'disabled': pages.current_page === pages.total_pages }">
-          <a class="page-link" href="#" @click.prevent="updatePage(pages.current_page + 1)">Next</a>
+        <li class="page-item" :class="{ disabled: pages.current_page === pages.total_pages }">
+          <a class="page-link" href="#" aria-label="Next" @click.prevent="updatePage(pages.current_page + 1)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
         </li>
       </ul>
     </nav>
@@ -23,11 +27,25 @@
 
 <script>
 export default {
-  props: ['pages'],
+  props: {
+    pages: {
+      type: Object,
+      default () {
+        return {}
+      }
+    }
+  },
   methods: {
-    updatePage (num) {
-      this.$emit('update', num)
+    updatePage (page) {
+      this.$emit('update', page)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .page-item.active .page-link {
+    background-color: #b06d4f;
+    border-color: #b06d4f;
+  }
+</style>
