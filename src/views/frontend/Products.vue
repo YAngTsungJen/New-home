@@ -11,7 +11,7 @@
           <div class="col-md-12 h-100">
             <div class="d-flex align-items-end h-100">
               <div class="mb-5">
-                <h2>最新建案</h2>
+                <h2>作品介紹</h2>
               </div>
             </div>
           </div>
@@ -25,7 +25,7 @@
             <li class="breadcrumb-item">
               <router-link to="/" class="text-muted">首頁</router-link>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">最新建案</li>
+            <li class="breadcrumb-item active" aria-current="page">作品介紹</li>
           </ol>
         </nav>
       </div>
@@ -34,10 +34,10 @@
       <div class="row justify-content-center">
         <div class="col-md-3">
           <ul class="list-group justify-content-md-center card-hov">
-            <li class="list-group-item" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
+            <li class="list-group-item list-group-item-action" @click.prevent="filterCategory = ''" :class="{ active: filterCategory === '' }">
               全部建案
             </li>
-            <li class="list-group-item" @click.prevent="filterCategory = item"
+            <li class="list-group-item list-group-item-action" @click.prevent="filterCategory = item"
                 :class="{ active: item === filterCategory }"
                 v-for="item in categories" :key="item"> {{ item }}
             </li>

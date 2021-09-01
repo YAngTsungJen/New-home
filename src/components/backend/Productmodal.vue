@@ -69,29 +69,29 @@
                     <input id="tempProduct.category" v-model="tempProduct.category" type="text" class="form-control" placeholder="請輸入分類"/>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="unit">單位</label>
+                    <label for="unit">單位（不需使用，請填0）</label>
                     <input id="tempProduct.unit" v-model="tempProduct.unit" type="text" class="form-control" placeholder="請輸入單位"/>
                   </div>
                 </div>
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="origin_price">原價</label>
+                    <label for="origin_price">原價（不需使用，請填0）</label>
                     <input id="tempProduct.origin_price" v-model="tempProduct.origin_price" type="text" class="form-control" placeholder="請輸入原價"/>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="price">售價</label>
+                    <label for="price">售價（不需使用，請填0）</label>
                     <input id="tempProduct.price" v-model="tempProduct.price" type="text" class="form-control" placeholder="請輸入售價"/>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="description">產品描述</label>
-                    <textarea name="description" id="tempProduct.description" v-model="tempProduct.description" class="form-control" placeholder="請輸入產品描述"></textarea>
+                    <label for="description">產品描述（不需使用，請填0）</label>
+                    <input name="description" id="tempProduct.description" v-model="tempProduct.description" class="form-control" placeholder="請輸入產品描述"/>
                   </div>
                 </div>
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="unitprice">單價</label>
+                    <label for="unitprice">每坪單價（請一併寫入單位）</label>
                     <input type="text" class="form-control" id="unitprice" v-model="tempProduct.options.unitprice" placeholder="請輸入單價">
                   </div>
                   <div class="col-md-4 mb-3">
@@ -106,7 +106,7 @@
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="landnumber">權狀坪數</label>
+                    <label for="landnumber">權狀坪數（請一併寫入單位）</label>
                     <input type="text" class="form-control" id="landnumber" v-model="tempProduct.options.landnumber" placeholder="請輸入權狀坪數">
                   </div>
                   <div class="col-md-4 mb-3">
@@ -129,14 +129,14 @@
                     <input  type="text" id="car" class="form-control" v-model="tempProduct.options.car" placeholder="請輸入車位">
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="content">說明內容</label>
+                    <label for="content">說明內容（不需使用，請填0）</label>
                     <input type="text" class="form-control" name="content" id="tempProduct.content" v-model="tempProduct.content" placeholder="請輸入說明內容">
                   </div>
                 </div>
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="now">現況</label>
+                    <label for="now">現況（例如：已完銷、現場看屋...）</label>
                     <input type="text" class="form-control" id="now" v-model="tempProduct.options.now" placeholder="請輸入現況">
                   </div>
                   <div class="col-md-4 mb-3">
@@ -169,17 +169,17 @@
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="mainbuilding">主建物</label>
+                    <label for="mainbuilding">主建物（請一併寫入單位）</label>
                     <input type="text" class="form-control" id="mainbuilding"
                     v-model="tempProduct.options.mainbuilding" placeholder="請輸入主建物">
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="subbuilding">附屬建物</label>
+                    <label for="subbuilding">附屬建物（請一併寫入單位）</label>
                     <input id="subbuilding" v-model="tempProduct.options.subbuilding"
                     type="text" class="form-control" placeholder="請輸入附屬建物">
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="land">土地坪數</label>
+                    <label for="land">土地坪數（請一併寫入單位）</label>
                     <input id="land" v-model="tempProduct.options.land" type="text" class="form-control" placeholder="請輸入土地坪數">
                   </div>
                 </div>

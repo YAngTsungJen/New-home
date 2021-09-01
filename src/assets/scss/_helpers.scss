@@ -223,22 +223,6 @@
   max-height: 60vh;
   overflow-y: scroll;
 }
-.topic{
-  font-size:20px;
-  color:palegreen;
-}
-.topic>li:hover{
-  color: blue;
-}
-.btn-cart{
-  background-color: transparent;
-  position: relative;
-}
-.btn-cart .badge{
-  position: absolute;
-  top: -1px;
-  right: -1px;
-}
 .dropdown-menu-right{
   right: 0;
   left: auto;
@@ -264,10 +248,6 @@
   right: 5%;
 }
 // Products
-
-.changecolor{
-background-color: #B67965;
-}
 .card-hov{
   cursor: pointer;
 }

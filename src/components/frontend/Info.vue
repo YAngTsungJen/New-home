@@ -34,28 +34,34 @@
     </section>
     <section>
       <div class="container mt-4">
-          <div class="brown text-center mb-3">
-            <h2>最多買家關注</h2>
-          </div>
+        <div class="brown text-center mb-3">
+          <h2>最多買家關注</h2>
+        </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mt-2">
             <div class="card">
-              <img src="@/assets/image/11D7FD3E-C091-45D1-BC58-094F4A5D2E24.jpg" class="card-img-top" alt="">
+              <img src="https://i.imgur.com/duoBk53.jpg" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>溪南稻鄉</h2>
-                <p class="card-text"> 台中市烏日區溪南路一段988號</p>
+                <div class="d-flex">
+                  <h2>溪南稻鄉</h2>
+                  <p class="text-danger h4 py-2 ml-auto">已完銷</p>
+                </div>
+                <p class="card-text"> 台中市烏日區溪南路一段</p>
                 <div class="text-right">
-                  <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/QeEgxEZdONHOSzAJEXyYuhYSsDOxQuQ9bHMVslzPQTDbpSh8T5uZoExJLiMU2tMM" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-4 mt-2">
             <div class="card">
-              <img src="https://i.imgur.com/PVEslL1.jpg" class="card-img-top" alt="">
+              <img src="https://i.imgur.com/yN0NpFM.png" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>瑞誠傳家</h2>
-                <p class="card-text">台中市西區向上路一段79巷</p>
+                <div class="d-flex">
+                  <h2>瑞誠傳家</h2>
+                  <p class="text-danger h4 py-2 ml-auto">已完銷</p>
+                </div>
+                <p class="card-text">台中市大里區美村街</p>
                 <div class="text-right">
                   <router-link to="/product/u4jh3X1C3lzlKyHKdLpLoMjA1DKMXYXxQzMr9aTm0REcWEzopTh0Eip17m0A93jl" class="btn btn-outline-more">查看更多</router-link>
                 </div>
@@ -66,10 +72,13 @@
             <div class="card">
               <img src="@/assets/image/S__4128803.jpg" class="card-img-top" alt="">
               <div class="card-body">
-                <h2>東城名邸</h2>
+                <div class="d-flex">
+                  <h2>東城名邸</h2>
+                  <p class="text-danger h4 py-2 ml-auto">已完銷</p>
+                </div>
                 <p class="card-text">台中市南屯區黎明路二段</p>
                 <div class="text-right">
-                  <router-link to="/product/Dl2uHpZi2Nr4c5qY6tW40zfvDqH4IeJcHllXXBCP1UIJbLzp6vMfOyCZzj51jnrR" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/vPGVIVxwKTeHCt6ErJTfuc6gGF57NRNedYLQD1AhkE8u8UDQYPa1fWNrilmNksP3" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
@@ -79,23 +88,38 @@
     </section>
     <section class="container mt-4">
       <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <div class="brown text-center mb-3">
-            <h2>熱銷建案</h2>
-          </div>
+        <div class="col-12">
           <div class="row">
-            <div class="col-lg-6 pr-sm-0">
+            <div class="col-12">
+              <div class="brown text-center mb-3">
+                <h2>熱銷建案</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row no-gutters mb-3 mb-lg-0">
+            <div class="col-lg-6">
               <img src="@/assets/image/S__32948241.jpg" class="img-fluid w-100">
             </div>
-            <div class="col-lg-6 m-auto text-left">
+            <div class="col-lg-6">
               <div class="row align-items-center h-100 mt-3">
-                <div class="col-12 col-lg-11 m-auto">
-                  <h3 class="text-center mt-3 pr-5" style="display: inline;">溪南稻香</h3>
-                  <span class="badge badge-more">寧靜社區別墅</span>
-                  <p class="mt-3">一畝地，一畝田，走過田耕走過故鄉，捷徑品茶道，登梗稻香聞，最是相思</p>
-                  <h5>全新建案，最後三房</h5>
-                  <div class="text-right">
-                    <router-link to="/product/VKR07jUxm5xfRbFkxESxWCmL9XpDnhXRXXeD8UgfU5NeAWeImR0synlPE8H8MtbE" class="btn btn-outline-more">查看更多</router-link>
+                <div class="col-12">
+                  <div class="px-3">
+                    <div class="d-flex bd-highlight">
+                      <div class="p-2 flex-grow-1 bd-highlight">
+                        <h3 class="text-center mt-3" style="display: inline;">溪南稻香</h3>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <span class="badge badge-more">寧靜社區別墅</span>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <span class="text-danger bold h4">已完銷</span>
+                      </div>
+                    </div>
+                    <p class="mt-3">一畝地，一畝田，走過田耕走過故鄉，捷徑品茶道，登梗稻香聞，最是相思</p>
+                    <h5>全新建案，最後三房</h5>
+                    <div class="text-right">
+                      <router-link to="/product/QeEgxEZdONHOSzAJEXyYuhYSsDOxQuQ9bHMVslzPQTDbpSh8T5uZoExJLiMU2tMM" class="btn btn-outline-more">查看更多</router-link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -103,21 +127,32 @@
           </div>
         </div>
       </div>
-      <div>
-        <div class="col-lg-10 mx-auto mt-3 mb-2">
-          <div class="row">
+      <div class="row mb-3 mb-lg-0">
+        <div class="col-12 mx-auto mb-2">
+          <div class="row no-gutters">
             <div class="col-lg-6 pr-sm-0 order-lg-2">
-              <img src="@/assets/image/S__4128803.jpg" class="img-fluid w-100">
+              <img src="https://i.imgur.com/RhPsD56.jpg" class="img-fluid w-100">
             </div>
             <div class="col-lg-6 text-left order-lg-1">
               <div class="row align-items-center h-100 mt-3">
-                <div class="col-12 col-lg-11 m-auto ">
-                  <h3 class="text-center mt-3 pr-5" style="display: inline;">東城名邸</h3>
-                  <span class="badge badge-more">優質精選學區住宅</span>
-                  <p class="mt-3">傳承世代根基，尋根的源頭，言中彼此帶幽玄，盡向言中辨正偏，孤負一條官驛路，茫茫沉在月明前</p>
-                  <h5>塗城商圈學區透天住宅</h5>
-                  <div class="text-right">
-                    <router-link to="/product/iyFjXtoD9hKAn9Z2xhUyaDLTDmJh0xXfIPU4He22NMAikQzVHVl71e3efaDIicQU" class="btn btn-outline-more">查看更多</router-link>
+                <div class="col-12">
+                  <div class="px-3">
+                    <div class="d-flex bd-highlight">
+                      <div class="p-2 flex-grow-1 bd-highlight">
+                        <h3 class="text-center mt-3 pr-5" style="display: inline;">東城名邸</h3>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <span class="badge badge-more">優質精選學區住宅</span>
+                      </div>
+                      <div class="p-2 bd-highlight">
+                        <div class="text-danger bold h4">已完銷</div>
+                      </div>
+                    </div>
+                    <p class="mt-3">傳承世代根基，尋根的源頭，言中彼此帶幽玄，盡向言中辨正偏，孤負一條官驛路，茫茫沉在月明前</p>
+                    <h5>塗城商圈學區透天住宅</h5>
+                    <div class="text-right">
+                      <router-link to="/product/vPGVIVxwKTeHCt6ErJTfuc6gGF57NRNedYLQD1AhkE8u8UDQYPa1fWNrilmNksP3" class="btn btn-outline-more">查看更多</router-link>
+                    </div>
                   </div>
                 </div>
               </div>

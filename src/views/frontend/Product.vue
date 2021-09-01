@@ -26,7 +26,7 @@
               <router-link to="/" class="text-muted">首頁</router-link>
             </li>
             <li class="breadcrumb-item">
-              <router-link to="/products" class="text-muted">最新建案</router-link>
+              <router-link to="/products" class="text-muted">作品介紹</router-link>
             </li>
             <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
           </ol>
@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="d-flex">
-                    <h2 class="text-danger">{{ product.price }}<small>萬元</small></h2>
+                    <h2 class="text-danger">{{ product.options.amount }}</h2>
                     <div class="ml-auto">
                   <button type="button" class="btn btn-light" @click.prevent="back()">返回</button>
                   <button type="button" class="btn btn-more" @click.prevent="addCart(product,product.num)">預約看屋</button>
@@ -61,7 +61,6 @@
                     <li>樓層：  {{ product.options.floor }}</li>
                     <li>朝向：  {{ product.options.direction }}</li>
                     <li>地址：  {{ product.options.address }}</li>
-                    <li class="text-danger h3 mt-3">{{ product.options.amount }}</li>
                   </ul>
                 </div>
               </div>
