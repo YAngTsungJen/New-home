@@ -16,6 +16,7 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
+$transparent: transparent;
 // $gray:    #666666 !default;
 
 $grays: () !default;
@@ -91,6 +92,7 @@ $theme-colors: map-merge(
     "whitegreen": $whitegreen,
     "more":       $more,
     "bar":       $bar,
+    "transparent": $transparent,
   ),
   $theme-colors
 );

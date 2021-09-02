@@ -5,11 +5,11 @@
       <div></div><div></div><div></div>
       </div></div>
     </loading>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #B67965;">
+    <nav class="navbar navbar-expand-lg fixed-top" :class="[classList['bg-color'], classList['navbar-color']]">
       <div class="container-fluid">
         <router-link class="navbar-brand" to="/">
         <img src="@/assets/image/圖層-1_02.png" width="120" class="img-fluid mr-4 mb-3" alt="店圖">
-        <h2 class="d-inline-block">捷登開發</h2>
+        <h2 class="d-inline-block" :class="classList['text-color']">捷登開發</h2>
         </router-link>
         <button @click.prevent="isMenuOpen = !isMenuOpen" class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="p-1" v-show="!isMenuOpen">
@@ -22,15 +22,15 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="menu navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link" to="/about">關於捷登</router-link>
+              <router-link :class="classList['text-color']" @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/about">關於捷登</router-link>
             </li>
             <li class="nav-item">
-              <router-link @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link" to="/products">作品介紹</router-link>
+              <router-link :class="classList['text-color']" @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/products">作品介紹</router-link>
             </li>
             <li class="nav-item">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <button class="btn btn-more dropdown-toggle" type="button" id="check" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  預約專區
+                  <p class="h4 d-inline-block mr-1">預約專區</p>
                   <span class="badge badge-pill badge-danger" v-if="cart.length">{{ cart.length }}</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right p-3 size" aria-labelledby="check">
@@ -89,12 +89,31 @@ export default {
     return {
       cart: [],
       isLoading: false,
-      isMenuOpen: false
+      isMenuOpen: false,
+      classList: {
+        'bg-color': 'bg-transparent',
+        'text-color': 'text-more',
+        'navbar-color': ''
+      }
     }
   },
   methods: {
-    myFunction (x) {
-      x.classList.toggle('change')
+    scrollFunction () {
+      const windowY = window.scrollY
+      const innerHeight = window.innerHeight - 600
+      if (windowY > innerHeight) {
+        this.classList = {
+          'bg-color': 'bg-more',
+          'navbar-color': 'navbar-dark',
+          'text-color': 'text-white'
+        }
+      } else {
+        this.classList = {
+          'bg-color': 'bg-transparent',
+          'navbar-color': 'navbar-light',
+          'text-color': 'text-more'
+        }
+      }
     },
     getCart () {
       this.isLoading = true
@@ -150,6 +169,12 @@ export default {
     this.$bus.$on('get-cart', () => {
       this.getCart()
     })
+  },
+  mounted () {
+    window.addEventListener('scroll', this.scrollFunction)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.scrollFunction)
   },
   beforeDestroy () {
     this.$bus.$off('get-cart')

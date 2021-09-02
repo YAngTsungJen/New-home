@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 mb-5">
+  <div class="mb-5">
     <section class="container-fluid text-white  banner-img banner-about">
       <div class="container h-100">
         <div class="row h-100">
