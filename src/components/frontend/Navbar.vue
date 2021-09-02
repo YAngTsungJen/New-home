@@ -6,21 +6,26 @@
       </div></div>
     </loading>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #B67965;">
-      <div class="container">
+      <div class="container-fluid">
         <router-link class="navbar-brand" to="/">
         <img src="@/assets/image/圖層-1_02.png" width="120" class="img-fluid mr-4 mb-3" alt="店圖">
         <h2 class="d-inline-block">捷登開發</h2>
         </router-link>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button @click.prevent="isMenuOpen = !isMenuOpen" class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="p-1" v-show="!isMenuOpen">
+            <i class="fas fa-bars"></i>
+          </span>
+          <span class="p-1" v-show="isMenuOpen">
+            <i class="fas fa-times"></i>
+          </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
+          <ul class="menu navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link class="nav-link" to="/about">關於捷登</router-link>
+              <router-link @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link" to="/about">關於捷登</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/products">作品介紹</router-link>
+              <router-link @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link" to="/products">作品介紹</router-link>
             </li>
             <li class="nav-item">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
@@ -65,7 +70,7 @@
                         <button type="button" class="btn btn-cyan" @click="removeAllCart()">
                             <i class="far fa-trash-alt">全部取消</i>
                         </button>
-                        <button type="button" class="btn btn-more " :disabled="cart.length === 0" @click="goReservation">前往預約專區</button>
+                        <button type="button" class="btn btn-more" :disabled="cart.length === 0" @click="goReservation">前往預約專區</button>
                       </div>
                     </section>
                 </div>
@@ -83,10 +88,14 @@ export default {
   data () {
     return {
       cart: [],
-      isLoading: false
+      isLoading: false,
+      isMenuOpen: false
     }
   },
   methods: {
+    myFunction (x) {
+      x.classList.toggle('change')
+    },
     getCart () {
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
