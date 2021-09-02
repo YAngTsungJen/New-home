@@ -5,3 +5,7 @@
 @import "./helpers";
 @import "./card";
 @import "./loading";
+
+button:focus {
+  outline: 0px;
+}
