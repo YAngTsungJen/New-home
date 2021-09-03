@@ -5,6 +5,7 @@ import 'bootstrap'
 import './assets/scss/main.scss'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueKinesis from 'vue-kinesis'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 import './bus'
@@ -15,6 +16,7 @@ import TW from 'vee-validate/dist/locale/zh_TW.json'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+Vue.use(VueKinesis)
 Vue.config.productionTip = false
 Vue.component('loading', Loading)
 Vue.use(VueAxios, axios)

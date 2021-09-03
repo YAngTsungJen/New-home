@@ -7,9 +7,9 @@
     </loading>
     <nav class="navbar navbar-expand-lg fixed-top" :class="[classList['bg-color'], classList['navbar-color']]">
       <div class="container-fluid">
-        <router-link class="navbar-brand" to="/">
+        <router-link class="navbar-brand" @click.native="clickthree" to="/">
         <img src="@/assets/image/圖層-1_02.png" width="120" class="img-fluid mr-4 mb-3" alt="店圖">
-        <h2 class="d-inline-block" :class="classList['text-color']">捷登開發</h2>
+        <h2 class="d-inline-block main-title" :class="classList['text-color']"><span class="highlight box3">捷登開發</span></h2>
         </router-link>
         <button @click.prevent="isMenuOpen = !isMenuOpen" class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="p-1" v-show="!isMenuOpen">
@@ -20,14 +20,14 @@
           </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="menu navbar-nav ml-auto">
-            <li class="nav-item">
-              <router-link :class="classList['text-color']" @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/about">關於捷登</router-link>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item text-center">
+              <router-link :class="classList['text-color']"  @click.native="clickone" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/about"><span class="highlight box1">關於捷登</span></router-link>
             </li>
-            <li class="nav-item">
-              <router-link :class="classList['text-color']" @click.native="isMenuOpen = false" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/products">作品介紹</router-link>
+            <li class="nav-item text-center">
+              <router-link :class="classList['text-color']" @click.native="clicktwo" data-toggle="collapse" data-target="#navbarNavDropdown" class="nav-link h4" to="/products"><span class="highlight box2">作品介紹</span></router-link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item text-center">
               <div class="dropdown" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <button class="btn btn-more dropdown-toggle" type="button" id="check" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <p class="h4 d-inline-block mr-1">預約專區</p>
@@ -84,6 +84,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   data () {
     return {
@@ -91,16 +92,34 @@ export default {
       isLoading: false,
       isMenuOpen: false,
       classList: {
-        'bg-color': 'bg-transparent',
-        'text-color': 'text-more',
+        'bg-color': 'bg-mild',
+        'text-color': 'text-dark',
         'navbar-color': ''
       }
     }
   },
   methods: {
+    clickone () {
+      this.isMenuOpen = false
+      $('.box1').addClass('addColor')
+      $('.box2').removeClass('addColor')
+      $('.box3').removeClass('addColor')
+    },
+    clicktwo () {
+      this.isMenuOpen = false
+      $('.box2').addClass('addColor')
+      $('.box1').removeClass('addColor')
+      $('.box3').removeClass('addColor')
+    },
+    clickthree () {
+      this.isMenuOpen = false
+      $('.box3').addClass('addColor')
+      $('.box1').removeClass('addColor')
+      $('.box2').removeClass('addColor')
+    },
     scrollFunction () {
       const windowY = window.scrollY
-      const innerHeight = window.innerHeight - 600
+      const innerHeight = window.innerHeight - 700
       if (windowY > innerHeight) {
         this.classList = {
           'bg-color': 'bg-more',
@@ -109,9 +128,9 @@ export default {
         }
       } else {
         this.classList = {
-          'bg-color': 'bg-transparent',
+          'bg-color': 'bg-mild',
           'navbar-color': 'navbar-light',
-          'text-color': 'text-more'
+          'text-color': 'text-dark'
         }
       }
     },

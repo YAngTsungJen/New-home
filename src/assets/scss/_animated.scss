@@ -1,0 +1,41 @@
+@keyframes scaleDraw {
+	0% {
+		transform:scale(1);
+	}
+	25% {
+		transform:scale(1.1);
+	}
+	50% {
+		transform:scale(1);
+	}
+	75% {
+		transform:scale(1.1);
+	}
+}
+.animated {
+	animation-name:scaleDraw;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+  animation-duration:10s;
+	/*动画所花费的时间*/
+}
+
+
+// 往下滑動
+.down p {
+	position: absolute;
+	bottom: -185px;
+	right: 30px;
+	color: #000;
+	text-align: center;
+	margin-top: 5vh;
+	font-size: 40px;
+	font-weight: 800;
+	opacity: 0.5;
+	animation: fadeIn 1s infinite linear alternate;
+}
+@keyframes fadeIn {
+	100% {
+		opacity: 1;
+	}
+}

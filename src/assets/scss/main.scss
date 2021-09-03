@@ -5,7 +5,72 @@
 @import "./helpers";
 @import "./card";
 @import "./loading";
+@import "./animated";
 
 button:focus {
   outline: 0px;
+}
+
+.info li:hover a{
+  color: yellow;
+  background-color: red;
+}
+
+.banner-subtitle{
+  font-family: 'Hachi Maru Pop', cursive;
+}
+.main-title{
+  font-family: 'Kaisei Decol', serif;
+}
+// .nav-item a{
+//   border-bottom: 5px solid transparent;
+//   &:hover{
+//     border-bottom: 5px solid red;
+//   }
+//   &:focus{
+//     border-bottom: 5px solid red;
+//   }
+// }
+
+.highlight{
+  position: relative;
+  &:hover{
+    &::before{
+      content: '';
+      z-index: -1;
+      position: absolute;
+      height: .7rem;
+      top: .9rem;
+      background: red;
+      width: 100%;
+      opacity: 0.55;
+    }
+  }
+}
+.addColor{
+  position: relative;
+  &::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    height: .7rem;
+    top: .9rem;
+    background: red;
+    width: 100%;
+    opacity: 0.55;
+  }
+}
+
+.banner-bottom-more {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 200px 0px 200px 200px;
+  border-color: transparent transparent #f1e9de transparent;
+  color: #fff;
+  cursor: pointer;
+  background: transparent;
 }

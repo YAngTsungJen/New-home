@@ -19,7 +19,7 @@
           <div class="col-12 col-lg-6 text-center mt-3">
             <h2> <i class="far fa-building fa-1x"></i> 居家話題 </h2>
             <nav class="row justify-content-center">
-              <ul class="col text-left mt-3 list-unstyled underline">
+              <ul class="info col text-left mt-3 list-unstyled">
                 <li><a href="https://house.udn.com/house/story/5905/4806277" class="text-color" target="_blank">好好的房子 為什麼會漏水呢？</a></li>
                 <li><a href="https://house.udn.com/house/story/5905/4825992" class="text-color" target="_blank">台中豪宅房市熱 千萬頂級床具、廚具紛紛進駐七期</a></li>
                 <li><a href="https://house.udn.com/house/story/5905/4825395" class="text-color" target="_blank">開放式廚房中看不中用？ 過來人曝一缺點「會後悔」</a></li>
@@ -131,7 +131,7 @@
         <div class="col-12 mx-auto mb-2">
           <div class="row no-gutters">
             <div class="col-lg-6 pr-sm-0 order-lg-2">
-              <img src="https://i.imgur.com/RhPsD56.jpg" class="img-fluid w-100">
+              <img src="https://i.imgur.com/zYiimHA.jpg" class="img-fluid w-100">
             </div>
             <div class="col-lg-6 text-left order-lg-1">
               <div class="row align-items-center h-100 mt-3">
