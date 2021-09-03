@@ -76,11 +76,11 @@
                 <hr>
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
-                    <label for="origin_price">原價（不需使用，請填0）</label>
+                    <label for="origin_price">原價（若完銷請填0，未完銷請填價格）</label>
                     <input id="tempProduct.origin_price" v-model="tempProduct.origin_price" type="text" class="form-control" placeholder="請輸入原價"/>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="price">售價（不需使用，請填0）</label>
+                    <label for="price">售價（若完銷請填0，未完銷請填價格）</label>
                     <input id="tempProduct.price" v-model="tempProduct.price" type="text" class="form-control" placeholder="請輸入售價"/>
                   </div>
                   <div class="col-md-4 mb-3">
@@ -184,7 +184,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="amount">剩餘戶數</label>
+                  <label for="amount">判定是否完銷（填已完銷或要賣出的價格）</label>
                   <input id="amount" v-model="tempProduct.options.amount" type="text" class="form-control" placeholder="請輸入剩餘戶數">
                 </div>
                 <hr>

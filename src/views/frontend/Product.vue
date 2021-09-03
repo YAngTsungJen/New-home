@@ -189,10 +189,6 @@
                   <p><i class="fas fa-store pr-2"></i>{{ item }}
                   </p>
                 </div>
-                <!-- <div class="col-md-4">
-                  <p><i class="fab fa-app-store-ios pr-2"></i>{{ product.options.nearplace[1] }}
-                  </p>
-                </div> -->
               </div>
             </div>
           </div>
@@ -282,6 +278,11 @@ export default {
         })
     },
     addCart (item, quantity = 1) {
+      console.log(this.product.options.amount === '已完銷')
+      if (this.product.options.amount === '已完銷') {
+        this.$bus.$emit('msg:push', '已經完銷囉，看看別間呢！', 'danger')
+        return
+      }
       this.isLoading = true
       const url = `${process.env.VUE_APP_APIPATH}${process.env.VUE_APP_UUID}/ec/shopping`
       const cart = {
