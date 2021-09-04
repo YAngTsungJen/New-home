@@ -45,7 +45,7 @@
         </div>
         <div class="col-md-9">
           <div class="row">
-            <div class="col-md-4" v-for="item in filterCategories" :key="item.id">
+            <div class="col-md-4 mt-3 mt-md-0" v-for="item in filterCategories" :key="item.id">
               <div class="card">
                 <div @click="goPage(item)" class="card-img-sm" :style="{background: `url(${item.imageUrl[0]}) center center no-repeat`, backgroundSize: 'cover'}">
                 </div>
@@ -60,7 +60,7 @@
         </div>
       </div>
     </section>
-    <section class="container mt-5 py-5">
+    <section class="container mt-2 py-3">
       <div class="row">
         <div class="col">
           <Pagination :pages="pagination" @update="getProducts" />

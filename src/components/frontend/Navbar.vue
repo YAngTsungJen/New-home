@@ -112,7 +112,6 @@ export default {
       $('.box3').removeClass('addColor')
     },
     clickthree () {
-      this.isMenuOpen = false
       $('.box3').addClass('addColor')
       $('.box1').removeClass('addColor')
       $('.box2').removeClass('addColor')
