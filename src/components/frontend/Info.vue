@@ -55,15 +55,15 @@
           </div>
           <div class="col-md-4 mt-2">
             <div class="card">
-              <img src="https://i.imgur.com/yN0NpFM.png" class="card-img-top" alt="">
+              <img src="https://i.imgur.com/XyhP31o.jpg" class="card-img-top" alt="">
               <div class="card-body">
                 <div class="d-flex">
-                  <h2>瑞誠傳家</h2>
-                  <p class="text-danger h4 py-2 ml-auto">已完銷</p>
+                  <h2>春社土地</h2>
+                  <!-- <p class="text-danger h4 py-2 ml-auto">840萬</p> -->
                 </div>
-                <p class="card-text">台中市大里區美村街</p>
+                <p class="card-text">台中市南屯區春社土地</p>
                 <div class="text-right">
-                  <router-link to="/product/u4jh3X1C3lzlKyHKdLpLoMjA1DKMXYXxQzMr9aTm0REcWEzopTh0Eip17m0A93jl" class="btn btn-outline-more">查看更多</router-link>
+                  <router-link to="/product/eIrT7uy3Zx9ZjIxXVKwrvylWGvIQXCRcfxqyadsKEs5LdJEjgqBP7EKYgIXIFQ2t" class="btn btn-outline-more">查看更多</router-link>
                 </div>
               </div>
             </div>
