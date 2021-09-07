@@ -212,7 +212,7 @@
     <section class="container">
       <div class="row">
         <div class="col-12 mx-auto text-center">
-          <h2 class="text-center mb-5">建築過程</h2>
+          <h2 class="text-center mb-5">現況</h2>
         </div>
         <div class="col-12">
           <div class="row no-gutters justify-content-lg-center mb-2">
