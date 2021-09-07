@@ -14,7 +14,7 @@
                 <div class="col-md-6">
                   <KinesisContainer>
                     <KinesisElement :strength="15">
-                      <h2 class="main-title">捷登開發</h2>
+                      <h2 class="main-title">捷登房屋</h2>
                     </KinesisElement>
                     <KinesisElement :strength="30" class="banner-subtitle"><p class="mb-0">一畝地，一畝田，<br> 走過田耕 <br> 走過故鄉，<br>捷徑品茶道，登梗稻香聞，最是相思</p></KinesisElement>
                     <div class="d-flex justify-content-center mt-2">
@@ -42,7 +42,7 @@
                 <div class="col-md-6">
                   <KinesisContainer>
                     <KinesisElement :strength="15">
-                      <h2 class="main-title">捷登開發</h2>
+                      <h2 class="main-title">捷登房屋</h2>
                     </KinesisElement>
                     <KinesisElement :strength="30" class="banner-subtitle">
                       <h5>人性規劃，藝術建築</h5>
@@ -73,7 +73,7 @@
                 <div class="col-md-6">
                   <KinesisContainer>
                     <KinesisElement :strength="15">
-                      <h2 class="main-title">捷登開發</h2>
+                      <h2 class="main-title">捷登房屋</h2>
                     </KinesisElement>
                     <KinesisElement :strength="30" class="banner-subtitle">
                       <h5>想追求品牌的建築嗎？</h5>

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-center align-items-md-center align-items-start text-white">
           <div class="mb-md-0 mb-1 pr-3">
-            <p class="mb-0"> 捷登建設股份有限公司 Copyright By：洋蔥</p>
+            <p class="mb-0"> 捷登房屋 Copyright By：洋蔥</p>
           </div>
           <ul class="list-unstyled mb-0 h2 d-flex">
             <li>

@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <router-link class="navbar-brand" @click.native="clickthree" to="/">
         <img src="@/assets/image/圖層-1_02.png" width="120" class="img-fluid mr-4 mb-3" alt="店圖">
-        <h2 class="d-inline-block main-title" :class="classList['text-color']"><span class="highlight box3">捷登開發</span></h2>
+        <h2 class="d-inline-block main-title" :class="classList['text-color']"><span class="highlight box3">捷登房屋</span></h2>
         </router-link>
         <button @click.prevent="isMenuOpen = !isMenuOpen" class="navbar-toggler p-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="p-1" v-show="!isMenuOpen">

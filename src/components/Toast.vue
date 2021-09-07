@@ -18,7 +18,7 @@
           >
             <span>
               <i class="fas fa-comments" />
-            </span> 捷登開發
+            </span> 捷登房屋
           </strong>
           <small class="text-muted ml-3">現在</small>
           <button
